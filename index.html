@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move and Breathe Lille — Studio Pilates Classique & Sophrolates · Roubaix Barbieux</title>
+<meta name="description" content="Studio de Pilates Classique et Sophrolates à Roubaix Barbieux, à 100m du Parc Barbieux. Cours sur tapis et machines (Reformer, Cadillac, Wunda Chair). Sophrologie et Sophrolates avec Coralie Delahaye, instructrice certifiée.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --teal: #1a7a6e;
+    --teal-dark: #0d5a51;
+    --teal-light: #e8f5f3;
+    --teal-mid: #4a9e94;
+    --cream: #f7f4ef;
+    --cream-dark: #ede8e0;
+    --sand: #c9b99a;
+    --text-dark: #1a1a1a;
+    --text-mid: #4a4a4a;
+    --text-light: #8a8a8a;
+    --white: #ffffff;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: rgba(247,244,239,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,185,154,0.2);
+    transition: all 0.4s ease;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--teal-dark);
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--teal);
+    color: var(--white) !important;
+    padding: 0.65rem 1.6rem;
+    border-radius: 2px;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.15em !important;
+    transition: background 0.3s !important;
+  }
+  .nav-cta:hover { background: var(--teal-dark) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-visual {
+    position: relative;
+    background: linear-gradient(135deg, #0d5a51 0%, #1a7a6e 40%, #2d9b8e 100%);
+    overflow: hidden;
+  }
+  .hero-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-figure {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-silhouette {
+    width: 100%; height: 100%;
+    opacity: 0.15;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='200' cy='120' rx='40' ry='40' fill='white'/%3E%3Cpath d='M200 160 Q160 200 140 280 Q160 300 200 290 Q240 300 260 280 Q240 200 200 160Z' fill='white'/%3E%3Cpath d='M160 200 Q100 240 80 300 Q100 320 130 300 Q150 260 160 240Z' fill='white'/%3E%3Cpath d='M240 200 Q300 240 320 300 Q300 320 270 300 Q250 260 240 240Z' fill='white'/%3E%3Cpath d='M170 290 Q150 360 160 440' stroke='white' stroke-width='20' stroke-linecap='round' fill='none'/%3E%3Cpath d='M230 290 Q250 360 240 440' stroke='white' stroke-width='20' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .hero-overlay-text {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 4rem;
+  }
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1rem;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 2rem;
+  }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 300;
+    color: var(--white);
+    display: block;
+  }
+  .hero-stat-label {
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    display: block; margin-top: 0.2rem;
+  }
+
+  .hero-content {
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 8rem 5rem 4rem 4rem;
+    background: var(--cream);
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block; width: 2.5rem; height: 1px;
+    background: var(--teal);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--teal);
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+    max-width: 360px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+  .hero-actions {
+    display: flex; align-items: center; gap: 2rem;
+  }
+  .btn-primary {
+    background: var(--teal);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border: none; cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26,122,110,0.25);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-mid);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.6rem;
+    transition: color 0.3s;
+  }
+  .btn-ghost:hover { color: var(--teal); }
+  .btn-ghost::after {
+    content: '→';
+    transition: transform 0.3s;
+  }
+  .btn-ghost:hover::after { transform: translateX(4px); }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    background: var(--teal-dark);
+    padding: 1rem 0;
+    overflow: hidden;
+    display: flex;
+  }
+  .marquee-track {
+    display: flex; gap: 3rem;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-item {
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    display: flex; align-items: center; gap: 3rem;
+  }
+  .marquee-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--teal-mid);
+    display: inline-block;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTION GÉNÉRALE */
+  section { padding: 7rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
+
+  .section-label {
+    font-size: 0.68rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block; width: 1.5rem; height: 1px;
+    background: var(--teal);
+  }
+
+  /* RECONNECT */
+  .reconnect { background: var(--white); }
+  .reconnect-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    align-items: center;
+  }
+  .reconnect-image {
+    position: relative;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #1a7a6e 0%, #0d5a51 100%);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .reconnect-image::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem; right: -2rem;
+    width: 60%; height: 60%;
+    border: 1px solid var(--teal-light);
+    border-radius: 2px;
+    z-index: -1;
+  }
+  .reconnect-yoga {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .yoga-svg { width: 60%; opacity: 0.3; }
+  .reconnect-badge {
+    position: absolute; bottom: 2rem; right: -3rem;
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 8rem;
+  }
+  .reconnect-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300;
+    color: var(--teal); display: block;
+  }
+  .reconnect-badge-text {
+    font-size: 0.65rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-light);
+    display: block; margin-top: 0.25rem;
+  }
+  .reconnect-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+    font-weight: 300; line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .reconnect-title em { font-style: italic; color: var(--teal); }
+  .reconnect-text {
+    font-size: 0.95rem; line-height: 1.9;
+    color: var(--text-mid); font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+  .features-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    font-size: 0.9rem; color: var(--text-mid);
+  }
+  .feature-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--teal); flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+
+  /* PRATIQUES */
+  .pratiques { background: var(--cream); }
+  .pratiques-header {
+    text-align: center; max-width: 600px;
+    margin: 0 auto 5rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3vw, 3.5rem);
+    font-weight: 300; line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .section-title em { font-style: italic; color: var(--teal); }
+  .section-sub {
+    font-size: 0.95rem; line-height: 1.8;
+    color: var(--text-light); font-weight: 300;
+  }
+  .pratiques-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .pratique-card {
+    position: relative; border-radius: 4px;
+    overflow: hidden; cursor: pointer;
+    transition: transform 0.4s ease;
+  }
+  .pratique-card:hover { transform: translateY(-6px); }
+  .pratique-card:hover .pratique-overlay { opacity: 1; }
+  .pratique-bg {
+    aspect-ratio: 3/4;
+    position: relative;
+  }
+  .bg-yoga { background: linear-gradient(160deg, #1a7a6e, #0d4a44); }
+  .bg-pilates { background: linear-gradient(160deg, #2d5a5a, #1a3a3a); }
+  .bg-wellness { background: linear-gradient(160deg, #4a7a6e, #2d5a51); }
+  .pratique-pattern {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.03) 40px,
+      rgba(255,255,255,0.03) 41px
+    );
+  }
+  .pratique-overlay {
+    position: absolute; inset: 0;
+    background: rgba(13,74,68,0.6);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pratique-discover {
+    border: 1px solid rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.9);
+    padding: 0.7rem 1.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    border-radius: 2px;
+  }
+  .pratique-info {
+    padding: 1.5rem 0 0;
+  }
+  .pratique-tag {
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+  .pratique-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 300;
+    color: var(--text-dark);
+  }
+
+  /* MÉTHODE */
+  .methode { background: var(--teal-dark); padding: 7rem 0; }
+  .methode-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8rem;
+    align-items: center;
+  }
+  .methode-label {
+    font-size: 0.68rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: rgba(255,255,255,0.45);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .methode-label::before {
+    content: ''; display: inline-block;
+    width: 1.5rem; height: 1px;
+    background: rgba(255,255,255,0.3);
+  }
+  .methode-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--white); margin-bottom: 2rem;
+  }
+  .methode-title em { font-style: italic; color: var(--teal-mid); }
+  .methode-text {
+    font-size: 0.95rem; line-height: 1.9;
+    color: rgba(255,255,255,0.65); font-weight: 300;
+    margin-bottom: 3rem;
+  }
+  .methode-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+  }
+  .methode-item {
+    display: flex; gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .methode-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 300;
+    color: var(--teal-mid); flex-shrink: 0;
+    line-height: 1;
+  }
+  .methode-item-title {
+    font-size: 0.85rem; font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.05em; margin-bottom: 0.3rem;
+  }
+  .methode-item-text {
+    font-size: 0.85rem; line-height: 1.7;
+    color: rgba(255,255,255,0.5); font-weight: 300;
+  }
+  .methode-visual {
+    position: relative;
+  }
+  .methode-phone {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    aspect-ratio: 9/16;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 1rem; padding: 2rem;
+  }
+  .phone-circle {
+    width: 80px; height: 80px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .phone-circle-inner {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: rgba(74,158,148,0.2);
+  }
+  .phone-lines { width: 100%; display: flex; flex-direction: column; gap: 0.5rem; }
+  .phone-line {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 1px;
+  }
+  .phone-line:first-child { width: 70%; }
+  .phone-line:nth-child(2) { width: 55%; }
+  .phone-line:nth-child(3) { width: 80%; }
+
+  /* RYTHME */
+  .rythme { background: var(--cream); }
+  .rythme-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  .rythme-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px; padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative; overflow: hidden;
+  }
+  .rythme-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .rythme-card:hover::before { transform: scaleX(1); }
+  .rythme-card:hover {
+    border-color: var(--teal-light);
+    box-shadow: 0 12px 32px rgba(26,122,110,0.08);
+    transform: translateY(-4px);
+  }
+  .rythme-card.featured {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+  .rythme-card.featured::before { display: none; }
+  .rythme-card.featured .rythme-type,
+  .rythme-card.featured .rythme-name,
+  .rythme-card.featured .rythme-price,
+  .rythme-card.featured .rythme-period,
+  .rythme-card.featured .rythme-feature,
+  .rythme-card.featured .rythme-badge {
+    color: rgba(255,255,255,0.9) !important;
+  }
+  .rythme-card.featured .rythme-divider { background: rgba(255,255,255,0.15); }
+  .rythme-card.featured .btn-rythme {
+    background: var(--white);
+    color: var(--teal);
+  }
+  .popular-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: var(--white) !important;
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  .rythme-type {
+    font-size: 0.68rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 0.75rem;
+  }
+  .rythme-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  .rythme-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300;
+    color: var(--text-dark); line-height: 1;
+  }
+  .rythme-period {
+    font-size: 0.8rem; color: var(--text-light);
+    margin-bottom: 0; font-weight: 300;
+  }
+  .rythme-divider {
+    height: 1px; background: var(--cream-dark);
+    margin: 2rem 0;
+  }
+  .rythme-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+  .rythme-feature {
+    font-size: 0.85rem; color: var(--text-mid);
+    display: flex; align-items: center; gap: 0.75rem;
+    font-weight: 300;
+  }
+  .rythme-check { color: var(--teal); font-size: 0.8rem; }
+  .btn-rythme {
+    display: block; width: 100%;
+    background: transparent;
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    padding: 0.85rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; letter-spacing: 0.12em;
+    text-transform: uppercase; cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .btn-rythme:hover {
+    background: var(--teal); color: var(--white);
+  }
+  .rythme-card.featured .btn-rythme:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    border-color: var(--white);
+  }
+
+  /* TÉMOIGNAGES */
+  .temoignages { background: var(--teal-dark); }
+  .temoignages-header {
+    text-align: center; margin-bottom: 4rem;
+  }
+  .temoignages-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3vw, 3.5rem);
+    font-weight: 300; color: var(--white);
+    line-height: 1.1;
+  }
+  .temoignages-title em { font-style: italic; color: var(--teal-mid); }
+  .temoignages-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .temoignage-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px; padding: 2.5rem;
+    transition: all 0.3s ease;
+  }
+  .temoignage-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.15);
+  }
+  .temoignage-stars {
+    display: flex; gap: 4px; margin-bottom: 1.5rem;
+  }
+  .star { color: var(--teal-mid); font-size: 0.8rem; }
+  .temoignage-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 300; font-style: italic;
+    line-height: 1.7; color: rgba(255,255,255,0.8);
+    margin-bottom: 2rem;
+  }
+  .temoignage-author {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .author-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: rgba(74,158,148,0.25);
+    border: 1px solid rgba(74,158,148,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: var(--teal-mid);
+  }
+  .author-name {
+    font-size: 0.85rem; font-weight: 500;
+    color: rgba(255,255,255,0.9);
+  }
+  .author-detail {
+    font-size: 0.75rem; color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  /* CTA FINAL */
+  .cta-final { background: var(--cream-dark); }
+  .cta-inner {
+    text-align: center; max-width: 700px;
+    margin: 0 auto;
+  }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 300; line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .cta-title em { font-style: italic; color: var(--teal); }
+  .cta-text {
+    font-size: 1rem; line-height: 1.8;
+    color: var(--text-mid); font-weight: 300;
+    margin-bottom: 3rem;
+  }
+  .cta-form {
+    display: flex; gap: 0; max-width: 480px; margin: 0 auto;
+  }
+  .cta-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--cream-dark);
+    border-right: none;
+    background: var(--white);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem; color: var(--text-dark);
+    outline: none;
+    border-radius: 2px 0 0 2px;
+    transition: border-color 0.3s;
+  }
+  .cta-input:focus { border-color: var(--teal); }
+  .cta-input::placeholder { color: var(--text-light); }
+  .cta-submit {
+    background: var(--teal);
+    color: var(--white);
+    border: none; cursor: pointer;
+    padding: 1rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 0 2px 2px 0;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+  .cta-submit:hover { background: var(--teal-dark); }
+
+  /* FOOTER */
+  footer {
+    background: #0a0a0a; color: rgba(255,255,255,0.5);
+    padding: 4rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem; margin-bottom: 3rem;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400;
+    color: var(--white); margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .footer-tagline {
+    font-size: 0.85rem; line-height: 1.7;
+    font-weight: 300; max-width: 240px;
+  }
+  .footer-col-title {
+    font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: rgba(255,255,255,0.8);
+    margin-bottom: 1.5rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-links a {
+    font-size: 0.85rem; color: rgba(255,255,255,0.4);
+    text-decoration: none; font-weight: 300;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--teal-mid); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.75rem;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-up { animation: fadeUp 0.8s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .delay-2 { animation-delay: 0.25s; opacity: 0; }
+  .delay-3 { animation-delay: 0.4s; opacity: 0; }
+  .delay-4 { animation-delay: 0.55s; opacity: 0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Move and Breathe Lille</div>
+  <ul class="nav-links">
+    <li><a href="#about">Qui suis-je</a></li>
+    <li><a href="#disciplines">Disciplines</a></li>
+    <li><a href="#methode">Méthode</a></li>
+    <li><a href="#tarifs">Horaires & Tarifs</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-visual">
+    <div class="hero-overlay-text">
+      <div class="hero-label">Studio · Roubaix Barbieux</div>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-num">900h</span>
+          <span class="hero-stat-label">Formation Pilates classique</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">15+</span>
+          <span class="hero-stat-label">Années de pratique</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">8+</span>
+          <span class="hero-stat-label">Années d'enseignement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow animate-up delay-1">Pilates · Sophrolates · Sophrologie</div>
+    <h1 class="hero-title animate-up delay-2">
+      Un mental apaisé<br>dans un corps<br><em>souple et fort</em>
+    </h1>
+    <p class="hero-desc animate-up delay-3">
+      Studio de Pilates Classique et Sophrolates à Roubaix Barbieux. Une approche personnalisée du mouvement et de la respiration, en solo, duo ou petit groupe.
+    </p>
+    <div class="hero-actions animate-up delay-4">
+      <a href="#contact" class="btn-primary">Réserver une séance</a>
+      <a href="#disciplines" class="btn-ghost">Découvrir les disciplines</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Pilates Reformer <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Sophrolates <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mat'class <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Cadillac <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Wunda Chair <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Sophrologie <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Ladder Barrel <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Rose Pilates <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pilates Reformer <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Sophrolates <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mat'class <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Cadillac <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Wunda Chair <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Sophrologie <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Ladder Barrel <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Rose Pilates <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- QUI SUIS-JE -->
+<section class="reconnect" id="about">
+  <div class="container">
+    <div class="reconnect-grid">
+      <div style="position:relative;">
+        <div class="reconnect-image">
+          <div class="reconnect-yoga">
+            <svg class="yoga-svg" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="40" r="22" fill="white"/>
+              <path d="M100 62 Q75 95 65 150 Q85 165 100 160 Q115 165 135 150 Q125 95 100 62Z" fill="white"/>
+              <path d="M70 100 Q35 130 20 180 Q40 195 65 175 Q72 145 75 120Z" fill="white"/>
+              <path d="M130 100 Q165 130 180 180 Q160 195 135 175 Q128 145 125 120Z" fill="white"/>
+              <path d="M75 160 Q65 220 72 280" stroke="white" stroke-width="12" stroke-linecap="round"/>
+              <path d="M125 160 Q135 220 128 280" stroke="white" stroke-width="12" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="reconnect-badge">
+            <span class="reconnect-badge-num">15+</span>
+            <span class="reconnect-badge-text">Ans de pratique</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Coralie Delahaye</div>
+        <h2 class="reconnect-title">Au plus proche<br>de <em>vos besoins</em></h2>
+        <p class="reconnect-text">
+          Après une première carrière dans le secteur médical, je me suis tournée vers les disciplines qui m'animaient depuis toujours. Ma mission : vous transmettre une meilleure approche du mouvement et de la respiration, pour gagner en autonomie et ancrer de nouvelles habitudes au quotidien.
+        </p>
+        <ul class="features-list">
+          <li class="feature-item">
+            <span class="feature-dot"></span>
+            <span>Formation Pilates Classique à Paris — 900h sur deux ans, méthode "The Original Pilates"</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-dot"></span>
+            <span>Diplôme universitaire de Sophrologie — Université de Lille 2</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-dot"></span>
+            <span>Méthode Bernadette De Gasquet (abdos) et formation Rose Pilates (cancer du sein)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-dot"></span>
+            <span>Certificat de Qualification Professionnelle d'animateur sportif</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCIPLINES -->
+<section class="pratiques" id="disciplines">
+  <div class="container">
+    <div class="pratiques-header">
+      <div class="section-label" style="justify-content:center;">Les disciplines</div>
+      <h2 class="section-title">Trois pratiques,<br>un même <em>équilibre</em></h2>
+      <p class="section-sub">Pilates classique, Sophrolates ou Sophrologie — choisissez la voie qui résonne, ou combinez-les pour un bien-être global.</p>
+    </div>
+    <div class="pratiques-grid">
+      <div class="pratique-card">
+        <div class="pratique-bg bg-pilates">
+          <div class="pratique-pattern"></div>
+          <div class="pratique-overlay">
+            <div class="pratique-discover">Découvrir</div>
+          </div>
+        </div>
+        <div class="pratique-info">
+          <div class="pratique-tag">Discipline 01</div>
+          <div class="pratique-name">Pilates Classique</div>
+        </div>
+      </div>
+      <div class="pratique-card" style="margin-top: 2.5rem;">
+        <div class="pratique-bg bg-yoga">
+          <div class="pratique-pattern"></div>
+          <div class="pratique-overlay">
+            <div class="pratique-discover">Découvrir</div>
+          </div>
+        </div>
+        <div class="pratique-info">
+          <div class="pratique-tag">Discipline 02</div>
+          <div class="pratique-name">Sophrolates</div>
+        </div>
+      </div>
+      <div class="pratique-card">
+        <div class="pratique-bg bg-wellness">
+          <div class="pratique-pattern"></div>
+          <div class="pratique-overlay">
+            <div class="pratique-discover">Découvrir</div>
+          </div>
+        </div>
+        <div class="pratique-info">
+          <div class="pratique-tag">Discipline 03</div>
+          <div class="pratique-name">Sophrologie</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTHODE -->
+<section class="methode" id="methode">
+  <div class="container">
+    <div class="methode-grid">
+      <div>
+        <div class="methode-label">Le Sophrolates ©</div>
+        <h2 class="methode-title">Le Pilates<br><em>en conscience</em></h2>
+        <p class="methode-text">
+          Une méthode signature qui fusionne les principes de la sophrologie — centrage, lâcher-prise, relaxation — avec les bénéfices du Pilates : renforcement profond, correction posturale et fluidité du mouvement. Chaque séance se déroule en trois phases.
+        </p>
+        <ul class="methode-list">
+          <li class="methode-item">
+            <span class="methode-num">01</span>
+            <div>
+              <div class="methode-item-title">Centrage initial</div>
+              <div class="methode-item-text">Exercices de respiration et prise de conscience corporelle pour ancrer la séance et installer le calme.</div>
+            </div>
+          </li>
+          <li class="methode-item">
+            <span class="methode-num">02</span>
+            <div>
+              <div class="methode-item-title">Pilates principal</div>
+              <div class="methode-item-text">Travail postural, renforcement musculaire profond, mouvements maîtrisés et fluides pour équilibrer la silhouette.</div>
+            </div>
+          </li>
+          <li class="methode-item">
+            <span class="methode-num">03</span>
+            <div>
+              <div class="methode-item-title">Pause finale</div>
+              <div class="methode-item-text">Intégration des bénéfices et détente — un retour au quotidien plus apaisé, plus aligné.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="methode-visual">
+        <div class="methode-phone">
+          <div style="text-align:center; padding: 1rem;">
+            <div class="phone-circle">
+              <div class="phone-circle-inner"></div>
+            </div>
+          </div>
+          <div style="width:100%; padding: 0 1rem;">
+            <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+              <div style="font-size:0.7rem; color: rgba(255,255,255,0.4); margin-bottom: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase;">Prochaine séance</div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:white; font-weight:300;">Sophrolates</div>
+              <div style="font-size:0.75rem; color: rgba(255,255,255,0.5); margin-top:0.25rem;">Demain · 9h30 · Studio Roubaix</div>
+            </div>
+            <div class="phone-lines">
+              <div class="phone-line" style="width:100%; height: 36px; background: rgba(74,158,148,0.15); border-radius: 4px;"></div>
+              <div class="phone-line" style="width:100%; height: 36px; background: rgba(255,255,255,0.04); border-radius: 4px; margin-top: 0.5rem;"></div>
+              <div class="phone-line" style="width:100%; height: 36px; background: rgba(255,255,255,0.04); border-radius: 4px; margin-top: 0.5rem;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORAIRES & FORMATS -->
+<section class="rythme" id="tarifs">
+  <div class="container">
+    <div style="text-align:center; max-width: 640px; margin: 0 auto 1rem;">
+      <div class="section-label" style="justify-content:center;">Formats & horaires</div>
+      <h2 class="section-title">Choisissez votre <em>format</em></h2>
+      <p class="section-sub">Cours en petit groupe, en duo ou en solo — chaque séance s'adapte à votre rythme et à vos objectifs. Tarifs détaillés et abonnements sur demande, réglables en plusieurs fois.</p>
+    </div>
+    <div class="rythme-grid">
+      <div class="rythme-card">
+        <div class="rythme-type">Format 01</div>
+        <div class="rythme-name">Mat'class</div>
+        <div class="rythme-price">Petit<span style="font-size:1.2rem;"> groupe</span></div>
+        <div class="rythme-period">Pilates sur tapis · 6 à 7 personnes</div>
+        <div class="rythme-divider"></div>
+        <ul class="rythme-features">
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Cours collectif sur tapis</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Travail postural et profond</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Tous niveaux, progression encadrée</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Réservation par téléphone ou email</li>
+        </ul>
+        <a href="#contact" class="btn-rythme" style="text-decoration:none; text-align:center;">Demander les tarifs</a>
+      </div>
+      <div class="rythme-card featured">
+        <div class="popular-tag">★ La signature du studio</div>
+        <div class="rythme-type">Format 02</div>
+        <div class="rythme-name">Sophrolates</div>
+        <div class="rythme-price">Solo<span style="font-size:1.2rem;"> ou groupe</span></div>
+        <div class="rythme-period">La méthode signature · respiration & mouvement</div>
+        <div class="rythme-divider"></div>
+        <ul class="rythme-features">
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Fusion Pilates & Sophrologie</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Petit groupe de 6 à 8 ou individuel</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Centrage, mouvement, intégration</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Idéal stress, posture, sommeil</li>
+        </ul>
+        <a href="#contact" class="btn-rythme" style="text-decoration:none; text-align:center;">Réserver une séance</a>
+      </div>
+      <div class="rythme-card">
+        <div class="rythme-type">Format 03</div>
+        <div class="rythme-name">Sur Reformer</div>
+        <div class="rythme-price">Solo<span style="font-size:1.2rem;"> ou duo</span></div>
+        <div class="rythme-period">Reformer · Cadillac · Wunda Chair · Ladder Barrel</div>
+        <div class="rythme-divider"></div>
+        <ul class="rythme-features">
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Système Pilates complet</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Sur rendez-vous, format individuel ou duo</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Programme entièrement sur mesure</li>
+          <li class="rythme-feature"><span class="rythme-check">✓</span> Matériel professionnel Gratz (US)</li>
+        </ul>
+        <a href="#contact" class="btn-rythme" style="text-decoration:none; text-align:center;">Prendre rendez-vous</a>
+      </div>
+    </div>
+
+    <!-- Horaires d'ouverture -->
+    <div style="margin-top: 5rem; background: var(--white); border: 1px solid var(--cream-dark); border-radius: 4px; padding: 3rem 2.5rem;">
+      <div class="section-label" style="justify-content:center; margin-bottom: 2rem;">Horaires d'ouverture</div>
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; text-align: center;">
+        <div>
+          <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem;">Lundi</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--teal-dark); font-weight: 400;">9h — 20h</div>
+        </div>
+        <div>
+          <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem;">Mardi</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--teal-dark); font-weight: 400;">9h — 20h30</div>
+        </div>
+        <div>
+          <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem;">Mercredi</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--teal-dark); font-weight: 400;">8h — 20h</div>
+        </div>
+        <div>
+          <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem;">Jeudi</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--teal-dark); font-weight: 400;">9h — 20h</div>
+        </div>
+        <div>
+          <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem;">Vendredi</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--teal-dark); font-weight: 400;">9h — 18h</div>
+        </div>
+        <div>
+          <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.5rem;">Samedi</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--teal-dark); font-weight: 400;">9h — 12h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AT WORK -->
+<section style="background: var(--teal-light); padding: 6rem 0;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center;">
+      <div>
+        <div class="section-label">At Work !</div>
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Le bien-être<br>au sein de votre <em>entreprise</em></h2>
+        <p style="font-size: 0.95rem; line-height: 1.9; color: var(--text-mid); font-weight: 300; margin-bottom: 2rem;">
+          La capacité d'un collaborateur à s'engager dans son entreprise dépend étroitement de sa santé physique et mentale. Move and Breathe intervient directement dans les entreprises et écoles : Pilates sur tapis, ateliers de Sophrologie ou cours de Sophrolates, accessibles à tous niveaux.
+        </p>
+        <a href="#contact" class="btn-primary">Mettre en place un programme</a>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <div style="background: var(--white); border-radius: 4px; padding: 2rem; border-top: 3px solid var(--teal);">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--teal-dark); margin-bottom: 0.75rem; font-weight: 400;">Pour vos collaborateurs</div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; font-weight: 300;">
+            <li>· Plus de motivation</li>
+            <li>· Plus de sérénité</li>
+            <li>· Cohésion d'équipe renforcée</li>
+            <li>· Réduction des TMS</li>
+          </ul>
+        </div>
+        <div style="background: var(--white); border-radius: 4px; padding: 2rem; border-top: 3px solid var(--teal); margin-top: 2.5rem;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--teal-dark); margin-bottom: 0.75rem; font-weight: 400;">Pour votre entreprise</div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; font-weight: 300;">
+            <li>· Diminution de l'absentéisme</li>
+            <li>· Performance accrue</li>
+            <li>· Attractivité renforcée</li>
+            <li>· Marque employeur valorisée</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="temoignages">
+  <div class="container">
+    <div class="temoignages-header">
+      <div class="section-label" style="color:rgba(255,255,255,0.4); justify-content:center;">
+        <span style="background:rgba(255,255,255,0.15); width:1.5rem; height:1px; display:inline-block;"></span>
+        Avis Google & Facebook
+      </div>
+      <h2 class="temoignages-title">Ce qu'elles disent<br>du <em>studio</em></h2>
+      <p style="color: rgba(255,255,255,0.5); font-weight: 300; font-size: 0.95rem; margin-top: 1.5rem; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+        Un extrait des avis laissés sur Google et Facebook par les élèves du studio.
+      </p>
+    </div>
+    <div class="temoignages-grid">
+      <div class="temoignage-card">
+        <div class="temoignage-stars">★★★★★</div>
+        <p class="temoignage-text">"Coralie est une instructrice exceptionnelle. Bienveillance, rigueur et précision à chaque séance. Je recommande vivement."</p>
+        <div class="temoignage-author">
+          <div class="author-avatar">C</div>
+          <div>
+            <div class="author-name">Avis Google</div>
+            <div class="author-detail">Élève Pilates Reformer</div>
+          </div>
+        </div>
+      </div>
+      <div class="temoignage-card">
+        <div class="temoignage-stars">★★★★★</div>
+        <p class="temoignage-text">"Les séances de Sophrolates sont un vrai moment pour soi. Je repars apaisée, alignée, et plus forte physiquement. Une méthode unique."</p>
+        <div class="temoignage-author">
+          <div class="author-avatar">F</div>
+          <div>
+            <div class="author-name">Avis Facebook</div>
+            <div class="author-detail">Élève Sophrolates</div>
+          </div>
+        </div>
+      </div>
+      <div class="temoignage-card">
+        <div class="temoignage-stars">★★★★★</div>
+        <p class="temoignage-text">"Studio chaleureux, équipement professionnel, accompagnement personnalisé. La méthode classique fait toute la différence."</p>
+        <div class="temoignage-author">
+          <div class="author-avatar">G</div>
+          <div>
+            <div class="author-name">Avis Google</div>
+            <div class="author-detail">Élève Mat'class</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-label" style="justify-content:center;">Prendre contact</div>
+      <h2 class="cta-title">Réservez votre<br><em>séance</em></h2>
+      <p class="cta-text">Pour les tarifs détaillés, les abonnements ou pour réserver votre séance, contactez le studio par téléphone, email ou via le formulaire.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 720px; margin: 0 auto 3rem;">
+        <a href="tel:0610234560" style="background: var(--white); border: 1px solid var(--cream-dark); padding: 1.5rem 1rem; text-align: center; text-decoration: none; border-radius: 4px; transition: all 0.3s; display: block;">
+          <div style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;">Téléphone</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text-dark); font-weight: 400;">06 10 23 45 60</div>
+        </a>
+        <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" style="background: var(--white); border: 1px solid var(--cream-dark); padding: 1.5rem 1rem; text-align: center; text-decoration: none; border-radius: 4px; transition: all 0.3s; display: block;">
+          <div style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;">Instagram</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text-dark); font-weight: 400;">@moveandbreathelille</div>
+        </a>
+        <div style="background: var(--white); border: 1px solid var(--cream-dark); padding: 1.5rem 1rem; text-align: center; border-radius: 4px;">
+          <div style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;">Studio</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text-dark); font-weight: 400; line-height: 1.4;">19 av. Gustave Delory<br>59100 Roubaix</div>
+        </div>
+      </div>
+
+      <div class="cta-form">
+        <input type="email" class="cta-input" placeholder="votre@email.com">
+        <button class="cta-submit">Être recontacté →</button>
+      </div>
+      <p style="font-size: 0.78rem; color: var(--text-light); margin-top: 1.5rem; font-weight: 300;">
+        Métro 2 — Croix Mairie · Tram — Parc Barbieux · Parking gratuit · À 100m du Parc
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Move and Breathe Lille</div>
+        <p class="footer-tagline">Studio de Pilates Classique et Sophrolates à Roubaix Barbieux, à 100m du Parc Barbieux.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Studio</div>
+        <ul class="footer-links">
+          <li><a href="#about">Qui suis-je</a></li>
+          <li><a href="#methode">La méthode</a></li>
+          <li><a href="#disciplines">Disciplines</a></li>
+          <li><a href="#tarifs">Horaires & Tarifs</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Disciplines</div>
+        <ul class="footer-links">
+          <li><a href="#disciplines">Pilates Classique</a></li>
+          <li><a href="#disciplines">Sophrolates</a></li>
+          <li><a href="#disciplines">Sophrologie</a></li>
+          <li><a href="#contact">At Work !</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:0610234560">06 10 23 45 60</a></li>
+          <li><a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#contact">19 av. Gustave Delory, Roubaix</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Move and Breathe Lille — Coralie Delahaye</span>
+      <span style="color: rgba(255,255,255,0.2);">Roubaix Barbieux · Lille</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
