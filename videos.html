@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidéos — Pilates, Sophrolates, Sophrologie · Move and Breathe Lille</title>
+<meta name="description" content="Découvrez le studio Move and Breathe en vidéo : démonstrations Pilates Classique, séances Sophrolates et exercices Sophrologie par Coralie Delahaye. Studio de Roubaix Barbieux.">
+<meta name="keywords" content="vidéo pilates, démonstration pilates classique, vidéo sophrolates, sophrologie vidéo, Move and Breathe Lille">
+<link rel="canonical" href="https://moveandbreathelille.fr/videos.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vidéos — Move and Breathe Lille">
+<meta property="og:description" content="Le studio Move and Breathe en vidéo : Pilates Classique, Sophrolates, Sophrologie.">
+<meta property="og:url" content="https://moveandbreathelille.fr/videos.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  /* ==== VIDEOS PAGE ==== */
+  .videos-section {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+  }
+  .videos-section:nth-child(odd) { background: var(--cream); }
+  .videos-section:nth-child(even) { background: var(--cream-soft); }
+  .videos-section.featured { background: var(--cream); }
+
+  .videos-section-head {
+    max-width: 720px;
+    margin-bottom: clamp(2.5rem, 4vw, 4rem);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: end;
+  }
+  .videos-section-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 3.5rem;
+    color: var(--sand);
+    line-height: 1;
+    opacity: 0.7;
+  }
+  .videos-section-head .eyebrow { margin-bottom: 0.75rem; }
+  .videos-section-head .h-2 { margin-bottom: 0.5rem; }
+  .videos-section-count {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--ink-mute);
+    padding-bottom: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+  .videos-grid.featured-first {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .videos-grid.featured-first > .video-card:first-child {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .video-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .video-card .yt-lite {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: var(--teal-deep);
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2px;
+    transition: transform 0.4s var(--ease);
+  }
+  .video-card .yt-lite:hover { transform: scale(1.01); }
+  .video-card .yt-thumb {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.4s, transform 0.6s var(--ease);
+  }
+  .video-card .yt-lite:hover .yt-thumb {
+    filter: brightness(0.82);
+    transform: scale(1.03);
+  }
+  .video-card .yt-play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 76px; height: 76px;
+    background: rgba(247, 243, 235, 0.92);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s var(--ease);
+    z-index: 2;
+  }
+  .video-card .yt-lite:hover .yt-play-btn { background: var(--teal); }
+  .video-card .yt-play-btn svg {
+    width: 26px;
+    fill: var(--teal);
+    margin-left: 4px;
+    transition: fill 0.3s;
+  }
+  .video-card .yt-lite:hover .yt-play-btn svg { fill: var(--cream); }
+  .video-card.featured .yt-play-btn { width: 96px; height: 96px; }
+  .video-card.featured .yt-play-btn svg { width: 32px; }
+  .yt-active .yt-play-btn { display: none; }
+
+  .video-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .video-tag {
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+  .video-title {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .video-card.featured .video-title {
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+  .video-duration {
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  .video-description {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-top: 0.4rem;
+  }
+
+  /* ==== EMPTY/PLACEHOLDER NOTE ==== */
+  .videos-note {
+    background: var(--ivory);
+    border: 1px dashed var(--sand);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    margin: 2rem 0;
+    font-family: var(--serif);
+    font-style: italic;
+  }
+
+  /* ==== CHANNEL CTA ==== */
+  .channel-cta {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .channel-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(247, 243, 235, 0.05) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  .channel-cta .container { position: relative; z-index: 1; }
+  .channel-cta .eyebrow { color: var(--sand); }
+  .channel-cta .eyebrow::before { background: var(--sand); }
+  .channel-cta h2 { color: var(--cream); margin: 1.5rem 0 1.5rem; }
+  .channel-cta h2 em { color: var(--sand); }
+  .channel-cta-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(247, 243, 235, 0.7);
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+  }
+  .yt-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.05rem 2rem;
+    background: var(--sand);
+    color: var(--ink);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.3s var(--ease);
+  }
+  .yt-icon-btn:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  }
+  .yt-icon-btn svg { width: 22px; height: 22px; fill: currentColor; }
+
+  @media (max-width: 900px) {
+    .videos-section-head {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .videos-section-num { font-size: 2.5rem; }
+    .videos-section-count { padding-bottom: 0; }
+    .videos-grid,
+    .videos-grid.featured-first {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .videos-grid.featured-first > .video-card:first-child {
+      grid-row: auto;
+      grid-column: auto;
+    }
+  }
+</style>
+
+<!-- JSON-LD: ItemList of videos -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Vidéos Move and Breathe Lille",
+  "description": "Vidéos de présentation et d'exercices Pilates, Sophrolates et Sophrologie",
+  "url": "https://moveandbreathelille.fr/videos.html"
+}
+</script>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Move <em>and</em> Breathe Lille</a>
+    <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="services.html">Disciplines</a></li>
+      <li><a href="videos.html">Vidéos</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="container">
+    <div class="page-header-inner reveal">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Vidéos</span>
+      </div>
+      <div class="eyebrow">En image</div>
+      <h1 class="h-mega mt-2">
+        Le studio<br>
+        <em>en vidéo</em>.
+      </h1>
+      <p class="lede mt-3">
+        Démonstrations, séances types, exercices guidés — pour mieux comprendre la pratique avant de pousser la porte du studio.
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- FEATURED / PRÉSENTATION -->
+<section class="videos-section featured">
+  <div class="container">
+    <div class="videos-section-head reveal">
+      <span class="videos-section-num">01</span>
+      <div>
+        <div class="eyebrow">Présentation du studio</div>
+        <h2 class="h-2">Découvrir <em>Move and Breathe</em></h2>
+      </div>
+      <span class="videos-section-count">1 vidéo</span>
+    </div>
+
+    <!-- Single full-width featured video -->
+    <div class="video-card featured reveal" style="max-width: 980px; margin: 0 auto;">
+      <!-- TODO Coralie : remplacer data-video-id="dQw4w9WgXcQ" par l'ID de ta vraie vidéo YouTube -->
+      <div class="yt-lite" data-video-id="dQw4w9WgXcQ" role="button" tabindex="0" aria-label="Lire la vidéo de présentation du studio">
+        <img class="yt-thumb" alt="Présentation Move and Breathe Lille" loading="lazy">
+        <div class="yt-play-btn" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <div class="video-meta">
+        <span class="video-tag">Présentation · Studio</span>
+        <h3 class="video-title">Move and Breathe Lille — Le studio, la méthode, l'équipement</h3>
+        <span class="video-duration">≈ 3 min</span>
+        <p class="video-description">Une visite guidée du studio à Roubaix Barbieux : le matériel Gratz, l'atmosphère, l'esprit de la méthode classique enseignée par Coralie Delahaye.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILATES VIDEOS -->
+<section class="videos-section">
+  <div class="container">
+    <div class="videos-section-head reveal">
+      <span class="videos-section-num">02</span>
+      <div>
+        <div class="eyebrow">Pilates Classique</div>
+        <h2 class="h-2">La méthode <em>originale</em></h2>
+      </div>
+      <span class="videos-section-count">2 vidéos</span>
+    </div>
+
+    <div class="videos-grid">
+      <div class="video-card reveal reveal-delay-1">
+        <div class="yt-lite" data-video-id="dQw4w9WgXcQ" role="button" tabindex="0">
+          <img class="yt-thumb" alt="Pilates sur tapis — Mat'class" loading="lazy">
+          <div class="yt-play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">Pilates · Mat'class</span>
+          <h3 class="video-title">Une séance type de Pilates sur tapis</h3>
+          <span class="video-duration">≈ 5 min</span>
+          <p class="video-description">Démonstration d'une séance Mat'class classique — centrage, exercices fondamentaux, fluidité.</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal reveal-delay-2">
+        <div class="yt-lite" data-video-id="dQw4w9WgXcQ" role="button" tabindex="0">
+          <img class="yt-thumb" alt="Pilates sur Reformer" loading="lazy">
+          <div class="yt-play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">Pilates · Reformer</span>
+          <h3 class="video-title">Initiation au Reformer Gratz</h3>
+          <span class="video-duration">≈ 4 min</span>
+          <p class="video-description">Le Reformer, pièce maîtresse du Pilates Classique : présentation, premiers mouvements, principes de résistance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOPHROLATES VIDEOS -->
+<section class="videos-section">
+  <div class="container">
+    <div class="videos-section-head reveal">
+      <span class="videos-section-num">03</span>
+      <div>
+        <div class="eyebrow">Sophrolates ©</div>
+        <h2 class="h-2">La <em>signature</em> du studio</h2>
+      </div>
+      <span class="videos-section-count">2 vidéos</span>
+    </div>
+
+    <div class="videos-grid">
+      <div class="video-card reveal reveal-delay-1">
+        <div class="yt-lite" data-video-id="dQw4w9WgXcQ" role="button" tabindex="0">
+          <img class="yt-thumb" alt="Une séance de Sophrolates" loading="lazy">
+          <div class="yt-play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">Sophrolates · Séance complète</span>
+          <h3 class="video-title">Sophrolates — les trois phases en mouvement</h3>
+          <span class="video-duration">≈ 6 min</span>
+          <p class="video-description">Centrage initial, Pilates principal, pause finale : la structure complète d'une séance Sophrolates.</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal reveal-delay-2">
+        <div class="yt-lite" data-video-id="dQw4w9WgXcQ" role="button" tabindex="0">
+          <img class="yt-thumb" alt="La méthode Sophrolates expliquée" loading="lazy">
+          <div class="yt-play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">Sophrolates · Méthode</span>
+          <h3 class="video-title">Pourquoi le Sophrolates — l'origine de la méthode</h3>
+          <span class="video-duration">≈ 4 min</span>
+          <p class="video-description">Comment Pilates et Sophrologie ont fusionné pour donner naissance à la méthode signature du studio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOPHROLOGIE VIDEOS -->
+<section class="videos-section">
+  <div class="container">
+    <div class="videos-section-head reveal">
+      <span class="videos-section-num">04</span>
+      <div>
+        <div class="eyebrow">Sophrologie</div>
+        <h2 class="h-2">Respirer, <em>se réguler</em></h2>
+      </div>
+      <span class="videos-section-count">2 vidéos</span>
+    </div>
+
+    <div class="videos-grid">
+      <div class="video-card reveal reveal-delay-1">
+        <div class="yt-lite" data-video-id="dQw4w9WgXcQ" role="button" tabindex="0">
+          <img class="yt-thumb" alt="Exercice de respiration guidé" loading="lazy">
+          <div class="yt-play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">Sophrologie · Respiration</span>
+          <h3 class="video-title">Cohérence cardiaque — exercice guidé</h3>
+          <span class="video-duration">≈ 5 min</span>
+          <p class="video-description">Un exercice de respiration accessible à tous, à pratiquer au quotidien pour gérer le stress et apaiser le mental.</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal reveal-delay-2">
+        <div class="yt-lite" data-video-id="dQw4w9WgXcQ" role="button" tabindex="0">
+          <img class="yt-thumb" alt="Relaxation pour mieux dormir" loading="lazy">
+          <div class="yt-play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">Sophrologie · Sommeil</span>
+          <h3 class="video-title">Préparer son sommeil — visualisation guidée</h3>
+          <span class="video-duration">≈ 7 min</span>
+          <p class="video-description">Une visualisation guidée pour relâcher les tensions de la journée et entrer en douceur dans la nuit.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="videos-note">
+      Note : les vidéos affichées ci-dessus sont des emplacements types. Coralie fournira les vrais ID YouTube de ses propres vidéos, qu'il suffira de coller dans l'attribut <code style="font-family: monospace; background: var(--cream-deep); padding: 0.15rem 0.4rem; border-radius: 2px; color: var(--teal);">data-video-id</code> de chaque vidéo pour qu'elles s'affichent.
+    </p>
+  </div>
+</section>
+
+<!-- CHAINE YOUTUBE CTA -->
+<section class="channel-cta">
+  <div class="container">
+    <div class="reveal" style="max-width: 680px; margin: 0 auto;">
+      <div class="eyebrow center">La chaîne YouTube</div>
+      <h2 class="h-1">Retrouvez<br>toutes les <em>vidéos</em></h2>
+      <p class="channel-cta-text">
+        Démonstrations, exercices guidés, conseils de Coralie — abonnez-vous à la chaîne pour ne rien manquer des nouveautés du studio.
+      </p>
+      <a href="https://www.youtube.com/@moveandbreathelille" target="_blank" rel="noopener" class="yt-icon-btn">
+        <svg viewBox="0 0 24 24">
+          <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 00.5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 002.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 002.1-2.1c.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/>
+        </svg>
+        Voir la chaîne YouTube
+      </a>
+      <p class="mt-3" style="font-size: 0.78rem; color: rgba(247, 243, 235, 0.4); font-weight: 300;">
+        @moveandbreathelille
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Move <em>and</em> Breathe Lille</div>
+        <p class="footer-tagline">Studio de Pilates Classique et Sophrolates à Roubaix Barbieux, à 100m du Parc Barbieux.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5.9.5.5.7.9.9 1.5.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.5-.5.5-.9.7-1.5.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-.9-.5-.5-.7-.9-.9-1.5-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.5.5-.5.9-.7 1.5-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.6-.1 4.8-.1zm0 5.4a4.4 4.4 0 100 8.8 4.4 4.4 0 000-8.8zm0 7.2a2.8 2.8 0 110-5.6 2.8 2.8 0 010 5.6zm5.6-7.4a1 1 0 11-2.1 0 1 1 0 012.1 0z"/></svg>
+          </a>
+          <a href="mailto:contact@moveandbreathelille.fr" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Studio</div>
+        <ul class="footer-links">
+          <li><a href="a-propos.html">Qui suis-je</a></li>
+          <li><a href="services.html#methode">La méthode</a></li>
+          <li><a href="services.html">Disciplines</a></li>
+          <li><a href="services.html#tarifs">Horaires &amp; Tarifs</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Disciplines</div>
+        <ul class="footer-links">
+          <li><a href="services.html#pilates">Pilates Classique</a></li>
+          <li><a href="services.html#sophrolates">Sophrolates</a></li>
+          <li><a href="services.html#sophrologie">Sophrologie</a></li>
+          <li><a href="services.html#at-work">At Work !</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:0610234560">06 10 23 45 60</a></li>
+          <li><a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="contact.html">19 av. Gustave Delory, Roubaix</a></li>
+          <li><a href="contact.html#access">Plan d'accès</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Move and Breathe Lille — Coralie Delahaye</span>
+      <span>Site réalisé par <a href="https://mapa-developpement.fr" target="_blank" rel="noopener">Mapa Développement</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

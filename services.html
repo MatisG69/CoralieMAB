@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disciplines — Pilates · Sophrolates · Sophrologie · Move and Breathe Lille</title>
+<meta name="description" content="Pilates Classique sur tapis et machines (Reformer, Cadillac, Wunda Chair), Sophrolates et Sophrologie au studio Move and Breathe à Roubaix Barbieux. Cours collectifs, duo, individuels. Programmes entreprise At Work.">
+<meta name="keywords" content="cours pilates Lille, cours pilates Roubaix, reformer, cadillac, sophrolates, sophrologie, pilates entreprise, At Work">
+<link rel="canonical" href="https://moveandbreathelille.fr/services.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Disciplines — Move and Breathe Lille">
+<meta property="og:description" content="Pilates Classique, Sophrolates et Sophrologie au studio Move and Breathe à Roubaix Barbieux.">
+<meta property="og:url" content="https://moveandbreathelille.fr/services.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  /* ==== DISCIPLINE BLOCKS ==== */
+  .discipline-block {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    position: relative;
+  }
+  .discipline-block:nth-child(odd) { background: var(--cream); }
+  .discipline-block:nth-child(even) { background: var(--cream-soft); }
+
+  .discipline-block-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+  }
+  .discipline-block-grid.reverse { grid-template-columns: 1.1fr 1fr; }
+  .discipline-block-grid.reverse .discipline-block-text { order: 2; }
+  .discipline-block-grid.reverse .discipline-block-visual { order: 1; }
+
+  .discipline-block-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 4rem;
+    color: var(--sand);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+  }
+  .discipline-block .h-1 { margin-bottom: 2rem; }
+  .discipline-block-lede {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+    font-weight: 300;
+  }
+  .discipline-block-text p {
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin-bottom: 1.25rem;
+  }
+
+  .features-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 2rem 0 2.5rem;
+  }
+  .feature-tag {
+    background: var(--ivory);
+    border: 1px solid var(--cream-deep);
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .discipline-block-visual {
+    aspect-ratio: 4/5;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+  .visual-pilates { background: linear-gradient(165deg, #1A3D38, #2D5A52 60%, #4A8B7F); }
+  .visual-sophrolates { background: linear-gradient(165deg, #6B5840, #B59E78 60%, #D4C5A8); }
+  .visual-sophrologie { background: linear-gradient(165deg, #2D5A52, #4A8B7F 60%, #7CBDB1); }
+
+  .discipline-block-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(0,0,0,0.18) 0%, transparent 60%);
+  }
+  .discipline-block-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    z-index: 1;
+  }
+  .discipline-block-icon svg { width: 55%; max-width: 280px; }
+  .discipline-block-vlabel {
+    position: absolute;
+    top: 1.5rem; left: 1.5rem;
+    z-index: 2;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    background: rgba(0,0,0,0.2);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+  }
+  .discipline-block-vcaption {
+    position: absolute;
+    bottom: 2rem; left: 2rem; right: 2rem;
+    z-index: 2;
+    font-family: var(--serif);
+    font-style: italic;
+    color: rgba(247, 243, 235, 0.92);
+    font-size: 1.3rem;
+    line-height: 1.35;
+  }
+
+  /* ==== FORMATS / TARIFS ==== */
+  .formats {
+    background: var(--ink);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .formats::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(247, 243, 235, 0.04) 1px, transparent 0);
+    background-size: 36px 36px;
+  }
+  .formats .container { position: relative; z-index: 1; }
+  .formats .eyebrow { color: var(--sand); }
+  .formats .eyebrow::before { background: var(--sand); }
+  .formats .h-2 { color: var(--cream); margin: 1.5rem 0 1.75rem; }
+  .formats .h-2 em { color: var(--sand); }
+  .formats .lede { color: rgba(247, 243, 235, 0.7); }
+
+  .formats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  .format-card {
+    background: rgba(247, 243, 235, 0.04);
+    border: 1px solid rgba(247, 243, 235, 0.1);
+    border-radius: 2px;
+    padding: 2.5rem 2rem;
+    transition: all 0.4s var(--ease);
+    position: relative;
+  }
+  .format-card:hover {
+    background: rgba(247, 243, 235, 0.06);
+    border-color: rgba(212, 197, 168, 0.4);
+    transform: translateY(-4px);
+  }
+  .format-card.featured {
+    background: var(--sand);
+    color: var(--ink);
+    border-color: var(--sand);
+  }
+  .format-card.featured .format-label,
+  .format-card.featured .format-name,
+  .format-card.featured .format-price,
+  .format-card.featured .format-period,
+  .format-card.featured .format-features li,
+  .format-card.featured .format-features li::before {
+    color: var(--ink);
+  }
+  .format-card.featured .format-features { border-color: rgba(26, 24, 20, 0.15); }
+  .format-card.featured .btn-format {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+  .format-card.featured .btn-format:hover {
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .format-badge {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    background: var(--ink);
+    color: var(--sand);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+  }
+  .format-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 0.85rem;
+  }
+  .format-name {
+    font-family: var(--serif);
+    font-size: 1.85rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .format-price {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 2.2rem;
+    color: var(--cream);
+    line-height: 1;
+    font-weight: 300;
+  }
+  .format-period {
+    font-size: 0.82rem;
+    color: rgba(247, 243, 235, 0.55);
+    margin-top: 0.5rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.45;
+  }
+  .format-divider {
+    height: 1px;
+    background: rgba(247, 243, 235, 0.1);
+    margin: 1.5rem 0;
+  }
+  .format-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(247, 243, 235, 0.1);
+  }
+  .format-features li {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: rgba(247, 243, 235, 0.75);
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .format-features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--sand);
+  }
+  .btn-format {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--sand);
+    padding: 0.9rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    transition: all 0.3s var(--ease);
+    text-decoration: none;
+  }
+  .btn-format:hover {
+    background: var(--sand);
+    color: var(--ink);
+  }
+
+  /* ==== AT WORK ==== */
+  .at-work { background: var(--cream-soft); }
+  .at-work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(3rem, 6vw, 5rem);
+    align-items: center;
+  }
+  .at-work-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .at-work-card {
+    background: var(--ivory);
+    border: 1px solid var(--cream-deep);
+    border-top: 3px solid var(--teal);
+    padding: 2rem;
+    border-radius: 2px;
+    transition: all 0.3s var(--ease);
+  }
+  .at-work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(45, 90, 82, 0.2);
+  }
+  .at-work-card:nth-child(2) { margin-top: 2.5rem; border-top-color: var(--sand-deep); }
+  .at-work-card h4 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--teal);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .at-work-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .at-work-card li {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .at-work-card li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--sand);
+    font-weight: bold;
+  }
+
+  /* ==== HORAIRES ==== */
+  .schedule {
+    background: var(--cream);
+  }
+  .schedule-box {
+    background: var(--ivory);
+    border: 1px solid var(--cream-deep);
+    border-radius: 2px;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .schedule-day {
+    padding: 0.5rem 0;
+  }
+  .schedule-day-name {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 0.6rem;
+  }
+  .schedule-day-hours {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--teal);
+    line-height: 1.3;
+  }
+
+  @media (max-width: 900px) {
+    .discipline-block-grid,
+    .discipline-block-grid.reverse { grid-template-columns: 1fr; gap: 2.5rem; }
+    .discipline-block-grid.reverse .discipline-block-text { order: 1; }
+    .discipline-block-grid.reverse .discipline-block-visual { order: 2; }
+    .formats-grid { grid-template-columns: 1fr; }
+    .at-work-grid { grid-template-columns: 1fr; }
+    .at-work-cards { grid-template-columns: 1fr; }
+    .at-work-card:nth-child(2) { margin-top: 0; }
+    .schedule-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Pilates et Sophrologie",
+  "provider": {
+    "@type":"HealthAndBeautyBusiness",
+    "name":"Move and Breathe Lille",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "19 avenue Gustave Delory",
+      "addressLocality": "Roubaix",
+      "postalCode": "59100",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": "Lille, Roubaix, Hauts-de-France",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Disciplines",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type":"Service","name":"Pilates Classique"}},
+      {"@type": "Offer", "itemOffered": {"@type":"Service","name":"Sophrolates"}},
+      {"@type": "Offer", "itemOffered": {"@type":"Service","name":"Sophrologie"}}
+    ]
+  }
+}
+</script>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Move <em>and</em> Breathe Lille</a>
+    <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="services.html">Disciplines</a></li>
+      <li><a href="videos.html">Vidéos</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="container">
+    <div class="page-header-inner reveal">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Disciplines</span>
+      </div>
+      <div class="eyebrow">Trois pratiques</div>
+      <h1 class="h-mega mt-2">
+        Pilates, Sophrolates,<br>
+        <em>Sophrologie</em>.
+      </h1>
+      <p class="lede mt-3">
+        Trois disciplines complémentaires, enseignées dans la rigueur de la méthode classique. Choisissez la voie qui vous parle — ou combinez-les pour un bien-être global.
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- PILATES CLASSIQUE -->
+<section class="discipline-block" id="pilates">
+  <div class="container">
+    <div class="discipline-block-grid">
+      <div class="discipline-block-text reveal">
+        <div class="discipline-block-num">01</div>
+        <div class="eyebrow">Discipline · 01</div>
+        <h2 class="h-1 mt-2">Pilates <em>Classique</em></h2>
+        <p class="discipline-block-lede">
+          La méthode originale de Joseph Pilates, transmise dans sa rigueur d'origine, sur tapis et sur machines.
+        </p>
+        <p>
+          Le Pilates Classique, c'est un système complet de 500 exercices articulés autour de six principes : centrage, concentration, contrôle, précision, respiration, fluidité. Travail postural profond, renforcement des muscles stabilisateurs, alignement et conscience corporelle.
+        </p>
+        <p>
+          Au studio, vous travaillez sur tapis (Mat'class) ou sur l'ensemble du matériel professionnel Gratz : Reformer, Cadillac, Wunda Chair, Ladder Barrel. Chaque appareil apporte des résistances spécifiques qui permettent de travailler en profondeur, sans impact, avec une précision millimétrique.
+        </p>
+        <ul class="features-tags">
+          <li class="feature-tag">Sur tapis</li>
+          <li class="feature-tag">Reformer</li>
+          <li class="feature-tag">Cadillac</li>
+          <li class="feature-tag">Wunda Chair</li>
+          <li class="feature-tag">Ladder Barrel</li>
+          <li class="feature-tag">Tous niveaux</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Réserver une séance Pilates</a>
+      </div>
+      <div class="discipline-block-visual visual-pilates reveal reveal-delay-2" aria-hidden="true">
+        <span class="discipline-block-vlabel">Photo · Reformer</span>
+        <div class="discipline-block-icon">
+          <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="40" r="18" fill="#F7F3EB"/>
+            <path d="M100 60 Q70 90 64 140 Q82 156 100 152 Q118 156 136 140 Q130 90 100 60Z" fill="#F7F3EB"/>
+            <path d="M64 110 Q30 100 20 80" stroke="#F7F3EB" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path d="M136 110 Q170 100 180 80" stroke="#F7F3EB" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path d="M76 152 Q60 180 56 200" stroke="#F7F3EB" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M124 152 Q140 180 144 200" stroke="#F7F3EB" stroke-width="16" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <p class="discipline-block-vcaption">"Une méthode précise, une transmission rigoureuse."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOPHROLATES -->
+<section class="discipline-block" id="sophrolates">
+  <div class="container">
+    <div class="discipline-block-grid reverse">
+      <div class="discipline-block-visual visual-sophrolates reveal" aria-hidden="true">
+        <span class="discipline-block-vlabel">Photo · Sophrolates</span>
+        <div class="discipline-block-icon">
+          <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="60" r="22" fill="#F7F3EB"/>
+            <path d="M100 84 Q72 112 64 168 Q82 184 100 178 Q118 184 136 168 Q128 112 100 84Z" fill="#F7F3EB"/>
+            <ellipse cx="60" cy="220" rx="50" ry="18" fill="#F7F3EB"/>
+            <ellipse cx="140" cy="220" rx="50" ry="18" fill="#F7F3EB"/>
+            <circle cx="100" cy="120" r="80" stroke="#F7F3EB" stroke-width="1.5" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+        <p class="discipline-block-vcaption">"Le mouvement comme méditation."</p>
+      </div>
+      <div class="discipline-block-text reveal reveal-delay-1" id="methode">
+        <div class="discipline-block-num">02</div>
+        <div class="eyebrow">Discipline · 02 · La signature</div>
+        <h2 class="h-1 mt-2">Sophrolates <em>©</em></h2>
+        <p class="discipline-block-lede">
+          La méthode signature du studio — une fusion réfléchie du Pilates et de la Sophrologie, structurée en trois phases.
+        </p>
+        <p>
+          Le Sophrolates est né de l'évidence qu'un corps bien tenu ne suffit pas sans un mental apaisé — et qu'un mental apaisé ne tient pas dans un corps tendu. C'est une méthode signature, développée au studio, qui s'adresse particulièrement à celles et ceux qui cherchent à se reconnecter à eux-mêmes, à mieux gérer le stress, à retrouver un sommeil de qualité.
+        </p>
+        <p>
+          Chaque séance se déroule en <strong style="color: var(--teal); font-weight: 500;">trois phases</strong> : un centrage initial pour ancrer la pratique et installer le calme, un travail Pilates principal pour renforcer en profondeur et corriger la posture, puis une pause finale d'intégration et de détente.
+        </p>
+        <ul class="features-tags">
+          <li class="feature-tag">Petit groupe 6 à 8</li>
+          <li class="feature-tag">Solo possible</li>
+          <li class="feature-tag">Stress &amp; sommeil</li>
+          <li class="feature-tag">Posture</li>
+          <li class="feature-tag">Respiration</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Réserver un Sophrolates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOPHROLOGIE -->
+<section class="discipline-block" id="sophrologie">
+  <div class="container">
+    <div class="discipline-block-grid">
+      <div class="discipline-block-text reveal">
+        <div class="discipline-block-num">03</div>
+        <div class="eyebrow">Discipline · 03</div>
+        <h2 class="h-1 mt-2">Sophrologie</h2>
+        <p class="discipline-block-lede">
+          Une approche corps-esprit douce et structurée, basée sur la respiration, la relaxation dynamique et la visualisation.
+        </p>
+        <p>
+          La Sophrologie, telle qu'enseignée au studio (DU de l'Université de Lille 2), permet d'apprendre à se réguler par soi-même : gérer le stress chronique, apaiser l'anxiété, retrouver un sommeil profond, préparer un événement, accompagner un changement de vie, soulager des douleurs.
+        </p>
+        <p>
+          Les séances peuvent être individuelles, en duo, ou en petit groupe. Elles se composent d'exercices de respiration, de relaxations guidées, et de visualisations positives. Aucun prérequis physique : la sophrologie est accessible à tous, à tout âge, dans toute condition.
+        </p>
+        <ul class="features-tags">
+          <li class="feature-tag">Individuel</li>
+          <li class="feature-tag">Duo</li>
+          <li class="feature-tag">Petit groupe</li>
+          <li class="feature-tag">Stress</li>
+          <li class="feature-tag">Sommeil</li>
+          <li class="feature-tag">Anxiété</li>
+          <li class="feature-tag">Accessible à tous</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Réserver une séance Sophrologie</a>
+      </div>
+      <div class="discipline-block-visual visual-sophrologie reveal reveal-delay-2" aria-hidden="true">
+        <span class="discipline-block-vlabel">Photo · Sophrologie</span>
+        <div class="discipline-block-icon">
+          <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="60" r="22" fill="#F7F3EB"/>
+            <path d="M100 84 Q70 110 60 160 Q70 180 100 175 Q130 180 140 160 Q130 110 100 84Z" fill="#F7F3EB"/>
+            <circle cx="100" cy="140" r="50" stroke="#F7F3EB" stroke-width="2" fill="none" opacity="0.6"/>
+            <circle cx="100" cy="140" r="70" stroke="#F7F3EB" stroke-width="2" fill="none" opacity="0.35"/>
+            <circle cx="100" cy="140" r="90" stroke="#F7F3EB" stroke-width="2" fill="none" opacity="0.2"/>
+          </svg>
+        </div>
+        <p class="discipline-block-vcaption">"Apprendre à se réguler par soi-même."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS / TARIFS -->
+<section class="formats" id="tarifs">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Formats &amp; tarifs</div>
+      <h2 class="h-2">Choisissez votre <em>format</em></h2>
+      <p class="lede mt-2">Cours en petit groupe, en duo ou en solo — chaque séance s'adapte à votre rythme. Tarifs détaillés, abonnements et règlement en plusieurs fois sur demande.</p>
+    </div>
+    <div class="formats-grid">
+      <div class="format-card reveal reveal-delay-1">
+        <div class="format-label">Format · 01</div>
+        <div class="format-name">Mat'class</div>
+        <div class="format-price">Petit groupe</div>
+        <div class="format-period">Pilates sur tapis · 6 à 7 personnes</div>
+        <ul class="format-features">
+          <li>Cours collectif sur tapis</li>
+          <li>Travail postural et profond</li>
+          <li>Tous niveaux, progression encadrée</li>
+          <li>Réservation par téléphone ou email</li>
+        </ul>
+        <a href="contact.html" class="btn-format">Demander les tarifs</a>
+      </div>
+
+      <div class="format-card featured reveal reveal-delay-2">
+        <div class="format-badge">★ Signature</div>
+        <div class="format-label">Format · 02</div>
+        <div class="format-name">Sophrolates</div>
+        <div class="format-price">Solo ou groupe</div>
+        <div class="format-period">La méthode signature · respiration &amp; mouvement</div>
+        <ul class="format-features">
+          <li>Fusion Pilates &amp; Sophrologie</li>
+          <li>Petit groupe de 6 à 8 ou individuel</li>
+          <li>Centrage, mouvement, intégration</li>
+          <li>Idéal stress, posture, sommeil</li>
+        </ul>
+        <a href="contact.html" class="btn-format">Réserver une séance</a>
+      </div>
+
+      <div class="format-card reveal reveal-delay-3">
+        <div class="format-label">Format · 03</div>
+        <div class="format-name">Sur Reformer</div>
+        <div class="format-price">Solo ou duo</div>
+        <div class="format-period">Reformer · Cadillac · Wunda Chair · Ladder Barrel</div>
+        <ul class="format-features">
+          <li>Système Pilates complet</li>
+          <li>Sur rendez-vous, format individuel ou duo</li>
+          <li>Programme entièrement sur mesure</li>
+          <li>Matériel professionnel Gratz (US)</li>
+        </ul>
+        <a href="contact.html" class="btn-format">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Horaires d'ouverture</div>
+      <h2 class="h-2 mt-2">Le studio est ouvert<br><em>six jours sur sept</em></h2>
+    </div>
+    <div class="schedule-box reveal">
+      <div class="schedule-grid">
+        <div class="schedule-day">
+          <div class="schedule-day-name">Lundi</div>
+          <div class="schedule-day-hours">9h — 20h</div>
+        </div>
+        <div class="schedule-day">
+          <div class="schedule-day-name">Mardi</div>
+          <div class="schedule-day-hours">9h — 20h30</div>
+        </div>
+        <div class="schedule-day">
+          <div class="schedule-day-name">Mercredi</div>
+          <div class="schedule-day-hours">8h — 20h</div>
+        </div>
+        <div class="schedule-day">
+          <div class="schedule-day-name">Jeudi</div>
+          <div class="schedule-day-hours">9h — 20h</div>
+        </div>
+        <div class="schedule-day">
+          <div class="schedule-day-name">Vendredi</div>
+          <div class="schedule-day-hours">9h — 18h</div>
+        </div>
+        <div class="schedule-day">
+          <div class="schedule-day-name">Samedi</div>
+          <div class="schedule-day-hours">9h — 12h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AT WORK -->
+<section class="at-work" id="at-work">
+  <div class="container">
+    <div class="at-work-grid">
+      <div class="reveal">
+        <div class="eyebrow">At Work !</div>
+        <h2 class="h-2 mt-2">Le bien-être<br>au sein de votre <em>entreprise</em></h2>
+        <p class="body-text mt-3">
+          La capacité d'un collaborateur à s'engager dans son entreprise dépend étroitement de sa santé physique et mentale. Move and Breathe intervient directement dans les entreprises et écoles : Pilates sur tapis, ateliers de Sophrologie ou cours de Sophrolates, accessibles à tous niveaux.
+        </p>
+        <p class="body-text mt-2">
+          Les programmes sont sur mesure, ponctuels ou récurrents, et peuvent être déployés dans vos locaux ou au studio. Devis sur demande.
+        </p>
+        <div class="mt-4">
+          <a href="contact.html" class="btn btn-primary">Mettre en place un programme</a>
+        </div>
+      </div>
+      <div class="at-work-cards reveal reveal-delay-2">
+        <div class="at-work-card">
+          <h4>Pour vos collaborateurs</h4>
+          <ul>
+            <li>Plus de motivation</li>
+            <li>Plus de sérénité</li>
+            <li>Cohésion d'équipe renforcée</li>
+            <li>Réduction des TMS</li>
+            <li>Meilleur sommeil</li>
+          </ul>
+        </div>
+        <div class="at-work-card">
+          <h4>Pour votre entreprise</h4>
+          <ul>
+            <li>Diminution de l'absentéisme</li>
+            <li>Performance accrue</li>
+            <li>Attractivité renforcée</li>
+            <li>Marque employeur valorisée</li>
+            <li>Bien-être au travail</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Move <em>and</em> Breathe Lille</div>
+        <p class="footer-tagline">Studio de Pilates Classique et Sophrolates à Roubaix Barbieux, à 100m du Parc Barbieux.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5.9.5.5.7.9.9 1.5.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.5-.5.5-.9.7-1.5.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-.9-.5-.5-.7-.9-.9-1.5-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.5.5-.5.9-.7 1.5-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.6-.1 4.8-.1zm0 5.4a4.4 4.4 0 100 8.8 4.4 4.4 0 000-8.8zm0 7.2a2.8 2.8 0 110-5.6 2.8 2.8 0 010 5.6zm5.6-7.4a1 1 0 11-2.1 0 1 1 0 012.1 0z"/></svg>
+          </a>
+          <a href="mailto:contact@moveandbreathelille.fr" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Studio</div>
+        <ul class="footer-links">
+          <li><a href="a-propos.html">Qui suis-je</a></li>
+          <li><a href="services.html#methode">La méthode</a></li>
+          <li><a href="services.html">Disciplines</a></li>
+          <li><a href="services.html#tarifs">Horaires &amp; Tarifs</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Disciplines</div>
+        <ul class="footer-links">
+          <li><a href="services.html#pilates">Pilates Classique</a></li>
+          <li><a href="services.html#sophrolates">Sophrolates</a></li>
+          <li><a href="services.html#sophrologie">Sophrologie</a></li>
+          <li><a href="services.html#at-work">At Work !</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:0610234560">06 10 23 45 60</a></li>
+          <li><a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="contact.html">19 av. Gustave Delory, Roubaix</a></li>
+          <li><a href="contact.html#access">Plan d'accès</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Move and Breathe Lille — Coralie Delahaye</span>
+      <span>Site réalisé par <a href="https://mapa-developpement.fr" target="_blank" rel="noopener">Mapa Développement</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
