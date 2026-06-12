@@ -3,24 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Move and Breathe Lille — Studio Pilates Classique & Sophrolates · Roubaix Barbieux</title>
-<meta name="description" content="Studio de Pilates Classique et Sophrolates à Roubaix Barbieux, à 100m du Parc Barbieux. Cours sur tapis et machines (Reformer, Cadillac, Wunda Chair). Sophrologie et Sophrolates avec Coralie Delahaye, instructrice certifiée.">
-<meta name="keywords" content="pilates Lille, pilates Roubaix, sophrologie Lille, sophrolates, studio pilates Barbieux, reformer Lille, cours pilates Roubaix">
+<title>Move and Breathe Pilates Studio — Roubaix Barbieux · Approche personnalisée corps-esprit</title>
+<meta name="description" content="Studio de Pilates à Roubaix Barbieux. Approche personnalisée du mouvement et de la respiration : Pilates classique, Sophrolates, méthode De Gasquet, sophrologie. Coralie Delahaye.">
+<meta name="keywords" content="pilates Lille, pilates Roubaix, sophrolates, méthode De Gasquet, studio pilates Barbieux, accompagnement corps esprit">
 <link rel="canonical" href="https://moveandbreathelille.fr/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Move and Breathe Lille — Studio Pilates Classique & Sophrolates">
-<meta property="og:description" content="Studio de Pilates Classique et Sophrolates à Roubaix Barbieux. Méthode signature Sophrolates par Coralie Delahaye.">
+<meta property="og:title" content="Move and Breathe Pilates Studio — Roubaix Barbieux">
+<meta property="og:description" content="Studio de Pilates où le mouvement et la respiration ont toute leur place. Approche personnalisée corps-esprit par Coralie Delahaye.">
 <meta property="og:url" content="https://moveandbreathelille.fr/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="https://moveandbreathelille.fr/og-image.jpg">
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -28,7 +25,7 @@
   .hero {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: 1.1fr 0.95fr;
     position: relative;
     overflow: hidden;
     background: var(--cream);
@@ -45,28 +42,28 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(181, 158, 120, 0.18) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(58, 110, 108, 0.10) 1px, transparent 0);
     background-size: 32px 32px;
-    opacity: 0.4;
+    opacity: 0.5;
     pointer-events: none;
     z-index: -1;
   }
-  .hero-eyebrow { margin-bottom: 2.25rem; }
+  .hero-eyebrow { margin-bottom: 2rem; }
   .hero-title {
-    margin-bottom: 2rem;
     font-family: var(--serif);
     font-weight: 300;
-    font-size: clamp(3rem, 6.5vw, 6.2rem);
+    font-size: clamp(2.6rem, 6vw, 5.8rem);
     line-height: 0.98;
     letter-spacing: -0.025em;
-    color: var(--ink);
+    color: var(--teal-deep);
+    margin-bottom: 2rem;
   }
   .hero-title em { font-style: italic; color: var(--teal); font-weight: 400; }
-  .hero-title .ampersand {
+  .hero-title .amp {
     font-style: italic;
-    color: var(--sand-deep);
-    font-weight: 400;
-    margin: 0 0.1em;
+    color: var(--sage-deep);
+    font-weight: 500;
+    margin: 0 0.05em;
   }
   .hero-desc {
     font-family: var(--serif);
@@ -74,7 +71,7 @@
     font-size: clamp(1.05rem, 1.3vw, 1.25rem);
     line-height: 1.6;
     color: var(--ink-soft);
-    max-width: 440px;
+    max-width: 460px;
     margin-bottom: 2.75rem;
     font-weight: 300;
   }
@@ -85,263 +82,275 @@
     margin-bottom: clamp(3rem, 6vw, 5rem);
     flex-wrap: wrap;
   }
-  .hero-meta {
-    margin-top: auto;
-    max-width: 480px;
-  }
+  .hero-meta { margin-top: auto; max-width: 520px; }
 
-  /* Hero visual */
+  /* Hero visual : reproduction du logo en grand */
   .hero-visual {
     position: relative;
-    overflow: hidden;
-    background: linear-gradient(160deg, var(--teal-deep) 0%, var(--teal) 50%, var(--teal-mid) 100%);
-  }
-  .hero-visual::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 30% 25%, rgba(255,255,255,0.10) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(0,0,0,0.20) 0%, transparent 60%);
-  }
-  .hero-figure {
-    position: absolute;
-    inset: 0;
+    background: var(--beige);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    overflow: hidden;
   }
-  .hero-figure svg {
-    width: 65%;
-    max-width: 360px;
-    height: auto;
-    opacity: 0.22;
-    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2));
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(30, 72, 71, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.5;
+  }
+  .hero-logo-large {
+    position: relative;
+    width: 75%;
+    max-width: 480px;
+    aspect-ratio: 1;
+  }
+  .hero-logo-circle {
+    position: absolute;
+    width: 62%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+  }
+  .hero-logo-c1 { top: 0; left: 19%; background: var(--sage-deep); opacity: 0.85; }
+  .hero-logo-c2 { bottom: 0; left: 0; background: var(--sage); opacity: 0.85; }
+  .hero-logo-c3 { bottom: 0; right: 0; background: var(--sage-pale); opacity: 0.95; }
+  .hero-logo-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: var(--serif);
+    color: var(--teal-deep);
+    z-index: 2;
+    width: 80%;
+  }
+  .hero-logo-line {
+    display: block;
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: 0.05em;
+  }
+  .hero-logo-amp {
+    display: block;
+    font-style: italic;
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    color: var(--teal);
+    margin: 0.35em 0;
+    font-weight: 400;
+  }
+  .hero-logo-sub {
+    display: block;
+    font-style: italic;
+    font-size: clamp(0.85rem, 1.1vw, 1rem);
+    color: var(--teal-mid);
+    margin-top: 0.6em;
+    font-weight: 400;
+    letter-spacing: 0.04em;
   }
   .hero-vertical-text {
     position: absolute;
     top: 50%;
-    right: 1.5rem;
+    right: 1.25rem;
     transform: translateY(-50%) rotate(180deg);
     writing-mode: vertical-rl;
-    color: rgba(247, 243, 235, 0.4);
+    color: var(--teal-mid);
     font-size: 0.7rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     z-index: 3;
-  }
-  .hero-corner {
-    position: absolute;
-    top: 2rem; right: 2rem;
-    width: 80px; height: 80px;
-    border: 1px solid rgba(247, 243, 235, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-  }
-  .hero-corner::before {
-    content: '';
-    width: 8px; height: 8px;
-    background: var(--sand);
-    border-radius: 50%;
-  }
-  .hero-visual-meta {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 2.5rem;
-    right: 2.5rem;
-    color: var(--cream);
-    z-index: 3;
-  }
-  .hero-visual-eyebrow {
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(247, 243, 235, 0.55);
-    margin-bottom: 1.25rem;
-  }
-  .hero-visual-quote {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: clamp(1.1rem, 1.4vw, 1.4rem);
-    line-height: 1.45;
-    color: rgba(247, 243, 235, 0.92);
-    margin-bottom: 0.75rem;
-    max-width: 380px;
-  }
-  .hero-visual-cite {
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(247, 243, 235, 0.5);
+    opacity: 0.6;
   }
 
-  /* ==== INTRO / WHO ==== */
-  .intro { background: var(--cream-soft); padding: clamp(5rem, 10vw, 9rem) 0; }
-  .intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.15fr;
-    gap: clamp(3rem, 7vw, 7rem);
-    align-items: center;
-  }
-  .intro-image-wrap {
+  /* ==== MANIFESTE ==== */
+  .manifesto {
+    background: var(--cream-soft);
+    padding: clamp(5rem, 10vw, 9rem) 0;
     position: relative;
-    aspect-ratio: 3/4;
-    border-radius: 2px;
+  }
+  .manifesto-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .manifesto h2 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    line-height: 1.18;
+    color: var(--teal-deep);
+    margin: 1.5rem 0 0;
+    letter-spacing: -0.015em;
+  }
+  .manifesto h2 em { font-style: italic; color: var(--teal); font-weight: 400; }
+  .manifesto-divider {
+    display: inline-block;
+    width: 60px; height: 1px;
+    background: var(--sage-deep);
+    margin: 2.5rem 0;
+  }
+  .manifesto-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+  .manifesto-cite {
+    margin-top: 2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+  }
+
+  /* ==== PILIERS — ce qui distingue le studio ==== */
+  .pillars { background: var(--cream); }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .pillar {
+    padding: 2.5rem 2rem;
+    background: var(--cream-soft);
+    border: 1px solid var(--beige);
+    border-radius: 4px;
+    transition: all 0.4s var(--ease);
+    position: relative;
     overflow: hidden;
   }
-  .intro-image-wrap::after {
-    content: '';
-    position: absolute;
-    bottom: -1.5rem; right: -1.5rem;
-    width: 70%; height: 70%;
-    border: 1px solid var(--sand);
-    border-radius: 2px;
-    z-index: -1;
+  .pillar:hover {
+    border-color: var(--sage-deep);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(30, 72, 71, 0.15);
   }
-  .intro-badge {
-    position: absolute;
-    bottom: 1.75rem; left: 1.75rem;
-    background: var(--cream);
-    border-radius: 2px;
-    padding: 1.25rem 1.5rem;
-    z-index: 2;
-    backdrop-filter: blur(8px);
-  }
-  .intro-badge-num {
+  .pillar-num {
     font-family: var(--serif);
     font-style: italic;
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     color: var(--teal);
+    margin-bottom: 1.5rem;
+    display: block;
     line-height: 1;
-    display: block;
   }
-  .intro-badge-label {
-    font-size: 0.66rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    display: block;
-    margin-top: 0.4rem;
+  .pillar-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--teal-deep);
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.005em;
   }
-  .intro-content .h-2 { margin-bottom: 1.75rem; margin-top: 1.25rem; }
-  .intro-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 2.25rem 0 2.5rem;
-    border-top: 1px solid var(--sand-line);
-    padding-top: 2rem;
-  }
-  .intro-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    font-size: 0.93rem;
+  .pillar-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
     color: var(--ink-soft);
-    line-height: 1.65;
-  }
-  .intro-features li::before {
-    content: '';
-    width: 6px; height: 6px;
-    background: var(--teal);
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 0.55rem;
   }
 
-  /* ==== DISCIPLINES ==== */
-  .disciplines { background: var(--cream); }
-  .disciplines-grid {
+  /* ==== PRATIQUES (3 disciplines) ==== */
+  .practices {
+    background: var(--cream-soft);
+    padding-top: clamp(5rem, 10vw, 9rem);
+  }
+  .practices-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
-  .discipline-card {
-    background: var(--ivory);
-    border: 1px solid var(--cream-deep);
+  .practice-card {
+    background: var(--cream);
+    border: 1px solid var(--beige);
     border-radius: 2px;
     overflow: hidden;
-    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+    transition: all 0.5s var(--ease);
     text-decoration: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
     color: inherit;
   }
-  .discipline-card:nth-child(2) { transform: translateY(2.5rem); }
-  .discipline-card:hover {
+  .practice-card:nth-child(2) { transform: translateY(2.5rem); }
+  .practice-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 30px 60px -30px rgba(45, 90, 82, 0.25);
+    box-shadow: 0 30px 60px -30px rgba(30, 72, 71, 0.25);
+    border-color: var(--sage-deep);
   }
-  .discipline-card:nth-child(2):hover { transform: translateY(calc(2.5rem - 6px)); }
-  .discipline-visual {
-    aspect-ratio: 4/5;
+  .practice-card:nth-child(2):hover { transform: translateY(calc(2.5rem - 6px)); }
+  .practice-visual {
+    aspect-ratio: 4/3;
     position: relative;
     overflow: hidden;
-  }
-  .discipline-visual-1 { background: linear-gradient(165deg, #1A3D38, #2D5A52 60%, #4A8B7F); }
-  .discipline-visual-2 { background: linear-gradient(165deg, #6B5840, #B59E78 60%, #D4C5A8); }
-  .discipline-visual-3 { background: linear-gradient(165deg, #2D5A52, #4A8B7F 60%, #7CBDB1); }
-  .discipline-visual::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.10) 0%, transparent 50%),
-      repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
-  }
-  .discipline-number {
-    position: absolute;
-    top: 1.5rem; right: 1.5rem;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1.5rem;
-    color: rgba(247, 243, 235, 0.5);
-    z-index: 2;
-  }
-  .discipline-icon {
-    position: absolute;
-    inset: 0;
+    background: var(--beige);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
   }
-  .discipline-icon svg {
-    width: 50%;
-    max-width: 180px;
-    opacity: 0.32;
-    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.15));
+  .practice-circles {
+    position: relative;
+    width: 70%;
+    aspect-ratio: 1;
   }
-  .discipline-content {
-    padding: 1.75rem 1.75rem 2rem;
+  .practice-circles .pc {
+    position: absolute;
+    width: 62%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
   }
-  .discipline-tag {
+  .pv-1 .pc-a { top: 0; left: 19%; background: var(--sage-deep); opacity: 0.85; }
+  .pv-1 .pc-b { bottom: 0; left: 0; background: var(--sage); opacity: 0.85; }
+  .pv-1 .pc-c { bottom: 0; right: 0; background: var(--sage-pale); opacity: 0.95; }
+  .pv-2 .pc-a { top: 0; left: 19%; background: var(--teal-mid); opacity: 0.75; }
+  .pv-2 .pc-b { bottom: 0; left: 0; background: var(--sage-deep); opacity: 0.85; }
+  .pv-2 .pc-c { bottom: 0; right: 0; background: var(--sage); opacity: 0.85; }
+  .pv-3 .pc-a { top: 0; left: 19%; background: var(--sage); opacity: 0.85; }
+  .pv-3 .pc-b { bottom: 0; left: 0; background: var(--sage-pale); opacity: 0.95; }
+  .pv-3 .pc-c { bottom: 0; right: 0; background: var(--beige-deep); opacity: 0.5; }
+  .practice-number {
+    position: absolute;
+    top: 1.25rem; right: 1.25rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--teal-deep);
+    opacity: 0.55;
+    z-index: 2;
+  }
+  .practice-content {
+    padding: 2rem 1.75rem 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .practice-tag {
     font-size: 0.66rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--teal);
     margin-bottom: 0.6rem;
   }
-  .discipline-name {
+  .practice-name {
     font-family: var(--serif);
     font-size: 1.65rem;
-    font-weight: 300;
-    color: var(--ink);
+    font-weight: 400;
+    color: var(--teal-deep);
     margin-bottom: 0.75rem;
     letter-spacing: -0.01em;
   }
-  .discipline-desc {
-    font-size: 0.88rem;
+  .practice-desc {
+    font-size: 0.9rem;
     color: var(--ink-soft);
-    line-height: 1.65;
-    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex: 1;
   }
-  .discipline-link {
-    font-size: 0.72rem;
+  .practice-link {
+    font-size: 0.7rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--teal);
@@ -350,9 +359,9 @@
     gap: 0.6rem;
     transition: gap 0.3s var(--ease);
   }
-  .discipline-card:hover .discipline-link { gap: 0.95rem; }
+  .practice-card:hover .practice-link { gap: 0.95rem; }
 
-  /* ==== SOPHROLATES SIGNATURE ==== */
+  /* ==== SIGNATURE (Sophrolates) ==== */
   .signature {
     background: var(--teal-deep);
     color: var(--cream);
@@ -364,160 +373,148 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(247, 243, 235, 0.06) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(220, 227, 214, 0.06) 1px, transparent 0);
     background-size: 32px 32px;
+  }
+  .signature-circles-bg {
+    position: absolute;
+    top: 50%; right: -200px;
+    transform: translateY(-50%);
+    width: 600px; height: 600px;
+    background:
+      radial-gradient(circle at 50% 30%, var(--sage-deep) 0%, transparent 24%),
+      radial-gradient(circle at 32% 65%, var(--sage) 0%, transparent 24%),
+      radial-gradient(circle at 68% 65%, var(--sage-pale) 0%, transparent 24%);
+    opacity: 0.18;
     pointer-events: none;
   }
   .signature .container { position: relative; z-index: 1; }
   .signature-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 1fr;
     gap: clamp(3rem, 7vw, 7rem);
     align-items: center;
   }
-  .signature-eyebrow {
-    color: var(--sand);
-  }
-  .signature-eyebrow::before { background: var(--sand); }
-  .signature h2 { color: var(--cream); margin-top: 1.5rem; margin-bottom: 1.75rem; }
-  .signature h2 em { color: var(--sand); }
+  .signature-eyebrow { color: var(--sage); }
+  .signature-eyebrow::before { background: var(--sage); }
+  .signature h2 { color: var(--cream); margin: 1.5rem 0 1.5rem; }
+  .signature h2 em { color: var(--sage); }
   .signature-text {
-    font-size: 0.98rem;
+    font-size: 1rem;
     line-height: 1.85;
-    color: rgba(247, 243, 235, 0.7);
-    margin-bottom: 2.5rem;
-    max-width: 480px;
+    color: rgba(220, 227, 214, 0.78);
+    margin-bottom: 1.5rem;
+    max-width: 540px;
   }
-  .phases {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
-    border-top: 1px solid rgba(247, 243, 235, 0.12);
-    padding-top: 2rem;
-  }
-  .phase {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.75rem;
-    align-items: flex-start;
-  }
-  .phase-num {
+  .signature-text.italic {
     font-family: var(--serif);
     font-style: italic;
-    font-size: 1.6rem;
-    color: var(--sand);
-    line-height: 1;
-    font-weight: 400;
-  }
-  .phase-title {
-    font-size: 0.88rem;
-    font-weight: 500;
+    font-size: 1.25rem;
     color: var(--cream);
-    margin-bottom: 0.4rem;
-    letter-spacing: 0.01em;
   }
-  .phase-text {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: rgba(247, 243, 235, 0.55);
+  .signature-actions {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .signature-actions .btn-light {
+    background: var(--sage);
+    color: var(--teal-deep);
+  }
+  .signature-actions .btn-light:hover {
+    background: var(--cream);
   }
   .signature-visual {
     aspect-ratio: 4/5;
-    position: relative;
+    background: linear-gradient(155deg, var(--teal-deep) 0%, var(--teal) 100%);
     border-radius: 2px;
     overflow: hidden;
-    background: linear-gradient(155deg, var(--teal) 0%, var(--teal-deep) 100%);
-    border: 1px solid rgba(247, 243, 235, 0.08);
+    position: relative;
+    border: 1px solid rgba(220, 227, 214, 0.08);
   }
   .signature-visual::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at 30% 30%, rgba(212, 197, 168, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 30% 30%, rgba(191, 213, 207, 0.15) 0%, transparent 50%),
       radial-gradient(circle at 70% 80%, rgba(0,0,0,0.3) 0%, transparent 50%);
   }
-  .signature-visual-content {
-    position: absolute;
-    bottom: 2rem; left: 2rem; right: 2rem;
-    z-index: 2;
-  }
-  .signature-visual-quote {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1.5rem;
-    line-height: 1.3;
-    color: var(--cream);
-    margin-bottom: 1.25rem;
-  }
-  .signature-visual-cite {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(247, 243, 235, 0.5);
-  }
-  .signature-visual-icon {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.25;
-    z-index: 1;
-  }
-  .signature-visual-icon svg { width: 55%; max-width: 280px; }
-
-  /* ==== VIDEOS TEASER ==== */
-  .videos-teaser { background: var(--cream); }
-  .videos-teaser-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: clamp(3rem, 6vw, 5rem);
-    align-items: center;
-  }
-  .yt-lite {
-    position: relative;
-    aspect-ratio: 16/9;
-    background: var(--teal-deep);
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 2px;
-    transition: transform 0.4s var(--ease);
-  }
-  .yt-lite:hover { transform: scale(1.01); }
-  .yt-thumb {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: filter 0.4s;
-  }
-  .yt-lite:hover .yt-thumb { filter: brightness(0.85); }
-  .yt-play-btn {
+  .signature-visual-circles {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 76px; height: 76px;
-    background: rgba(247, 243, 235, 0.92);
+    width: 70%; aspect-ratio: 1;
+    opacity: 0.5;
+  }
+  .signature-visual-circles .pc {
+    position: absolute;
+    width: 62%; aspect-ratio: 1;
     border-radius: 50%;
+    mix-blend-mode: screen;
+  }
+  .signature-visual-circles .pc-a { top: 0; left: 19%; background: var(--sage-deep); opacity: 0.5; }
+  .signature-visual-circles .pc-b { bottom: 0; left: 0; background: var(--sage); opacity: 0.5; }
+  .signature-visual-circles .pc-c { bottom: 0; right: 0; background: var(--sage-pale); opacity: 0.6; }
+  .signature-visual-quote {
+    position: absolute;
+    bottom: 2rem; left: 2rem; right: 2rem;
+    z-index: 2;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--cream);
+  }
+  .signature-visual-cite {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  /* ==== ACCOMPAGNEMENTS TEASER ==== */
+  .accomp-teaser { background: var(--cream); }
+  .accomp-teaser-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(3rem, 6vw, 5rem);
+    align-items: center;
+  }
+  .accomp-tags {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    margin: 2.5rem 0;
+  }
+  .accomp-tag {
+    background: var(--cream-soft);
+    border: 1px solid var(--beige);
+    padding: 1rem 1.25rem;
+    border-radius: 2px;
+    font-size: 0.88rem;
+    color: var(--teal-deep);
+    line-height: 1.4;
     display: flex;
     align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(8px);
+    gap: 0.75rem;
     transition: all 0.3s var(--ease);
-    z-index: 2;
   }
-  .yt-lite:hover .yt-play-btn { background: var(--teal); }
-  .yt-play-btn svg {
-    width: 26px;
-    fill: var(--teal);
-    margin-left: 4px;
-    transition: fill 0.3s;
+  .accomp-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
   }
-  .yt-lite:hover .yt-play-btn svg { fill: var(--cream); }
-  .yt-active .yt-play-btn { display: none; }
+  .accomp-tag:hover {
+    border-color: var(--sage-deep);
+    background: var(--cream);
+  }
 
-  /* ==== TESTIMONIALS ==== */
+  /* ==== AVIS ==== */
   .testimonials { background: var(--cream-soft); }
   .testimonials-grid {
     display: grid;
@@ -526,16 +523,16 @@
     margin-top: 3rem;
   }
   .testimonial {
-    background: var(--ivory);
-    border: 1px solid var(--cream-deep);
+    background: var(--cream);
+    border: 1px solid var(--beige);
     padding: 2.5rem 2rem;
     border-radius: 2px;
     position: relative;
     transition: all 0.3s var(--ease);
   }
   .testimonial:hover {
-    border-color: var(--sand);
-    box-shadow: 0 30px 60px -30px rgba(45, 90, 82, 0.18);
+    border-color: var(--sage-deep);
+    box-shadow: 0 30px 60px -30px rgba(30, 72, 71, 0.18);
   }
   .testimonial-quote-mark {
     position: absolute;
@@ -543,12 +540,12 @@
     font-family: var(--serif);
     font-style: italic;
     font-size: 4.5rem;
-    color: var(--sand);
-    opacity: 0.4;
+    color: var(--sage-deep);
+    opacity: 0.35;
     line-height: 1;
   }
   .testimonial-stars {
-    color: var(--sand-deep);
+    color: var(--teal);
     font-size: 0.85rem;
     letter-spacing: 0.15em;
     margin-bottom: 1.25rem;
@@ -568,7 +565,7 @@
     align-items: center;
     gap: 0.85rem;
     padding-top: 1.25rem;
-    border-top: 1px solid var(--cream-deep);
+    border-top: 1px solid var(--beige);
   }
   .testimonial-avatar {
     width: 38px; height: 38px;
@@ -584,7 +581,7 @@
   }
   .testimonial-name {
     font-size: 0.85rem;
-    color: var(--ink);
+    color: var(--teal-deep);
     font-weight: 400;
     margin-bottom: 0.15rem;
   }
@@ -593,9 +590,80 @@
     color: var(--ink-mute);
   }
 
+  /* ==== STUDIO DIGITAL TEASER ==== */
+  .digital-teaser {
+    background: var(--beige);
+    padding: clamp(4rem, 7vw, 6rem) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .digital-teaser::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(30, 72, 71, 0.06) 1px, transparent 0);
+    background-size: 28px 28px;
+  }
+  .digital-teaser .container { position: relative; z-index: 1; }
+  .digital-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .digital-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--teal-deep);
+    color: var(--sage);
+    border-radius: 999px;
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .digital-pill::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .digital-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    margin-top: 2rem;
+  }
+  .digital-feature {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--teal-deep);
+    line-height: 1.55;
+  }
+  .digital-feature::before {
+    content: '';
+    width: 18px; height: 18px;
+    border: 1.5px solid var(--teal);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    background: var(--cream);
+    position: relative;
+  }
+
   /* ==== CTA FINAL ==== */
   .cta-final {
-    background: var(--cream-deep);
+    background: var(--cream-soft);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -604,16 +672,12 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(181, 158, 120, 0.2) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(58, 110, 108, 0.12) 1px, transparent 0);
     background-size: 36px 36px;
-    opacity: 0.5;
-    pointer-events: none;
+    opacity: 0.6;
   }
   .cta-final .container { position: relative; z-index: 1; }
-  .cta-final-inner {
-    max-width: 720px;
-    margin: 0 auto;
-  }
+  .cta-final-inner { max-width: 720px; margin: 0 auto; }
   .cta-final h2 { margin: 1.5rem 0 1.75rem; }
   .cta-final-text {
     font-family: var(--serif);
@@ -630,10 +694,10 @@
     margin-bottom: 3rem;
   }
   .cta-option {
-    background: var(--ivory);
+    background: var(--cream);
     padding: 1.5rem 1.25rem;
     border-radius: 2px;
-    border: 1px solid var(--cream-deep);
+    border: 1px solid var(--beige);
     text-decoration: none;
     display: block;
     transition: all 0.3s var(--ease);
@@ -642,7 +706,7 @@
   .cta-option:hover {
     border-color: var(--teal);
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px -14px rgba(45, 90, 82, 0.2);
+    box-shadow: 0 12px 28px -14px rgba(30, 72, 71, 0.2);
   }
   .cta-option-label {
     font-size: 0.66rem;
@@ -654,34 +718,33 @@
   .cta-option-value {
     font-family: var(--serif);
     font-size: 1.05rem;
-    color: var(--ink);
+    color: var(--teal-deep);
     line-height: 1.35;
   }
 
-  /* ==== MOBILE ==== */
-  @media (max-width: 900px) {
+  @media (max-width: 980px) {
     .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-visual { aspect-ratio: 4/5; order: -1; min-height: 50vh; }
+    .hero-visual { aspect-ratio: 4/3; order: -1; min-height: 50vh; }
     .hero-content { padding-top: 7rem; padding-bottom: 4rem; min-height: 70vh; }
-    .intro-grid,
-    .signature-grid,
-    .videos-teaser-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .disciplines-grid,
+    .pillars-grid,
+    .practices-grid,
     .testimonials-grid { grid-template-columns: 1fr; }
-    .discipline-card:nth-child(2) { transform: none; }
-    .discipline-card:nth-child(2):hover { transform: translateY(-6px); }
+    .practice-card:nth-child(2) { transform: none; }
+    .practice-card:nth-child(2):hover { transform: translateY(-6px); }
+    .signature-grid,
+    .accomp-teaser-grid,
+    .digital-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .accomp-tags { grid-template-columns: 1fr; }
     .cta-options { grid-template-columns: 1fr; }
-    .intro-badge { padding: 1rem 1.25rem; }
-    .intro-badge-num { font-size: 1.8rem; }
+    .digital-features { grid-template-columns: 1fr; }
   }
 </style>
 
-<!-- JSON-LD: LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
-  "name": "Move and Breathe Lille",
+  "name": "Move and Breathe Pilates Studio",
   "image": "https://moveandbreathelille.fr/og-image.jpg",
   "url": "https://moveandbreathelille.fr",
   "telephone": "+33-6-10-23-45-60",
@@ -702,7 +765,7 @@
   ],
   "sameAs": ["https://www.instagram.com/moveandbreathelille"],
   "founder": {"@type":"Person","name":"Coralie Delahaye"},
-  "description": "Studio de Pilates Classique et Sophrolates à Roubaix Barbieux. Cours sur tapis et machines, Sophrologie et méthode signature Sophrolates par Coralie Delahaye, instructrice certifiée."
+  "description": "Studio de Pilates à Roubaix Barbieux. Approche personnalisée du mouvement et de la respiration : Pilates classique, Sophrolates, méthode De Gasquet, sophrologie. Par Coralie Delahaye."
 }
 </script>
 </head>
@@ -712,15 +775,27 @@
 <!-- NAV -->
 <nav class="nav" aria-label="Navigation principale">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Move <em>and</em> Breathe Lille</a>
+    <a href="index.html" class="logo-mark" aria-label="Move and Breathe Pilates Studio">
+      <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
+        <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
+        <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
+      </svg>
+      <span class="logo-mark-text">
+        <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
+        <span class="logo-mark-sub">Pilates Studio</span>
+      </span>
+    </a>
     <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="a-propos.html">À propos</a></li>
-      <li><a href="services.html">Disciplines</a></li>
-      <li><a href="videos.html">Vidéos</a></li>
+      <li><a href="le-studio.html">Le Studio</a></li>
+      <li><a href="pilates.html">Pilates</a></li>
+      <li><a href="sophrolates.html">Sophrolates</a></li>
+      <li><a href="accompagnement.html">Accompagnement</a></li>
+      <li><a href="tarifs.html">Tarifs &amp; Planning</a></li>
       <li><a href="contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </div>
@@ -729,34 +804,30 @@
 <!-- HERO -->
 <header class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow eyebrow reveal">Pilates · Sophrolates · Sophrologie</div>
-    <h1 class="hero-title reveal reveal-delay-1">
-      Un mental apaisé<br>
-      dans un corps<br>
-      <em>souple <span class="ampersand">&amp;</span> fort</em>
-    </h1>
+    <div class="hero-eyebrow eyebrow reveal">Pilates · Sophrolates · Accompagnement</div>
+    <h1 class="hero-title split-text reveal reveal-delay-1">Un corps plus fort, plus mobile, <em>plus équilibré.</em></h1>
     <p class="hero-desc reveal reveal-delay-2">
-      Studio de Pilates Classique et Sophrolates à Roubaix Barbieux. Une approche personnalisée du mouvement et de la respiration, en solo, duo ou petit groupe.
+      Studio de Pilates à Roubaix Barbieux. Une approche personnalisée du mouvement et de la respiration — parce que chaque corps est unique et mérite un accompagnement individualisé.
     </p>
     <div class="hero-actions reveal reveal-delay-3">
-      <a href="contact.html" class="btn btn-primary">Réserver une séance</a>
-      <a href="services.html" class="btn btn-ghost">
-        Découvrir les disciplines
+      <a href="contact.html" class="btn btn-primary btn-magnetic">Prendre rendez-vous</a>
+      <a href="le-studio.html" class="btn btn-ghost">
+        Découvrir l'approche
         <span class="arrow">→</span>
       </a>
     </div>
     <div class="hero-meta reveal reveal-delay-4">
       <div class="stats-row">
         <div>
-          <span class="stat-num">900<em>h</em></span>
-          <span class="stat-label">Formation Pilates classique</span>
+          <span class="stat-num"><span class="counter-num" data-counter="900">0</span><em>h</em></span>
+          <span class="stat-label">Formation Pilates</span>
         </div>
         <div>
-          <span class="stat-num">15<em>+</em></span>
+          <span class="stat-num"><span class="counter-num" data-counter="15">0</span><em>+</em></span>
           <span class="stat-label">Années de pratique</span>
         </div>
         <div>
-          <span class="stat-num">8<em>+</em></span>
+          <span class="stat-num"><span class="counter-num" data-counter="8">0</span><em>+</em></span>
           <span class="stat-label">Années d'enseignement</span>
         </div>
       </div>
@@ -764,29 +835,17 @@
   </div>
 
   <div class="hero-visual" aria-hidden="true">
-    <span class="hero-vertical-text">Studio · Roubaix Barbieux</span>
-    <div class="hero-corner"></div>
-    <div class="hero-figure">
-      <!-- Refined pilates silhouette -->
-      <svg viewBox="0 0 240 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Head -->
-        <circle cx="120" cy="55" r="22" fill="#F7F3EB"/>
-        <!-- Torso -->
-        <path d="M120 80 Q92 110 86 168 Q104 184 120 178 Q136 184 154 168 Q148 110 120 80Z" fill="#F7F3EB"/>
-        <!-- Left arm raised -->
-        <path d="M94 116 Q60 102 38 60 Q44 50 56 56 Q82 84 100 104Z" fill="#F7F3EB"/>
-        <!-- Right arm raised -->
-        <path d="M146 116 Q180 102 202 60 Q196 50 184 56 Q158 84 140 104Z" fill="#F7F3EB"/>
-        <!-- Left leg -->
-        <path d="M96 178 Q80 224 86 290 Q86 308 96 318 Q108 308 108 290 Q112 232 116 184Z" fill="#F7F3EB"/>
-        <!-- Right leg -->
-        <path d="M144 178 Q160 224 154 290 Q154 308 144 318 Q132 308 132 290 Q128 232 124 184Z" fill="#F7F3EB"/>
-      </svg>
-    </div>
-    <div class="hero-visual-meta">
-      <div class="hero-visual-eyebrow">La méthode signature</div>
-      <p class="hero-visual-quote">"Une heure pour soi qui change toute la semaine."</p>
-      <p class="hero-visual-cite">— Élève Sophrolates</p>
+    <span class="hero-vertical-text">Roubaix · Barbieux</span>
+    <div class="hero-logo-large">
+      <span class="hero-logo-circle hero-logo-c1"></span>
+      <span class="hero-logo-circle hero-logo-c2"></span>
+      <span class="hero-logo-circle hero-logo-c3"></span>
+      <span class="hero-logo-text">
+        <span class="hero-logo-line">MOVE</span>
+        <span class="hero-logo-amp">&amp;</span>
+        <span class="hero-logo-line">BREATHE</span>
+        <span class="hero-logo-sub">Pilates Studio</span>
+      </span>
     </div>
   </div>
 </header>
@@ -794,223 +853,215 @@
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="marquee-item">Pilates Reformer <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pilates classique <span class="marquee-dot"></span></span>
     <span class="marquee-item">Sophrolates <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Mat'class <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Méthode De Gasquet <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Reformer <span class="marquee-dot"></span></span>
     <span class="marquee-item">Cadillac <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Wunda Chair <span class="marquee-dot"></span></span>
     <span class="marquee-item">Sophrologie <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Ladder Barrel <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Rose Pilates <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Pilates Reformer <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Chaînes musculaires <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Respiration <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pilates classique <span class="marquee-dot"></span></span>
     <span class="marquee-item">Sophrolates <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Mat'class <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Méthode De Gasquet <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Reformer <span class="marquee-dot"></span></span>
     <span class="marquee-item">Cadillac <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Wunda Chair <span class="marquee-dot"></span></span>
     <span class="marquee-item">Sophrologie <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Ladder Barrel <span class="marquee-dot"></span></span>
-    <span class="marquee-item">Rose Pilates <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Chaînes musculaires <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Respiration <span class="marquee-dot"></span></span>
   </div>
 </div>
 
-<!-- INTRO / QUI SUIS-JE -->
-<section class="intro" id="about-teaser">
+<!-- MANIFESTE -->
+<section class="manifesto">
   <div class="container">
-    <div class="intro-grid">
-      <div class="intro-image-wrap reveal">
-        <div class="img-panel-placeholder">
-          <span class="img-panel-label">Photo Coralie</span>
-          <div class="silhouette-meditation">
-            <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="50" r="20" fill="#F7F3EB"/>
-              <path d="M100 72 Q72 100 64 160 Q82 180 100 174 Q118 180 136 160 Q128 100 100 72Z" fill="#F7F3EB"/>
-              <path d="M62 130 Q30 150 16 196 Q28 210 56 196 Q70 170 76 148" fill="#F7F3EB"/>
-              <path d="M138 130 Q170 150 184 196 Q172 210 144 196 Q130 170 124 148" fill="#F7F3EB"/>
-              <ellipse cx="80" cy="240" rx="50" ry="20" fill="#F7F3EB"/>
-              <ellipse cx="120" cy="240" rx="50" ry="20" fill="#F7F3EB"/>
-            </svg>
-          </div>
-        </div>
-        <div class="intro-badge">
-          <span class="intro-badge-num">15<em>+</em></span>
-          <span class="intro-badge-label">Ans de pratique</span>
-        </div>
-      </div>
-      <div class="intro-content reveal reveal-delay-2">
-        <div class="eyebrow">Coralie Delahaye</div>
-        <h2 class="h-2">Au plus proche<br>de <em>vos besoins</em></h2>
-        <p class="body-text">
-          Après une première carrière dans le secteur médical, je me suis tournée vers les disciplines qui m'animaient depuis toujours. Ma mission : vous transmettre une meilleure approche du mouvement et de la respiration, pour gagner en autonomie et ancrer de nouvelles habitudes au quotidien.
-        </p>
-        <ul class="intro-features">
-          <li>Formation Pilates Classique à Paris — 900h sur deux ans, méthode "The Original Pilates"</li>
-          <li>Diplôme universitaire de Sophrologie — Université de Lille 2</li>
-          <li>Méthode Bernadette De Gasquet (abdos) et formation Rose Pilates (cancer du sein)</li>
-          <li>Certificat de Qualification Professionnelle d'animateur sportif</li>
-        </ul>
-        <a href="a-propos.html" class="btn btn-outline">
-          Mon parcours
-          <span class="arrow">→</span>
-        </a>
-      </div>
+    <div class="manifesto-inner">
+      <div class="eyebrow center reveal">Le studio</div>
+      <h2 class="scroll-reveal-text serif">Move and Breathe est un lieu où l'on prend <em>le temps</em>.</h2>
+      <span class="manifesto-divider"></span>
+      <p class="manifesto-text scroll-reveal-text">
+        Le temps d'observer, de comprendre, d'apprendre et de progresser durablement. Au-delà de la performance physique, mon objectif est de vous aider à mieux comprendre votre corps, développer votre confiance dans le mouvement, prévenir les douleurs et retrouver un véritable équilibre entre corps et esprit.
+      </p>
+      <p class="manifesto-cite reveal">— Coralie Delahaye</p>
     </div>
   </div>
 </section>
 
-<!-- DISCIPLINES -->
-<section class="disciplines">
+<!-- PILIERS -->
+<section class="pillars">
   <div class="container">
     <div class="section-head center reveal">
-      <div class="eyebrow center">Les disciplines</div>
-      <h2 class="h-2 mt-2">Trois pratiques,<br>un même <em>équilibre</em></h2>
-      <p class="lede">Pilates classique, Sophrolates ou Sophrologie — choisissez la voie qui résonne, ou combinez-les pour un bien-être global.</p>
+      <div class="eyebrow center">Ce qui distingue le studio</div>
+      <h2 class="h-2 mt-2">Pas un cours de plus.<br>Un <em>vrai accompagnement</em>.</h2>
+      <p class="lede mt-2">Beaucoup de personnes enseignent le Pilates. Ce qui nous distingue, c'est l'approche.</p>
     </div>
-    <div class="disciplines-grid">
-      <a href="services.html#pilates" class="discipline-card reveal reveal-delay-1">
-        <div class="discipline-visual discipline-visual-1">
-          <span class="discipline-number">01</span>
-          <div class="discipline-icon">
-            <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="40" r="18" fill="#F7F3EB"/>
-              <path d="M100 60 Q70 90 64 140 Q82 156 100 152 Q118 156 136 140 Q130 90 100 60Z" fill="#F7F3EB"/>
-              <path d="M64 110 Q30 100 20 80" stroke="#F7F3EB" stroke-width="14" stroke-linecap="round" fill="none"/>
-              <path d="M136 110 Q170 100 180 80" stroke="#F7F3EB" stroke-width="14" stroke-linecap="round" fill="none"/>
-              <path d="M76 152 Q60 180 56 200" stroke="#F7F3EB" stroke-width="16" stroke-linecap="round" fill="none"/>
-              <path d="M124 152 Q140 180 144 200" stroke="#F7F3EB" stroke-width="16" stroke-linecap="round" fill="none"/>
-            </svg>
+    <div class="pillars-grid stagger-fade reveal">
+      <div class="pillar">
+        <span class="pillar-num">01</span>
+        <h3 class="pillar-title">Approche personnalisée</h3>
+        <p class="pillar-text">Aucun corps n'est identique. Chaque programme est conçu pour vous — votre histoire, votre posture, vos objectifs, vos contraintes du moment.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">02</span>
+        <h3 class="pillar-title">Expertise globale du mouvement</h3>
+        <p class="pillar-text">Le Pilates est le socle, mais c'est l'ensemble qui fait sens : De Gasquet, chaînes musculaires, sophrologie, éducation corporelle, travail respiratoire.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">03</span>
+        <h3 class="pillar-title">Vision corps-esprit</h3>
+        <p class="pillar-text">Le corps ne se travaille pas sans le mental, ni l'inverse. La respiration fait le pont — c'est elle qui change tout, séance après séance.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">04</span>
+        <h3 class="pillar-title">Accompagnement sur le long terme</h3>
+        <p class="pillar-text">Une séance change peu de choses. Une pratique régulière, encadrée, ajustée — transforme. C'est cette continuité que j'installe avec vous.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">05</span>
+        <h3 class="pillar-title">Studio à taille humaine</h3>
+        <p class="pillar-text">Petits effectifs, parfois solo ou duo. On a la place de respirer, le temps de corriger, l'attention pour entendre ce que le corps dit.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">06</span>
+        <h3 class="pillar-title">Outils complémentaires</h3>
+        <p class="pillar-text">Au-delà du Pilates, plusieurs approches s'imbriquent — choisies pour répondre précisément à ce dont vous avez besoin à cet instant-là.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRATIQUES -->
+<section class="practices">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Trois pratiques principales</div>
+      <h2 class="h-2 mt-2">Le mouvement,<br>la respiration, <em>la régulation</em></h2>
+    </div>
+    <div class="practices-grid">
+      <a href="pilates.html" class="practice-card reveal reveal-delay-1">
+        <div class="practice-visual">
+          <div class="practice-circles pv-1">
+            <span class="pc pc-a"></span>
+            <span class="pc pc-b"></span>
+            <span class="pc pc-c"></span>
           </div>
+          <span class="practice-number">01</span>
         </div>
-        <div class="discipline-content">
-          <div class="discipline-tag">Discipline 01</div>
-          <h3 class="discipline-name">Pilates Classique</h3>
-          <p class="discipline-desc">Système complet sur tapis et machines : Reformer, Cadillac, Wunda Chair, Ladder Barrel.</p>
-          <span class="discipline-link">Découvrir <span class="arrow">→</span></span>
+        <div class="practice-content">
+          <span class="practice-tag">Pratique · 01</span>
+          <h3 class="practice-name">Pilates</h3>
+          <p class="practice-desc">Sur tapis et sur l'ensemble des machines : Reformer, Cadillac, Chair, Barrel. Un véritable enseignement Pilates complet, pas seulement du Reformer.</p>
+          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
         </div>
       </a>
 
-      <a href="services.html#sophrolates" class="discipline-card reveal reveal-delay-2">
-        <div class="discipline-visual discipline-visual-2">
-          <span class="discipline-number">02</span>
-          <div class="discipline-icon">
-            <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="60" r="22" fill="#F7F3EB"/>
-              <path d="M100 84 Q70 110 60 160 Q70 180 100 175 Q130 180 140 160 Q130 110 100 84Z" fill="#F7F3EB"/>
-              <ellipse cx="100" cy="200" rx="60" ry="14" fill="#F7F3EB"/>
-              <path d="M40 200 Q40 180 60 175 M160 200 Q160 180 140 175" stroke="#F7F3EB" stroke-width="3" fill="none"/>
-            </svg>
+      <a href="sophrolates.html" class="practice-card reveal reveal-delay-2">
+        <div class="practice-visual">
+          <div class="practice-circles pv-2">
+            <span class="pc pc-a"></span>
+            <span class="pc pc-b"></span>
+            <span class="pc pc-c"></span>
           </div>
+          <span class="practice-number">02</span>
         </div>
-        <div class="discipline-content">
-          <div class="discipline-tag">Discipline 02</div>
-          <h3 class="discipline-name">Sophrolates</h3>
-          <p class="discipline-desc">La méthode signature du studio — fusion du Pilates et de la Sophrologie en trois phases.</p>
-          <span class="discipline-link">Découvrir <span class="arrow">→</span></span>
+        <div class="practice-content">
+          <span class="practice-tag">Pratique · 02 · Signature</span>
+          <h3 class="practice-name">Sophrolates</h3>
+          <p class="practice-desc">Ma prestation signature — l'alliance du Pilates et de la sophrologie. Un travail du corps et du mental, où la respiration et la récupération ont toute leur place.</p>
+          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
         </div>
       </a>
 
-      <a href="services.html#sophrologie" class="discipline-card reveal reveal-delay-3">
-        <div class="discipline-visual discipline-visual-3">
-          <span class="discipline-number">03</span>
-          <div class="discipline-icon">
-            <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="60" r="22" fill="#F7F3EB"/>
-              <path d="M100 84 Q70 110 60 160 Q70 180 100 175 Q130 180 140 160 Q130 110 100 84Z" fill="#F7F3EB"/>
-              <circle cx="100" cy="140" r="50" stroke="#F7F3EB" stroke-width="2" fill="none" opacity="0.6"/>
-              <circle cx="100" cy="140" r="70" stroke="#F7F3EB" stroke-width="2" fill="none" opacity="0.3"/>
-            </svg>
+      <a href="accompagnement.html" class="practice-card reveal reveal-delay-3">
+        <div class="practice-visual">
+          <div class="practice-circles pv-3">
+            <span class="pc pc-a"></span>
+            <span class="pc pc-b"></span>
+            <span class="pc pc-c"></span>
           </div>
+          <span class="practice-number">03</span>
         </div>
-        <div class="discipline-content">
-          <div class="discipline-tag">Discipline 03</div>
-          <h3 class="discipline-name">Sophrologie</h3>
-          <p class="discipline-desc">Respiration consciente, relaxation profonde, ancrage — pour le sommeil, le stress, la confiance.</p>
-          <span class="discipline-link">Découvrir <span class="arrow">→</span></span>
+        <div class="practice-content">
+          <span class="practice-tag">Pratique · 03</span>
+          <h3 class="practice-name">Accompagnement personnalisé</h3>
+          <p class="practice-desc">La boîte à outils : De Gasquet, chaînes musculaires, sophrologie, respiration, éducation corporelle. Pour le mal de dos, le stress, la péri-ménopause, la reprise d'activité.</p>
+          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
         </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- SIGNATURE -->
-<section class="signature" id="sophrolates-teaser">
+<!-- SIGNATURE (Sophrolates) -->
+<section class="signature">
+  <div class="signature-circles-bg" aria-hidden="true" data-parallax="0.15"></div>
   <div class="container">
     <div class="signature-grid">
       <div class="reveal">
-        <div class="eyebrow signature-eyebrow">Le Sophrolates ©</div>
-        <h2 class="h-2">Le Pilates<br><em>en conscience</em></h2>
-        <p class="signature-text">
-          Une méthode signature qui fusionne les principes de la sophrologie — centrage, lâcher-prise, relaxation — avec les bénéfices du Pilates : renforcement profond, correction posturale et fluidité du mouvement. Chaque séance se déroule en trois phases.
+        <div class="eyebrow signature-eyebrow">Ma prestation signature</div>
+        <h2 class="h-2">Sophrolates,<br><em>le corps et l'esprit</em></h2>
+        <p class="signature-text italic">
+          Quand le Pilates rencontre la sophrologie, le mouvement devient méditation et la respiration devient guide.
         </p>
-        <ol class="phases">
-          <li class="phase">
-            <span class="phase-num">01</span>
-            <div>
-              <div class="phase-title">Centrage initial</div>
-              <p class="phase-text">Exercices de respiration et prise de conscience corporelle pour ancrer la séance et installer le calme.</p>
-            </div>
-          </li>
-          <li class="phase">
-            <span class="phase-num">02</span>
-            <div>
-              <div class="phase-title">Pilates principal</div>
-              <p class="phase-text">Travail postural, renforcement musculaire profond, mouvements maîtrisés et fluides pour équilibrer la silhouette.</p>
-            </div>
-          </li>
-          <li class="phase">
-            <span class="phase-num">03</span>
-            <div>
-              <div class="phase-title">Pause finale</div>
-              <p class="phase-text">Intégration des bénéfices et détente — un retour au quotidien plus apaisé, plus aligné.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-      <div class="signature-visual reveal reveal-delay-2" aria-hidden="true">
-        <div class="signature-visual-icon">
-          <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="60" r="22" fill="#D4C5A8"/>
-            <path d="M100 84 Q72 112 64 168 Q82 184 100 178 Q118 184 136 168 Q128 112 100 84Z" fill="#D4C5A8"/>
-            <ellipse cx="60" cy="220" rx="50" ry="18" fill="#D4C5A8"/>
-            <ellipse cx="140" cy="220" rx="50" ry="18" fill="#D4C5A8"/>
-            <circle cx="100" cy="120" r="80" stroke="#D4C5A8" stroke-width="1.5" fill="none" opacity="0.4"/>
-          </svg>
-        </div>
-        <div class="signature-visual-content">
-          <p class="signature-visual-quote">"Le mouvement comme méditation, la respiration comme guide."</p>
-          <p class="signature-visual-cite">— Approche Sophrolates</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEOS TEASER -->
-<section class="videos-teaser">
-  <div class="container">
-    <div class="videos-teaser-grid">
-      <div class="reveal">
-        <div class="eyebrow">En vidéo</div>
-        <h2 class="h-2 mt-2">Découvrez la <em>méthode</em></h2>
-        <p class="body-text mt-2">Des vidéos pour mieux comprendre le Pilates Classique, le Sophrolates et la Sophrologie au studio.</p>
-        <div class="mt-3">
-          <a href="videos.html" class="btn btn-outline">
-            Voir toutes les vidéos
+        <p class="signature-text">
+          C'est ma méthode signature — née de la conviction qu'un corps bien tenu ne suffit pas sans un mental apaisé, et qu'un mental apaisé ne tient pas dans un corps tendu. Travail respiratoire, gestion du stress, récupération, posture : tout est lié.
+        </p>
+        <div class="signature-actions">
+          <a href="sophrolates.html" class="btn btn-light btn-magnetic">Découvrir le Sophrolates</a>
+          <a href="contact.html" class="btn btn-ghost" style="color: var(--sage); border-color: var(--sage);">
+            Réserver une séance
             <span class="arrow">→</span>
           </a>
         </div>
       </div>
-      <!-- Featured video — replace data-video-id by real YouTube IDs -->
-      <div class="yt-lite reveal reveal-delay-1" data-video-id="dQw4w9WgXcQ" role="button" tabindex="0" aria-label="Lire la vidéo de présentation du studio">
-        <img class="yt-thumb" alt="Présentation Move and Breathe Lille" loading="lazy">
-        <div class="yt-play-btn" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      <div class="signature-visual reveal reveal-delay-2" aria-hidden="true">
+        <div class="signature-visual-circles">
+          <span class="pc pc-a"></span>
+          <span class="pc pc-b"></span>
+          <span class="pc pc-c"></span>
+        </div>
+        <div class="signature-visual-quote">
+          "Une heure pour soi qui change toute la semaine."
+          <div class="signature-visual-cite">— Élève Sophrolates</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ACCOMPAGNEMENT TEASER -->
+<section class="accomp-teaser">
+  <div class="container">
+    <div class="accomp-teaser-grid">
+      <div class="reveal">
+        <div class="eyebrow">L'accompagnement</div>
+        <h2 class="h-2 mt-2">Une <em>boîte à outils</em>,<br>pas une méthode unique</h2>
+        <p class="body-text mt-3">
+          Selon votre histoire, vos douleurs, vos objectifs et le moment de votre vie, je combine plusieurs approches — toutes complémentaires, toutes au service de votre corps.
+        </p>
+        <a href="accompagnement.html" class="btn btn-outline mt-4">
+          Voir tous les accompagnements
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="caption">Accompagnements spécifiques</p>
+        <div class="accomp-tags">
+          <div class="accomp-tag">Mal de dos &amp; lombalgies</div>
+          <div class="accomp-tag">Stress &amp; anxiété</div>
+          <div class="accomp-tag">Reprise d'activité</div>
+          <div class="accomp-tag">Péri-ménopause &amp; ménopause</div>
+          <div class="accomp-tag">Amélioration de la posture</div>
+          <div class="accomp-tag">Prévention des douleurs</div>
+          <div class="accomp-tag">Post-partum</div>
+          <div class="accomp-tag">Récupération sportive</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
 <section class="testimonials">
   <div class="container">
     <div class="section-head center reveal">
@@ -1050,10 +1101,35 @@
           <div class="testimonial-avatar">G</div>
           <div>
             <div class="testimonial-name">Avis Google</div>
-            <div class="testimonial-meta">Élève Mat'class</div>
+            <div class="testimonial-meta">Élève Mat Class</div>
           </div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO DIGITAL TEASER -->
+<section class="digital-teaser">
+  <div class="container">
+    <div class="digital-grid">
+      <div class="reveal">
+        <span class="digital-pill">Bientôt — Studio Digital</span>
+        <h2 class="h-2">Le studio,<br><em>aussi chez vous</em></h2>
+        <p class="body-text mt-3">
+          Une bibliothèque de vidéos à la demande, des séances thématiques, un accès continu — pour pratiquer pendant les vacances, en complément du studio, ou à votre rythme depuis chez vous. Le Studio Digital arrive prochainement.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <ul class="digital-features">
+          <li class="digital-feature">Vidéos à la demande</li>
+          <li class="digital-feature">Séances thématiques</li>
+          <li class="digital-feature">Accès pendant les vacances</li>
+          <li class="digital-feature">Pratique à domicile</li>
+          <li class="digital-feature">Niveaux progressifs</li>
+          <li class="digital-feature">Complément du studio</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -1063,8 +1139,8 @@
   <div class="container">
     <div class="cta-final-inner reveal">
       <div class="eyebrow center">Prendre contact</div>
-      <h2 class="h-1">Réservez votre<br><em>séance</em></h2>
-      <p class="cta-final-text">Pour les tarifs détaillés, les abonnements ou pour réserver votre séance, contactez le studio directement.</p>
+      <h2 class="h-1">On en <em>parle</em> ?</h2>
+      <p class="cta-final-text">Le mieux pour démarrer : une séance découverte à 15 € en Mat Class, ou un bilan individuel à 45 €. Et pour toute question, un simple coup de fil suffit.</p>
       <div class="cta-options">
         <a href="tel:0610234560" class="cta-option">
           <div class="cta-option-label">Téléphone</div>
@@ -1079,7 +1155,7 @@
           <div class="cta-option-value">19 av. Gustave Delory<br>59100 Roubaix</div>
         </a>
       </div>
-      <a href="contact.html" class="btn btn-primary">
+      <a href="contact.html" class="btn btn-primary btn-magnetic">
         Formulaire de contact
         <span class="arrow">→</span>
       </a>
@@ -1095,8 +1171,18 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">Move <em>and</em> Breathe Lille</div>
-        <p class="footer-tagline">Studio de Pilates Classique et Sophrolates à Roubaix Barbieux, à 100m du Parc Barbieux.</p>
+        <a href="index.html" class="logo-mark">
+          <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
+            <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
+            <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
+          </svg>
+          <span class="logo-mark-text">
+            <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
+            <span class="logo-mark-sub">Pilates Studio</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Studio de Pilates à Roubaix Barbieux. Approche personnalisée corps-esprit, par Coralie Delahaye.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5.9.5.5.7.9.9 1.5.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.5-.5.5-.9.7-1.5.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-.9-.5-.5-.7-.9-.9-1.5-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.5.5-.5.9-.7 1.5-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.6-.1 4.8-.1zm0 5.4a4.4 4.4 0 100 8.8 4.4 4.4 0 000-8.8zm0 7.2a2.8 2.8 0 110-5.6 2.8 2.8 0 010 5.6zm5.6-7.4a1 1 0 11-2.1 0 1 1 0 012.1 0z"/></svg>
@@ -1109,19 +1195,19 @@
       <div>
         <div class="footer-col-title">Studio</div>
         <ul class="footer-links">
-          <li><a href="a-propos.html">Qui suis-je</a></li>
-          <li><a href="services.html#methode">La méthode</a></li>
-          <li><a href="services.html">Disciplines</a></li>
-          <li><a href="services.html#tarifs">Horaires &amp; Tarifs</a></li>
+          <li><a href="le-studio.html">Le Studio</a></li>
+          <li><a href="le-studio.html#parcours">Mon parcours</a></li>
+          <li><a href="le-studio.html#philosophie">Ma philosophie</a></li>
+          <li><a href="le-studio.html#lieu">Le lieu</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Disciplines</div>
+        <div class="footer-col-title">Pratiques</div>
         <ul class="footer-links">
-          <li><a href="services.html#pilates">Pilates Classique</a></li>
-          <li><a href="services.html#sophrolates">Sophrolates</a></li>
-          <li><a href="services.html#sophrologie">Sophrologie</a></li>
-          <li><a href="services.html#at-work">At Work !</a></li>
+          <li><a href="pilates.html">Pilates</a></li>
+          <li><a href="sophrolates.html">Sophrolates</a></li>
+          <li><a href="accompagnement.html">Accompagnement</a></li>
+          <li><a href="tarifs.html">Tarifs &amp; Planning</a></li>
         </ul>
       </div>
       <div>
@@ -1135,7 +1221,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Move and Breathe Lille — Coralie Delahaye</span>
+      <span>© <span data-year>2026</span> Move and Breathe Pilates Studio — Coralie Delahaye</span>
       <span>Site réalisé par <a href="https://mapa-developpement.fr" target="_blank" rel="noopener">Mapa Développement</a></span>
     </div>
   </div>

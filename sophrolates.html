@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophrolates — La prestation signature · Move and Breathe Pilates Studio</title>
+<meta name="description" content="Sophrolates, l'alliance du Pilates et de la sophrologie. Travail du corps et du mental, respiration, gestion du stress, récupération. La méthode signature de Coralie Delahaye au studio Move and Breathe à Roubaix.">
+<meta name="keywords" content="sophrolates, pilates sophrologie, méthode signature Coralie Delahaye, gestion stress mouvement, respiration pilates">
+<link rel="canonical" href="https://moveandbreathelille.fr/sophrolates.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sophrolates — Move and Breathe Pilates Studio">
+<meta property="og:description" content="La prestation signature : l'alliance du Pilates et de la sophrologie, pour le corps et le mental.">
+<meta property="og:url" content="https://moveandbreathelille.fr/sophrolates.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  /* Sophrolates header style override */
+  .page-header.sophrolates-header {
+    background: var(--teal-deep);
+    color: var(--cream);
+  }
+  .page-header.sophrolates-header::before {
+    background-image: radial-gradient(circle at 1px 1px, rgba(220, 227, 214, 0.06) 1px, transparent 0);
+  }
+  .page-header.sophrolates-header::after {
+    background:
+      radial-gradient(circle at 50% 30%, var(--sage-deep) 0%, transparent 26%),
+      radial-gradient(circle at 32% 65%, var(--sage) 0%, transparent 26%),
+      radial-gradient(circle at 68% 65%, var(--sage-pale) 0%, transparent 26%);
+    opacity: 0.22;
+  }
+  .page-header.sophrolates-header .breadcrumb,
+  .page-header.sophrolates-header .breadcrumb a { color: var(--sage); }
+  .page-header.sophrolates-header .breadcrumb-sep { color: rgba(220, 227, 214, 0.4); }
+  .page-header.sophrolates-header .eyebrow { color: var(--sage); }
+  .page-header.sophrolates-header .eyebrow::before { background: var(--sage); }
+  .page-header.sophrolates-header .h-mega { color: var(--cream); }
+  .page-header.sophrolates-header .h-mega em { color: var(--sage); }
+  .page-header.sophrolates-header .lede { color: rgba(220, 227, 214, 0.85); }
+
+  /* ==== POETIC INTRO ==== */
+  .poetic {
+    background: var(--cream);
+    padding: clamp(5rem, 10vw, 9rem) 0;
+    text-align: center;
+    position: relative;
+  }
+  .poetic-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .poetic-line {
+    font-family: var(--serif);
+    font-weight: 300;
+    color: var(--teal-deep);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+  .poetic-line.l1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  .poetic-line.l2 {
+    font-style: italic;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--teal);
+  }
+  .poetic-divider {
+    display: inline-block;
+    width: 60px; height: 1px;
+    background: var(--sage-deep);
+    margin: 2.5rem 0 2rem;
+  }
+  .poetic-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+
+  /* ==== ALLIANCE — the two domains coming together ==== */
+  .alliance {
+    background: var(--cream-soft);
+    padding: clamp(5rem, 9vw, 8rem) 0;
+  }
+  .alliance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+    max-width: 1100px;
+    margin: 4rem auto 0;
+  }
+  .alliance-card {
+    background: var(--cream);
+    border: 1px solid var(--beige);
+    border-radius: 2px;
+    padding: clamp(2rem, 3vw, 2.5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  .alliance-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--sage-deep);
+  }
+  .alliance-card.b::before { background: var(--teal); }
+  .alliance-card-pill {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+  }
+  .alliance-card h3 {
+    font-family: var(--serif);
+    font-size: 1.85rem;
+    font-weight: 400;
+    color: var(--teal-deep);
+    margin-bottom: 1.25rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .alliance-card h3 em { font-style: italic; color: var(--teal); }
+  .alliance-card p {
+    font-size: 0.93rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .alliance-vs {
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 760px;
+  }
+  .alliance-vs-line {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    color: var(--teal-deep);
+    line-height: 1.3;
+  }
+  .alliance-vs-line em { color: var(--teal); font-weight: 500; }
+
+  /* ==== PHASES ==== */
+  .phases-section {
+    background: var(--teal-deep);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .phases-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(220, 227, 214, 0.05) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  .phases-circles-bg {
+    position: absolute;
+    top: -100px; right: -200px;
+    width: 600px; height: 600px;
+    background:
+      radial-gradient(circle at 50% 30%, var(--sage-deep) 0%, transparent 24%),
+      radial-gradient(circle at 32% 65%, var(--sage) 0%, transparent 24%),
+      radial-gradient(circle at 68% 65%, var(--sage-pale) 0%, transparent 24%);
+    opacity: 0.13;
+    pointer-events: none;
+  }
+  .phases-section .container { position: relative; z-index: 1; }
+  .phases-section .eyebrow { color: var(--sage); }
+  .phases-section .eyebrow::before { background: var(--sage); }
+  .phases-section h2 { color: var(--cream); margin: 1.5rem 0 2rem; }
+  .phases-section h2 em { color: var(--sage); }
+  .phases-section .lede { color: rgba(220, 227, 214, 0.75); }
+
+  .phases-list {
+    list-style: none;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .phase-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 1.4fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(220, 227, 214, 0.15);
+    align-items: center;
+  }
+  .phase-row:last-child { border-bottom: 1px solid rgba(220, 227, 214, 0.15); }
+  .phase-row-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 4rem;
+    color: var(--sage);
+    line-height: 1;
+    font-weight: 300;
+  }
+  .phase-row-title {
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .phase-row-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: rgba(220, 227, 214, 0.85);
+  }
+
+  /* ==== EFFETS / BÉNÉFICES ==== */
+  .benefits {
+    background: var(--cream);
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+  }
+  .benefit {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .benefit-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--teal);
+    line-height: 1;
+    padding-top: 0.25rem;
+  }
+  .benefit h4 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--teal-deep);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.005em;
+  }
+  .benefit p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  /* ==== TESTIMONIAL FOCUS ==== */
+  .testimonial-focus {
+    background: var(--beige);
+    padding: clamp(5rem, 9vw, 8rem) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonial-focus::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(30, 72, 71, 0.08) 1px, transparent 0);
+    background-size: 30px 30px;
+  }
+  .testimonial-focus .container { position: relative; z-index: 1; }
+  .testimonial-focus-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .testimonial-focus-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 5rem;
+    color: var(--teal);
+    line-height: 1;
+    opacity: 0.6;
+  }
+  .testimonial-focus-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    line-height: 1.45;
+    color: var(--teal-deep);
+    margin: 1.5rem 0 2rem;
+    letter-spacing: -0.005em;
+  }
+  .testimonial-focus-cite {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+  }
+
+  /* ==== CTA ==== */
+  .sophrolates-cta {
+    background: var(--cream-soft);
+    text-align: center;
+  }
+  .sophrolates-cta-inner { max-width: 680px; margin: 0 auto; }
+  .sophrolates-cta h2 { margin: 1.5rem 0 1.75rem; }
+  .sophrolates-cta-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 2.5rem;
+  }
+  .sophrolates-cta-actions {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 980px) {
+    .alliance-grid { grid-template-columns: 1fr; }
+    .phase-row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+    .phase-row-num { font-size: 3rem; }
+    .benefits-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Sophrolates",
+  "provider": {
+    "@type":"HealthAndBeautyBusiness",
+    "name":"Move and Breathe Pilates Studio"
+  },
+  "description": "Sophrolates : méthode signature alliant Pilates et sophrologie. Travail du corps et du mental, respiration, gestion du stress, récupération."
+}
+</script>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-mark" aria-label="Move and Breathe Pilates Studio">
+      <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
+        <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
+        <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
+      </svg>
+      <span class="logo-mark-text">
+        <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
+        <span class="logo-mark-sub">Pilates Studio</span>
+      </span>
+    </a>
+    <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="le-studio.html">Le Studio</a></li>
+      <li><a href="pilates.html">Pilates</a></li>
+      <li><a href="sophrolates.html">Sophrolates</a></li>
+      <li><a href="accompagnement.html">Accompagnement</a></li>
+      <li><a href="tarifs.html">Tarifs &amp; Planning</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HEADER (dark) -->
+<header class="page-header sophrolates-header">
+  <div class="container">
+    <div class="page-header-inner reveal">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Sophrolates</span>
+      </div>
+      <div class="eyebrow">Ma prestation signature</div>
+      <h1 class="h-mega mt-2">
+        Quand le corps<br>
+        et l'esprit<br>
+        <em>respirent ensemble.</em>
+      </h1>
+      <p class="lede mt-3">
+        Sophrolates — l'alliance du Pilates et de la sophrologie. Né de la conviction qu'un corps fort ne suffit pas sans un mental apaisé, et qu'un mental apaisé ne tient pas dans un corps tendu.
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- POETIC INTRO -->
+<section class="poetic">
+  <div class="container">
+    <div class="poetic-inner">
+      <p class="poetic-line l1 split-text">Bouger pour relâcher.</p>
+      <p class="poetic-line l2 split-text">Respirer pour habiter.</p>
+      <span class="poetic-divider reveal"></span>
+      <p class="poetic-text scroll-reveal-text">
+        Le Sophrolates est né d'une évidence : la séance la plus complète n'est pas celle qui renforce le plus de muscles, mais celle qui nous laisse, à la fin, plus aligné·e dans son corps, plus apaisé·e dans sa tête, plus relié·e à soi.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ALLIANCE -->
+<section class="alliance">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Une alliance, pas une juxtaposition</div>
+      <h2 class="h-2 mt-2">Deux disciplines,<br>une seule <em>expérience</em></h2>
+      <p class="lede mt-2">Le Sophrolates n'est pas du Pilates "avec un peu de relax à la fin". C'est une méthode pensée, structurée, où chaque discipline nourrit l'autre.</p>
+    </div>
+
+    <div class="alliance-grid">
+      <div class="alliance-card a reveal reveal-delay-1">
+        <div class="alliance-card-pill">Pilates</div>
+        <h3>Le corps qui se <em>construit</em></h3>
+        <p>Renforcement profond, conscience posturale, mobilité articulaire, gainage. Le Pilates donne au corps les fondations dont il a besoin — précis, contrôlé, exigeant.</p>
+        <p>Il agit sur la structure : les muscles profonds, l'alignement, la stabilité, la qualité du mouvement.</p>
+      </div>
+      <div class="alliance-card b reveal reveal-delay-2">
+        <div class="alliance-card-pill">Sophrologie</div>
+        <h3>L'esprit qui se <em>libère</em></h3>
+        <p>Respiration consciente, relaxation dynamique, ancrage corporel, visualisation. La sophrologie installe le calme, régule le système nerveux, libère les tensions invisibles.</p>
+        <p>Elle agit sur le souffle, l'attention, la qualité de présence à soi-même.</p>
+      </div>
+    </div>
+
+    <div class="alliance-vs reveal">
+      <p class="alliance-vs-line">Ensemble, le mouvement devient méditation —<br>et la respiration, <em>une véritable thérapie</em>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHASES -->
+<section class="phases-section">
+  <div class="phases-circles-bg" aria-hidden="true" data-parallax="0.18"></div>
+  <div class="container">
+    <div class="reveal" style="max-width: 720px;">
+      <div class="eyebrow">Le déroulé d'une séance</div>
+      <h2 class="h-2">Trois temps,<br>une seule <em>respiration</em></h2>
+      <p class="lede">Chaque séance suit le même fil — pour que le corps sache ce qui vient, et que l'esprit s'autorise à lâcher.</p>
+    </div>
+
+    <ol class="phases-list">
+      <li class="phase-row reveal reveal-delay-1">
+        <span class="phase-row-num">01</span>
+        <div>
+          <div class="phase-row-title">Centrage</div>
+        </div>
+        <div class="phase-row-text">
+          On arrive. On dépose la journée. Quelques minutes de respiration consciente, d'ancrage corporel — pour quitter mentalement ce qui précède et ouvrir l'espace de la séance.
+        </div>
+      </li>
+      <li class="phase-row reveal reveal-delay-2">
+        <span class="phase-row-num">02</span>
+        <div>
+          <div class="phase-row-title">Mouvement Pilates</div>
+        </div>
+        <div class="phase-row-text">
+          Travail postural, renforcement profond, mobilité, fluidité. Mais toujours en respiration consciente — le mouvement ne quitte jamais le souffle. C'est ce qui change tout.
+        </div>
+      </li>
+      <li class="phase-row reveal reveal-delay-3">
+        <span class="phase-row-num">03</span>
+        <div>
+          <div class="phase-row-title">Pause d'intégration</div>
+        </div>
+        <div class="phase-row-text">
+          On laisse les bénéfices se déposer. Relaxation guidée, respiration profonde, ressentis. C'est ici que le corps imprime durablement ce qu'il vient d'apprendre.
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Ce que le Sophrolates change</div>
+      <h2 class="h-2 mt-2">Pour le corps,<br>pour la tête, <em>pour le souffle</em></h2>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit reveal reveal-delay-1">
+        <span class="benefit-num">01</span>
+        <div>
+          <h4>Gestion du stress</h4>
+          <p>Le système nerveux apprend à se réguler. Le stress chronique recule. On gagne en patience, en calme, en discernement face aux situations difficiles.</p>
+        </div>
+      </div>
+      <div class="benefit reveal reveal-delay-2">
+        <span class="benefit-num">02</span>
+        <div>
+          <h4>Qualité de sommeil</h4>
+          <p>Le souffle s'apaise. La tension du jour s'évacue. Beaucoup d'élèves rapportent un endormissement plus rapide et un sommeil plus profond dès les premières semaines.</p>
+        </div>
+      </div>
+      <div class="benefit reveal reveal-delay-1">
+        <span class="benefit-num">03</span>
+        <div>
+          <h4>Conscience du corps</h4>
+          <p>Le mouvement et la respiration éveillent ensemble une présence corporelle plus fine. On habite mieux son corps, dans la séance et au quotidien.</p>
+        </div>
+      </div>
+      <div class="benefit reveal reveal-delay-2">
+        <span class="benefit-num">04</span>
+        <div>
+          <h4>Récupération profonde</h4>
+          <p>Pas un cours qui épuise — une séance dont on ressort plus disponible, plus solide. C'est la régularité qui transforme : on prend le temps, on en retire l'énergie.</p>
+        </div>
+      </div>
+      <div class="benefit reveal reveal-delay-1">
+        <span class="benefit-num">05</span>
+        <div>
+          <h4>Posture &amp; respiration liées</h4>
+          <p>On découvre qu'une posture juste libère le souffle, et qu'un souffle libre soutient la posture. Le travail devient cohérent — plus rien ne tire dans le mauvais sens.</p>
+        </div>
+      </div>
+      <div class="benefit reveal reveal-delay-2">
+        <span class="benefit-num">06</span>
+        <div>
+          <h4>Confiance dans le mouvement</h4>
+          <p>On retrouve la confiance dans son corps — particulièrement précieux après une blessure, une maternité, une période de fatigue ou de vie compliquée.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL FOCUS -->
+<section class="testimonial-focus">
+  <div class="container">
+    <div class="testimonial-focus-inner reveal">
+      <span class="testimonial-focus-mark" aria-hidden="true">“</span>
+      <p class="testimonial-focus-text">Les séances de Sophrolates sont un vrai moment pour soi. Je repars apaisée, alignée, et plus forte physiquement. Une méthode unique.</p>
+      <p class="testimonial-focus-cite">— Élève Sophrolates · Avis Facebook</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sophrolates-cta">
+  <div class="container">
+    <div class="sophrolates-cta-inner reveal">
+      <div class="eyebrow center">Essayer le Sophrolates</div>
+      <h2 class="h-1">Une heure pour soi<br>qui <em>change la semaine</em></h2>
+      <p class="sophrolates-cta-text">
+        Le Sophrolates se vit plus qu'il ne se décrit. Deux créneaux collectifs chaque semaine — le mardi à 18h30 et le mercredi à 19h — ou en séance individuelle sur rendez-vous.
+      </p>
+      <div class="sophrolates-cta-actions">
+        <a href="contact.html" class="btn btn-primary btn-magnetic">Réserver une séance Sophrolates</a>
+        <a href="tarifs.html" class="btn btn-outline">
+          Voir tarifs &amp; planning
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo-mark">
+          <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
+            <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
+            <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
+          </svg>
+          <span class="logo-mark-text">
+            <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
+            <span class="logo-mark-sub">Pilates Studio</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Studio de Pilates à Roubaix Barbieux. Approche personnalisée corps-esprit, par Coralie Delahaye.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5.9.5.5.7.9.9 1.5.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.5-.5.5-.9.7-1.5.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-.9-.5-.5-.7-.9-.9-1.5-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.5.5-.5.9-.7 1.5-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.6-.1 4.8-.1zm0 5.4a4.4 4.4 0 100 8.8 4.4 4.4 0 000-8.8zm0 7.2a2.8 2.8 0 110-5.6 2.8 2.8 0 010 5.6zm5.6-7.4a1 1 0 11-2.1 0 1 1 0 012.1 0z"/></svg>
+          </a>
+          <a href="mailto:contact@moveandbreathelille.fr" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Studio</div>
+        <ul class="footer-links">
+          <li><a href="le-studio.html">Le Studio</a></li>
+          <li><a href="le-studio.html#parcours">Mon parcours</a></li>
+          <li><a href="le-studio.html#philosophie">Ma philosophie</a></li>
+          <li><a href="le-studio.html#lieu">Le lieu</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Pratiques</div>
+        <ul class="footer-links">
+          <li><a href="pilates.html">Pilates</a></li>
+          <li><a href="sophrolates.html">Sophrolates</a></li>
+          <li><a href="accompagnement.html">Accompagnement</a></li>
+          <li><a href="tarifs.html">Tarifs &amp; Planning</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:0610234560">06 10 23 45 60</a></li>
+          <li><a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="contact.html">19 av. Gustave Delory, Roubaix</a></li>
+          <li><a href="contact.html#access">Plan d'accès</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Move and Breathe Pilates Studio — Coralie Delahaye</span>
+      <span>Site réalisé par <a href="https://mapa-developpement.fr" target="_blank" rel="noopener">Mapa Développement</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

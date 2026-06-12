@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Move and Breathe Lille · Studio Pilates Roubaix Barbieux</title>
+<title>Contact — Move and Breathe Pilates Studio · Roubaix Barbieux</title>
 <meta name="description" content="Contactez le studio Move and Breathe à Roubaix Barbieux. Téléphone 06 10 23 45 60, email contact@moveandbreathelille.fr, formulaire en ligne. 19 av. Gustave Delory, 59100 Roubaix. Métro 2 Croix Mairie, Tram Parc Barbieux.">
 <meta name="keywords" content="contact pilates Roubaix, contact sophrologie Lille, studio Roubaix Barbieux, prendre rendez-vous pilates">
 <link rel="canonical" href="https://moveandbreathelille.fr/contact.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Contact — Move and Breathe Lille">
-<meta property="og:description" content="Studio de Pilates Classique et Sophrolates à Roubaix Barbieux. Contact, accès, horaires.">
+<meta property="og:title" content="Contact — Move and Breathe Pilates Studio">
+<meta property="og:description" content="Studio de Pilates à Roubaix Barbieux. Contact, accès, horaires.">
 <meta property="og:url" content="https://moveandbreathelille.fr/contact.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -33,8 +33,8 @@
 
   /* Form column */
   .contact-form-wrap {
-    background: var(--ivory);
-    border: 1px solid var(--cream-deep);
+    background: var(--cream);
+    border: 1px solid var(--beige);
     border-radius: 2px;
     padding: clamp(2rem, 4vw, 3rem);
   }
@@ -53,7 +53,7 @@
     line-height: 1.55;
     margin-top: 1.25rem;
     padding-top: 1.25rem;
-    border-top: 1px solid var(--cream-deep);
+    border-top: 1px solid var(--beige);
   }
   .form-status {
     display: none;
@@ -74,14 +74,14 @@
     gap: 1.25rem;
   }
   .contact-info-card {
-    background: var(--ivory);
-    border: 1px solid var(--cream-deep);
+    background: var(--cream);
+    border: 1px solid var(--beige);
     border-radius: 2px;
     padding: 1.85rem 1.75rem;
     transition: all 0.3s var(--ease);
   }
   .contact-info-card:hover {
-    border-color: var(--sand);
+    border-color: var(--sage-deep);
     transform: translateY(-2px);
   }
   .contact-info-card.dark {
@@ -95,7 +95,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(247, 243, 235, 0.05) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(220, 227, 214, 0.05) 1px, transparent 0);
     background-size: 28px 28px;
   }
   .contact-info-card.dark > * { position: relative; }
@@ -111,8 +111,8 @@
   }
   .contact-info-icon svg { width: 16px; height: 16px; }
   .contact-info-card.dark .contact-info-icon {
-    background: rgba(212, 197, 168, 0.18);
-    color: var(--sand);
+    background: rgba(191, 213, 207, 0.2);
+    color: var(--sage);
   }
   .contact-info-label {
     font-size: 0.66rem;
@@ -121,27 +121,26 @@
     color: var(--teal);
     margin-bottom: 0.5rem;
   }
-  .contact-info-card.dark .contact-info-label { color: var(--sand); }
+  .contact-info-card.dark .contact-info-label { color: var(--sage); }
   .contact-info-value {
     font-family: var(--serif);
     font-size: 1.35rem;
     font-weight: 400;
-    color: var(--ink);
+    color: var(--teal-deep);
     line-height: 1.35;
     letter-spacing: -0.005em;
   }
   .contact-info-card.dark .contact-info-value { color: var(--cream); }
   .contact-info-value em { font-style: italic; color: var(--teal); }
-  .contact-info-card.dark .contact-info-value em { color: var(--sand); }
+  .contact-info-card.dark .contact-info-value em { color: var(--sage); }
   .contact-info-meta {
     font-size: 0.85rem;
     color: var(--ink-mute);
     margin-top: 0.5rem;
     line-height: 1.5;
   }
-  .contact-info-card.dark .contact-info-meta { color: rgba(247, 243, 235, 0.55); }
+  .contact-info-card.dark .contact-info-meta { color: rgba(220, 227, 214, 0.6); }
 
-  /* Mini schedule in sidebar */
   .schedule-mini {
     list-style: none;
     display: flex;
@@ -155,17 +154,17 @@
     align-items: center;
     padding: 0.35rem 0;
     font-size: 0.85rem;
-    border-bottom: 1px solid rgba(247, 243, 235, 0.08);
+    border-bottom: 1px solid rgba(220, 227, 214, 0.08);
   }
   .schedule-mini li:last-child { border-bottom: none; }
   .schedule-mini-day {
-    color: rgba(247, 243, 235, 0.7);
+    color: rgba(220, 227, 214, 0.7);
     letter-spacing: 0.05em;
   }
   .schedule-mini-hours {
     font-family: var(--serif);
     font-style: italic;
-    color: var(--sand);
+    color: var(--sage);
   }
 
   /* ==== ACCESS / MAP ==== */
@@ -187,7 +186,7 @@
     gap: 1.5rem;
     margin-top: 2.5rem;
     padding-top: 2rem;
-    border-top: 1px solid var(--sand-line);
+    border-top: 1px solid var(--beige-deep);
   }
   .access-item {
     display: grid;
@@ -209,7 +208,7 @@
     font-family: var(--serif);
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--ink);
+    color: var(--teal-deep);
     margin-bottom: 0.25rem;
   }
   .access-item-text {
@@ -218,14 +217,13 @@
     line-height: 1.6;
   }
 
-  /* Map */
   .map-wrap {
     aspect-ratio: 4/5;
     border-radius: 2px;
     overflow: hidden;
     position: relative;
-    background: var(--cream-deep);
-    border: 1px solid var(--cream-deep);
+    background: var(--beige);
+    border: 1px solid var(--beige-deep);
   }
   .map-wrap iframe {
     width: 100%;
@@ -255,7 +253,7 @@
     font-family: var(--serif);
     font-size: 1.2rem;
     font-weight: 400;
-    color: var(--ink);
+    color: var(--teal-deep);
     margin-bottom: 0.4rem;
     line-height: 1.25;
   }
@@ -267,7 +265,7 @@
 
   /* ==== FINAL CTA ==== */
   .contact-cta {
-    background: var(--ink);
+    background: var(--teal-deep);
     color: var(--cream);
     text-align: center;
     position: relative;
@@ -277,40 +275,38 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(247, 243, 235, 0.05) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(220, 227, 214, 0.05) 1px, transparent 0);
     background-size: 32px 32px;
   }
   .contact-cta .container { position: relative; z-index: 1; }
-  .contact-cta .eyebrow { color: var(--sand); }
-  .contact-cta .eyebrow::before { background: var(--sand); }
+  .contact-cta .eyebrow { color: var(--sage); }
+  .contact-cta .eyebrow::before { background: var(--sage); }
   .contact-cta h2 { color: var(--cream); margin: 1.5rem 0 1.5rem; }
-  .contact-cta h2 em { color: var(--sand); }
+  .contact-cta h2 em { color: var(--sage); }
   .contact-cta-text {
     font-family: var(--serif);
     font-style: italic;
     font-size: 1.15rem;
     line-height: 1.6;
-    color: rgba(247, 243, 235, 0.7);
+    color: rgba(220, 227, 214, 0.75);
     max-width: 540px;
     margin: 0 auto 2.5rem;
   }
 
-  @media (max-width: 900px) {
-    .contact-grid,
-    .access-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  @media (max-width: 980px) {
+    .contact-grid, .access-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>
 
-<!-- JSON-LD: ContactPage -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Contact Move and Breathe Lille",
+  "name": "Contact Move and Breathe Pilates Studio",
   "url": "https://moveandbreathelille.fr/contact.html",
   "about": {
     "@type": "HealthAndBeautyBusiness",
-    "name": "Move and Breathe Lille",
+    "name": "Move and Breathe Pilates Studio",
     "telephone": "+33-6-10-23-45-60",
     "email": "contact@moveandbreathelille.fr",
     "address": {
@@ -331,15 +327,27 @@
 <!-- NAV -->
 <nav class="nav" aria-label="Navigation principale">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Move <em>and</em> Breathe Lille</a>
+    <a href="index.html" class="logo-mark" aria-label="Move and Breathe Pilates Studio">
+      <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
+        <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
+        <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
+      </svg>
+      <span class="logo-mark-text">
+        <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
+        <span class="logo-mark-sub">Pilates Studio</span>
+      </span>
+    </a>
     <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="a-propos.html">À propos</a></li>
-      <li><a href="services.html">Disciplines</a></li>
-      <li><a href="videos.html">Vidéos</a></li>
+      <li><a href="le-studio.html">Le Studio</a></li>
+      <li><a href="pilates.html">Pilates</a></li>
+      <li><a href="sophrolates.html">Sophrolates</a></li>
+      <li><a href="accompagnement.html">Accompagnement</a></li>
+      <li><a href="tarifs.html">Tarifs &amp; Planning</a></li>
       <li><a href="contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </div>
@@ -366,7 +374,7 @@
   </div>
 </header>
 
-<!-- MAIN: form + info -->
+<!-- MAIN -->
 <section class="contact-main">
   <div class="container">
     <div class="contact-grid">
@@ -395,12 +403,13 @@
             <div class="field">
               <label for="subject">Sujet</label>
               <select id="subject" name="subject">
-                <option value="Demande d'information">Demande d'information</option>
-                <option value="Réservation Pilates Classique">Réservation — Pilates Classique</option>
+                <option value="Séance découverte Mat Class (15€)">Séance découverte — Mat Class (15 €)</option>
+                <option value="Séance Bilan/Découverte (45€)">Séance Bilan/Découverte — Individuel (45 €)</option>
+                <option value="Séance découverte Duo (30€/pers)">Séance découverte — Duo (30 €/pers.)</option>
+                <option value="Réservation Mat Class">Réservation — Mat Class (collectif)</option>
                 <option value="Réservation Sophrolates">Réservation — Sophrolates</option>
-                <option value="Réservation Sophrologie">Réservation — Sophrologie</option>
-                <option value="Cours sur Reformer (individuel/duo)">Cours sur Reformer (individuel/duo)</option>
-                <option value="Programme entreprise At Work">Programme entreprise (At Work)</option>
+                <option value="Accompagnement personnalisé">Accompagnement personnalisé (solo ou duo)</option>
+                <option value="Demande d'information">Demande d'information</option>
                 <option value="Autre">Autre</option>
               </select>
             </div>
@@ -411,7 +420,7 @@
           </div>
 
           <div class="contact-form-actions">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary btn-magnetic">
               Envoyer ma demande
               <span class="arrow">→</span>
             </button>
@@ -423,7 +432,7 @@
           <div id="form-status" class="form-status"></div>
 
           <p class="contact-form-rgpd">
-            Les informations recueillies dans ce formulaire sont uniquement destinées à Move and Breathe Lille pour répondre à votre demande. Aucune donnée n'est partagée avec un tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression.
+            Les informations recueillies dans ce formulaire sont uniquement destinées à Move and Breathe Pilates Studio pour répondre à votre demande. Aucune donnée n'est partagée avec un tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression.
           </p>
         </form>
       </div>
@@ -431,7 +440,7 @@
       <!-- INFO -->
       <aside class="contact-info-stack reveal reveal-delay-2">
         <div class="contact-info-card">
-          <div class="contact-info-icon">
+          <div class="contact-info-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
           </div>
           <div class="contact-info-label">Téléphone</div>
@@ -440,7 +449,7 @@
         </div>
 
         <div class="contact-info-card">
-          <div class="contact-info-icon">
+          <div class="contact-info-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div class="contact-info-label">Email</div>
@@ -449,7 +458,7 @@
         </div>
 
         <div class="contact-info-card">
-          <div class="contact-info-icon">
+          <div class="contact-info-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </div>
           <div class="contact-info-label">Instagram</div>
@@ -458,7 +467,7 @@
         </div>
 
         <div class="contact-info-card">
-          <div class="contact-info-icon">
+          <div class="contact-info-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div class="contact-info-label">Adresse</div>
@@ -467,7 +476,7 @@
         </div>
 
         <div class="contact-info-card dark">
-          <div class="contact-info-icon">
+          <div class="contact-info-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="contact-info-label">Horaires</div>
@@ -479,7 +488,7 @@
             <li><span class="schedule-mini-day">Jeudi</span><span class="schedule-mini-hours">9h — 20h</span></li>
             <li><span class="schedule-mini-day">Vendredi</span><span class="schedule-mini-hours">9h — 18h</span></li>
             <li><span class="schedule-mini-day">Samedi</span><span class="schedule-mini-hours">9h — 12h</span></li>
-            <li><span class="schedule-mini-day">Dimanche</span><span class="schedule-mini-hours" style="color: rgba(247,243,235,0.3);">Fermé</span></li>
+            <li><span class="schedule-mini-day">Dimanche</span><span class="schedule-mini-hours" style="color: rgba(220,227,214,0.3);">Fermé</span></li>
           </ul>
         </div>
       </aside>
@@ -487,7 +496,7 @@
   </div>
 </section>
 
-<!-- ACCESS / MAP -->
+<!-- ACCESS -->
 <section class="access" id="access">
   <div class="container">
     <div class="access-grid">
@@ -540,12 +549,12 @@
       <div class="map-wrap reveal reveal-delay-1">
         <iframe
           src="https://www.openstreetmap.org/export/embed.html?bbox=3.1640%2C50.6750%2C3.1760%2C50.6850&amp;layer=mapnik&amp;marker=50.6800%2C3.1700"
-          title="Plan du studio Move and Breathe Lille"
+          title="Plan du studio Move and Breathe Pilates Studio"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="map-overlay">
           <div class="map-overlay-label">Studio</div>
-          <div class="map-overlay-name">Move and Breathe Lille</div>
+          <div class="map-overlay-name">Move and Breathe</div>
           <div class="map-overlay-addr">19 av. Gustave Delory<br>59100 Roubaix Barbieux</div>
         </div>
       </div>
@@ -562,7 +571,7 @@
       <p class="contact-cta-text">
         Quelques minutes par téléphone suffisent pour cerner ce qui vous conviendrait le mieux. N'hésitez pas — c'est le premier pas qui compte.
       </p>
-      <a href="tel:0610234560" class="btn btn-light">
+      <a href="tel:0610234560" class="btn btn-light btn-magnetic">
         Appeler le 06 10 23 45 60
       </a>
     </div>
@@ -574,8 +583,18 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">Move <em>and</em> Breathe Lille</div>
-        <p class="footer-tagline">Studio de Pilates Classique et Sophrolates à Roubaix Barbieux, à 100m du Parc Barbieux.</p>
+        <a href="index.html" class="logo-mark">
+          <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
+            <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
+            <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
+          </svg>
+          <span class="logo-mark-text">
+            <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
+            <span class="logo-mark-sub">Pilates Studio</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Studio de Pilates à Roubaix Barbieux. Approche personnalisée corps-esprit, par Coralie Delahaye.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5.9.5.5.7.9.9 1.5.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.5-.5.5-.9.7-1.5.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-.9-.5-.5-.7-.9-.9-1.5-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.5.5-.5.9-.7 1.5-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.6-.1 4.8-.1zm0 5.4a4.4 4.4 0 100 8.8 4.4 4.4 0 000-8.8zm0 7.2a2.8 2.8 0 110-5.6 2.8 2.8 0 010 5.6zm5.6-7.4a1 1 0 11-2.1 0 1 1 0 012.1 0z"/></svg>
@@ -588,19 +607,19 @@
       <div>
         <div class="footer-col-title">Studio</div>
         <ul class="footer-links">
-          <li><a href="a-propos.html">Qui suis-je</a></li>
-          <li><a href="services.html#methode">La méthode</a></li>
-          <li><a href="services.html">Disciplines</a></li>
-          <li><a href="services.html#tarifs">Horaires &amp; Tarifs</a></li>
+          <li><a href="le-studio.html">Le Studio</a></li>
+          <li><a href="le-studio.html#parcours">Mon parcours</a></li>
+          <li><a href="le-studio.html#philosophie">Ma philosophie</a></li>
+          <li><a href="le-studio.html#lieu">Le lieu</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Disciplines</div>
+        <div class="footer-col-title">Pratiques</div>
         <ul class="footer-links">
-          <li><a href="services.html#pilates">Pilates Classique</a></li>
-          <li><a href="services.html#sophrolates">Sophrolates</a></li>
-          <li><a href="services.html#sophrologie">Sophrologie</a></li>
-          <li><a href="services.html#at-work">At Work !</a></li>
+          <li><a href="pilates.html">Pilates</a></li>
+          <li><a href="sophrolates.html">Sophrolates</a></li>
+          <li><a href="accompagnement.html">Accompagnement</a></li>
+          <li><a href="tarifs.html">Tarifs &amp; Planning</a></li>
         </ul>
       </div>
       <div>
@@ -614,7 +633,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Move and Breathe Lille — Coralie Delahaye</span>
+      <span>© <span data-year>2026</span> Move and Breathe Pilates Studio — Coralie Delahaye</span>
       <span>Site réalisé par <a href="https://mapa-developpement.fr" target="_blank" rel="noopener">Mapa Développement</a></span>
     </div>
   </div>
