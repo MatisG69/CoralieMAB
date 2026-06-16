@@ -410,6 +410,109 @@
   });
 
   /* ============================================
+     AVIS — CAROUSEL
+     ============================================ */
+  const reviewsCarousel = document.querySelector('.reviews-carousel');
+  if (reviewsCarousel) {
+    const track = reviewsCarousel.querySelector('.reviews-track');
+    const cards = Array.from(track.querySelectorAll('.review-card'));
+    const prevBtn = reviewsCarousel.querySelector('.reviews-prev');
+    const nextBtn = reviewsCarousel.querySelector('.reviews-next');
+    const dotsWrap = document.querySelector('.reviews-dots');
+    let index = 0;
+
+    const perView = () => {
+      const w = window.innerWidth;
+      if (w <= 640) return 1;
+      if (w <= 980) return 2;
+      return 3;
+    };
+
+    const maxIndex = () => Math.max(0, cards.length - perView());
+
+    const buildDots = () => {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      const pages = maxIndex() + 1;
+      for (let i = 0; i < pages; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'reviews-dot' + (i === index ? ' active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Avis ' + (i + 1));
+        dot.addEventListener('click', () => { index = i; update(); });
+        dotsWrap.appendChild(dot);
+      }
+    };
+
+    const update = () => {
+      const mi = maxIndex();
+      if (index > mi) index = mi;
+      if (index < 0) index = 0;
+      const card = cards[0];
+      const style = getComputedStyle(card);
+      const cardW = card.offsetWidth + parseFloat(style.marginRight);
+      track.style.transform = `translateX(-${index * cardW}px)`;
+      if (prevBtn) prevBtn.disabled = index === 0;
+      if (nextBtn) nextBtn.disabled = index === mi;
+      if (dotsWrap) {
+        dotsWrap.querySelectorAll('.reviews-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === index);
+        });
+      }
+    };
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { index--; update(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { index++; update(); });
+
+    // Touch / swipe support
+    let startX = 0, isDragging = false;
+    reviewsCarousel.querySelector('.reviews-viewport').addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX; isDragging = true;
+    }, { passive: true });
+    reviewsCarousel.querySelector('.reviews-viewport').addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { diff > 0 ? index++ : index--; update(); }
+      isDragging = false;
+    }, { passive: true });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { buildDots(); update(); }, 200);
+    });
+
+    buildDots();
+    update();
+  }
+
+  /* ============================================
+     FAQ — Accordéon
+     ============================================ */
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach((item) => {
+    const q = item.querySelector('.faq-q');
+    if (!q) return;
+    q.setAttribute('aria-expanded', 'false');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      // Close siblings in the same list
+      const list = item.closest('.faq-list');
+      if (list) {
+        list.querySelectorAll('.faq-item.open').forEach((other) => {
+          if (other !== item) {
+            other.classList.remove('open');
+            const oq = other.querySelector('.faq-q');
+            if (oq) oq.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+      item.classList.toggle('open', !isOpen);
+      q.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+    });
+  });
+
+  /* ============================================
      YEAR IN FOOTER
      ============================================ */
   const yearEl = document.querySelector('[data-year]');

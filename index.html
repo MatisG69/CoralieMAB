@@ -17,7 +17,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swapdisplay=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -51,10 +51,10 @@
   .hero-eyebrow { margin-bottom: 2rem; }
   .hero-title {
     font-family: var(--serif);
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(2.6rem, 6vw, 5.8rem);
     line-height: 0.98;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.012em;
     color: var(--teal-deep);
     margin-bottom: 2rem;
   }
@@ -73,7 +73,7 @@
     color: var(--ink-soft);
     max-width: 460px;
     margin-bottom: 2.75rem;
-    font-weight: 300;
+    font-weight: 400;
   }
   .hero-actions {
     display: flex;
@@ -178,12 +178,12 @@
   }
   .manifesto h2 {
     font-family: var(--serif);
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(2rem, 4.5vw, 3.4rem);
     line-height: 1.18;
     color: var(--teal-deep);
     margin: 1.5rem 0 0;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.008em;
   }
   .manifesto h2 em { font-style: italic; color: var(--teal); font-weight: 400; }
   .manifesto-divider {
@@ -198,7 +198,7 @@
     font-size: clamp(1.15rem, 1.4vw, 1.35rem);
     line-height: 1.65;
     color: var(--ink-soft);
-    font-weight: 300;
+    font-weight: 400;
   }
   .manifesto-cite {
     margin-top: 2rem;
@@ -289,6 +289,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .practice-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-out);
+  }
+  .practice-card:hover .practice-visual img {
+    transform: scale(1.06);
+  }
+  .practice-number {
+    background: rgba(7, 41, 43, 0.45);
+    backdrop-filter: blur(6px);
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    color: var(--cream) !important;
+    opacity: 1 !important;
   }
   .practice-circles {
     position: relative;
@@ -427,36 +444,26 @@
   }
   .signature-visual {
     aspect-ratio: 4/5;
-    background: linear-gradient(155deg, var(--teal-deep) 0%, var(--teal) 100%);
+    background: var(--teal-deep);
     border-radius: 2px;
     overflow: hidden;
     position: relative;
     border: 1px solid rgba(220, 227, 214, 0.08);
   }
+  .signature-visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .signature-visual::after {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(circle at 30% 30%, rgba(191, 213, 207, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 70% 80%, rgba(0,0,0,0.3) 0%, transparent 50%);
+    background: linear-gradient(to top, rgba(7, 41, 43, 0.85) 0%, rgba(7, 41, 43, 0.1) 45%, transparent 70%);
+    z-index: 1;
   }
-  .signature-visual-circles {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%; aspect-ratio: 1;
-    opacity: 0.5;
-  }
-  .signature-visual-circles .pc {
-    position: absolute;
-    width: 62%; aspect-ratio: 1;
-    border-radius: 50%;
-    mix-blend-mode: screen;
-  }
-  .signature-visual-circles .pc-a { top: 0; left: 19%; background: var(--sage-deep); opacity: 0.5; }
-  .signature-visual-circles .pc-b { bottom: 0; left: 0; background: var(--sage); opacity: 0.5; }
-  .signature-visual-circles .pc-c { bottom: 0; right: 0; background: var(--sage-pale); opacity: 0.6; }
   .signature-visual-quote {
     position: absolute;
     bottom: 2rem; left: 2rem; right: 2rem;
@@ -558,7 +565,7 @@
     line-height: 1.65;
     color: var(--ink-soft);
     margin-bottom: 1.75rem;
-    font-weight: 300;
+    font-weight: 400;
   }
   .testimonial-author {
     display: flex;
@@ -738,6 +745,124 @@
     .cta-options { grid-template-columns: 1fr; }
     .digital-features { grid-template-columns: 1fr; }
   }
+  /* ==== AVIS — CAROUSEL ==== */
+  .reviews {
+    background: var(--cream);
+    padding: clamp(4rem, 8vw, 7rem) 0;
+  }
+  .reviews-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+  .reviews-stars { color: #E8B04B; letter-spacing: 0.1em; font-size: 1.1rem; }
+  .reviews-rating-text {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .reviews-carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  .reviews-viewport {
+    overflow: hidden;
+    flex: 1;
+  }
+  .reviews-track {
+    display: flex;
+    transition: transform 0.6s var(--ease);
+    will-change: transform;
+  }
+  .review-card {
+    flex: 0 0 calc((100% - 3rem) / 3);
+    margin-right: 1.5rem;
+    background: var(--cream-soft);
+    border: 1px solid var(--beige);
+    border-radius: 3px;
+    padding: 2rem 1.85rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+    box-sizing: border-box;
+  }
+  .review-stars { color: #E8B04B; letter-spacing: 0.08em; font-size: 0.95rem; margin-bottom: 1rem; }
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    flex: 1;
+    font-weight: 300;
+  }
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--beige);
+  }
+  .review-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .review-name { font-family: var(--serif); font-size: 1.05rem; color: var(--teal-deep); font-weight: 500; }
+  .review-meta { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); margin-top: 0.15rem; }
+  .reviews-arrow {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--beige-deep);
+    background: var(--cream-soft);
+    color: var(--teal);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s var(--ease);
+  }
+  .reviews-arrow svg { width: 22px; height: 22px; }
+  .reviews-arrow:hover { background: var(--teal); color: var(--cream); border-color: var(--teal); }
+  .reviews-arrow:disabled { opacity: 0.35; cursor: default; }
+  .reviews-arrow:disabled:hover { background: var(--cream-soft); color: var(--teal); border-color: var(--beige-deep); }
+  .reviews-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  .reviews-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--beige-deep);
+    cursor: pointer;
+    transition: all 0.3s var(--ease);
+    padding: 0;
+  }
+  .reviews-dot.active { background: var(--teal); width: 24px; border-radius: 4px; }
+
+  @media (max-width: 980px) {
+    .review-card { flex: 0 0 calc((100% - 1.5rem) / 2); }
+  }
+  @media (max-width: 640px) {
+    .review-card { flex: 0 0 100%; margin-right: 1rem; min-height: 0; }
+    .reviews-arrow { display: none; }
+  }
 </style>
 
 <script type="application/ld+json">
@@ -776,16 +901,8 @@
 <nav class="nav" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="logo-mark" aria-label="Move and Breathe Pilates Studio">
-      <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
-        <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
-        <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
-      </svg>
-      <span class="logo-mark-text">
-        <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
-        <span class="logo-mark-sub">Pilates Studio</span>
-      </span>
-    </a>
+        <img src="assets/img/logo-officiel.png" alt="Move and Breathe Pilates Studio" class="logo-img">
+      </a>
     <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -872,6 +989,108 @@
   </div>
 </div>
 
+<!-- AVIS — CAROUSEL -->
+<section class="reviews" id="avis">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Avis Google</div>
+      <h2 class="h-2 mt-2">Ce qu'elles disent<br>du <em>studio</em></h2>
+      <div class="reviews-rating reveal">
+        <span class="reviews-stars">★★★★★</span>
+        <span class="reviews-rating-text">5,0 — Avis vérifiés Google</span>
+      </div>
+    </div>
+
+    <div class="reviews-carousel reveal">
+      <button class="reviews-arrow reviews-prev" aria-label="Avis précédent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="reviews-viewport">
+        <div class="reviews-track">
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Coralie est un rayon de soleil. D'une positivité rare, elle sait rendre l'effort agréable et s'adapte à chaque morphologie afin que l'exercice soit pleinement profitable. Ses cours sont variés et évoluent au fil de l'année. Une personne chaleureuse, accueillante et bienveillante. L'essayer c'est l'adopter.</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <div class="review-name">Aurélie M.</div>
+                <div class="review-meta">Avis Google</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Coralie est adorable et très compétente. Je souffrais du dos et c'est ce qui m'a fait débuter cette discipline. Au bout de la cinquième séance c'était terminé, et avec une pratique régulière je me sens libérée. Franchement je recommande le Pilates et Coralie en particulier.</p>
+            <div class="review-author">
+              <div class="review-avatar">S</div>
+              <div>
+                <div class="review-name">Sophie L.</div>
+                <div class="review-meta">Avis Google</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Un très bon cours qui prend soin du corps et de l'esprit. Un temps pour soi agréable et bienfaisant. Coralie prend soin de nous en fonction de notre état, de nos douleurs (dos, genoux), mais aussi avec un vrai travail en profondeur. Topissime.</p>
+            <div class="review-author">
+              <div class="review-avatar">C</div>
+              <div>
+                <div class="review-name">Claire D.</div>
+                <div class="review-meta">Avis Google</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Je pratique le Pilates depuis deux ans avec Coralie et je suis ravie. Coralie est très compétente et les cours se déroulent de manière agréable. J'en retire beaucoup de satisfaction et de bénéfices au niveau musculaire et de la posture ; mon corps est plus tonique et plus fluide.</p>
+            <div class="review-author">
+              <div class="review-avatar">M</div>
+              <div>
+                <div class="review-name">Marie P.</div>
+                <div class="review-meta">Avis Google</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Coralie m'a fait découvrir les Sophrolates, une combinaison de Pilates et de Sophrologie, parfait pour moi qui souffre facilement du dos et qui suis tendue de nature. On ressent les bienfaits associés de ces deux pratiques. Je recommande particulièrement !</p>
+            <div class="review-author">
+              <div class="review-avatar">N</div>
+              <div>
+                <div class="review-name">Nathalie B.</div>
+                <div class="review-meta">Avis Google</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">Si vous cherchez un lieu pour prendre des cours de Pilates, foncez les yeux fermés chez Move and Breathe. Coralie est à l'écoute, vous accompagne en douceur et vous fait progresser séance après séance.</p>
+            <div class="review-author">
+              <div class="review-avatar">É</div>
+              <div>
+                <div class="review-name">Émilie R.</div>
+                <div class="review-meta">Avis Google</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <button class="reviews-arrow reviews-next" aria-label="Avis suivant">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="reviews-dots" role="tablist" aria-label="Navigation des avis"></div>
+  </div>
+</section>
+
 <!-- MANIFESTE -->
 <section class="manifesto">
   <div class="container">
@@ -940,11 +1159,7 @@
     <div class="practices-grid">
       <a href="pilates.html" class="practice-card reveal reveal-delay-1">
         <div class="practice-visual">
-          <div class="practice-circles pv-1">
-            <span class="pc pc-a"></span>
-            <span class="pc pc-b"></span>
-            <span class="pc pc-c"></span>
-          </div>
+          <img src="assets/img/pilates-tapis.jpg" alt="Cours de Pilates sur tapis" loading="lazy">
           <span class="practice-number">01</span>
         </div>
         <div class="practice-content">
@@ -957,11 +1172,7 @@
 
       <a href="sophrolates.html" class="practice-card reveal reveal-delay-2">
         <div class="practice-visual">
-          <div class="practice-circles pv-2">
-            <span class="pc pc-a"></span>
-            <span class="pc pc-b"></span>
-            <span class="pc pc-c"></span>
-          </div>
+          <img src="assets/img/sophrolates-relax.jpg" alt="Séance de Sophrolates, moment de relâchement" loading="lazy">
           <span class="practice-number">02</span>
         </div>
         <div class="practice-content">
@@ -974,11 +1185,7 @@
 
       <a href="accompagnement.html" class="practice-card reveal reveal-delay-3">
         <div class="practice-visual">
-          <div class="practice-circles pv-3">
-            <span class="pc pc-a"></span>
-            <span class="pc pc-b"></span>
-            <span class="pc pc-c"></span>
-          </div>
+          <img src="assets/img/accompagnement-bilan.jpg" alt="Accompagnement personnalisé et bilan" loading="lazy">
           <span class="practice-number">03</span>
         </div>
         <div class="practice-content">
@@ -1014,14 +1221,10 @@
           </a>
         </div>
       </div>
-      <div class="signature-visual reveal reveal-delay-2" aria-hidden="true">
-        <div class="signature-visual-circles">
-          <span class="pc pc-a"></span>
-          <span class="pc pc-b"></span>
-          <span class="pc pc-c"></span>
-        </div>
+      <div class="signature-visual reveal reveal-delay-2">
+        <img src="assets/img/pilates-machine.jpg" alt="Coralie en séance de Pilates accompagné au studio Move and Breathe" loading="lazy">
         <div class="signature-visual-quote">
-          "Une heure pour soi qui change toute la semaine."
+          Une heure pour soi qui change toute la semaine.
           <div class="signature-visual-cite">— Élève Sophrolates</div>
         </div>
       </div>
@@ -1057,54 +1260,6 @@
           <div class="accomp-tag">Récupération sportive</div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- AVIS -->
-<section class="testimonials">
-  <div class="container">
-    <div class="section-head center reveal">
-      <div class="eyebrow center">Avis Google &amp; Facebook</div>
-      <h2 class="h-2 mt-2">Ce qu'elles disent<br>du <em>studio</em></h2>
-    </div>
-    <div class="testimonials-grid">
-      <article class="testimonial reveal reveal-delay-1">
-        <span class="testimonial-quote-mark" aria-hidden="true">“</span>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">Coralie est une instructrice exceptionnelle. Bienveillance, rigueur et précision à chaque séance. Je recommande vivement.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">C</div>
-          <div>
-            <div class="testimonial-name">Avis Google</div>
-            <div class="testimonial-meta">Élève Pilates Reformer</div>
-          </div>
-        </div>
-      </article>
-      <article class="testimonial reveal reveal-delay-2">
-        <span class="testimonial-quote-mark" aria-hidden="true">“</span>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">Les séances de Sophrolates sont un vrai moment pour soi. Je repars apaisée, alignée, et plus forte physiquement. Une méthode unique.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">F</div>
-          <div>
-            <div class="testimonial-name">Avis Facebook</div>
-            <div class="testimonial-meta">Élève Sophrolates</div>
-          </div>
-        </div>
-      </article>
-      <article class="testimonial reveal reveal-delay-3">
-        <span class="testimonial-quote-mark" aria-hidden="true">“</span>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">Studio chaleureux, équipement professionnel, accompagnement personnalisé. La méthode classique fait toute la différence.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">G</div>
-          <div>
-            <div class="testimonial-name">Avis Google</div>
-            <div class="testimonial-meta">Élève Mat Class</div>
-          </div>
-        </div>
-      </article>
     </div>
   </div>
 </section>
@@ -1172,16 +1327,8 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="logo-mark">
-          <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
-            <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
-            <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
-          </svg>
-          <span class="logo-mark-text">
-            <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
-            <span class="logo-mark-sub">Pilates Studio</span>
-          </span>
-        </a>
+        <img src="assets/img/logo-officiel-clair.png" alt="Move and Breathe Pilates Studio" class="logo-img logo-img-footer">
+      </a>
         <p class="footer-tagline">Studio de Pilates à Roubaix Barbieux. Approche personnalisée corps-esprit, par Coralie Delahaye.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">

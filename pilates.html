@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swapdisplay=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -37,7 +37,7 @@
     line-height: 1.55;
     color: var(--teal-deep);
     margin-bottom: 1.75rem;
-    font-weight: 300;
+    font-weight: 400;
   }
   .intro-text {
     font-size: 1rem;
@@ -213,6 +213,21 @@
   }
   .visual-tapis { background: linear-gradient(165deg, var(--beige-deep), var(--sage-deep) 60%, var(--sage)); }
   .visual-machines { background: linear-gradient(165deg, var(--teal-mid), var(--teal) 60%, var(--teal-deep)); }
+  .visual-photo {
+    background: var(--beige);
+  }
+  .visual-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .visual-photo .discipline-visual-caption {
+    background: linear-gradient(transparent, rgba(7, 41, 43, 0.75));
+    padding: 5rem 2rem 2rem;
+    bottom: 0; left: 0; right: 0;
+  }
   .discipline-visual::after {
     content: '';
     position: absolute;
@@ -317,16 +332,8 @@
 <nav class="nav" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="logo-mark" aria-label="Move and Breathe Pilates Studio">
-      <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
-        <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
-        <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
-      </svg>
-      <span class="logo-mark-text">
-        <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
-        <span class="logo-mark-sub">Pilates Studio</span>
-      </span>
-    </a>
+        <img src="assets/img/logo-officiel.png" alt="Move and Breathe Pilates Studio" class="logo-img">
+      </a>
     <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -382,18 +389,8 @@
         </div>
       </div>
       <div class="intro-image reveal reveal-delay-2">
-        <div class="img-panel-placeholder">
-          <span class="img-panel-label">Photo Pilates</span>
-          <div class="silhouette-pilates">
-            <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="40" r="18" fill="#DCE3D6"/>
-              <path d="M100 60 Q70 90 64 140 Q82 156 100 152 Q118 156 136 140 Q130 90 100 60Z" fill="#DCE3D6"/>
-              <path d="M64 110 Q30 100 20 80" stroke="#DCE3D6" stroke-width="14" stroke-linecap="round" fill="none"/>
-              <path d="M136 110 Q170 100 180 80" stroke="#DCE3D6" stroke-width="14" stroke-linecap="round" fill="none"/>
-              <path d="M76 152 Q60 180 56 200" stroke="#DCE3D6" stroke-width="16" stroke-linecap="round" fill="none"/>
-              <path d="M124 152 Q140 180 144 200" stroke="#DCE3D6" stroke-width="16" stroke-linecap="round" fill="none"/>
-            </svg>
-          </div>
+        <div class="img-panel">
+          <img src="assets/img/pilates-cercle.jpg" alt="Cours de Pilates au studio Move and Breathe, travail avec le cercle Pilates (magic circle)" loading="lazy">
         </div>
       </div>
     </div>
@@ -427,14 +424,9 @@
         </ul>
         <a href="tarifs.html" class="btn btn-primary btn-magnetic">Voir le planning &amp; les tarifs</a>
       </div>
-      <div class="discipline-visual visual-tapis reveal reveal-delay-2" aria-hidden="true">
-        <span class="discipline-visual-label">Photo · Tapis</span>
-        <div class="discipline-visual-circles">
-          <span class="pc pc-a"></span>
-          <span class="pc pc-b"></span>
-          <span class="pc pc-c"></span>
-        </div>
-        <p class="discipline-visual-caption">"La base. Là où tout commence."</p>
+      <div class="discipline-visual visual-photo reveal reveal-delay-2">
+        <img src="assets/img/pilates-tapis.jpg" alt="Cours collectif de Pilates sur tapis (Mat Class) au studio Move and Breathe" loading="lazy">
+        <p class="discipline-visual-caption">La base. Là où tout commence.</p>
       </div>
     </div>
   </div>
@@ -444,14 +436,9 @@
 <section class="discipline-block dark" id="machines">
   <div class="container">
     <div class="discipline-grid reverse">
-      <div class="discipline-visual visual-machines reveal" aria-hidden="true">
-        <span class="discipline-visual-label">Photo · Machines</span>
-        <div class="discipline-visual-circles">
-          <span class="pc pc-a"></span>
-          <span class="pc pc-b"></span>
-          <span class="pc pc-c"></span>
-        </div>
-        <p class="discipline-visual-caption">"L'ensemble du système Pilates. Pas seulement du Reformer."</p>
+      <div class="discipline-visual visual-photo reveal">
+        <img src="assets/img/pilates-machine.jpg" alt="Séance de Pilates sur machine avec accompagnement individualisé au studio Move and Breathe" loading="lazy">
+        <p class="discipline-visual-caption">L'ensemble du système Pilates. Pas seulement du Reformer.</p>
       </div>
       <div class="discipline-text reveal reveal-delay-1">
         <div class="discipline-num">02</div>
@@ -491,6 +478,34 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Questions fréquentes</div>
+      <h2 class="h-2 mt-2">Vous vous <em>demandez</em>…</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Je n'ai jamais pratiqué le Pilates, puis-je commencer ?<span class="faq-q-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Oui, les séances sont adaptées à votre niveau et à vos besoins. Le débutant est le bienvenu — on construit les bases ensemble, à votre rythme.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Le Pilates est-il adapté après 50 ans ?<span class="faq-q-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Absolument. Le Pilates aide à préserver la mobilité, la force, l'équilibre et la posture à tout âge. C'est même l'une des pratiques les plus précieuses pour accompagner le corps dans la durée.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quelle est la différence entre les cours sur tapis et les séances sur Reformer ?<span class="faq-q-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Les cours sur tapis utilisent principalement le poids du corps, tandis que le Reformer apporte une résistance grâce à ses ressorts et permet un accompagnement plus individualisé.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Combien de séances faut-il pour ressentir les bénéfices ?<span class="faq-q-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Les premiers changements sont souvent perceptibles après quelques semaines de pratique régulière.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="pilates-cta">
   <div class="container">
@@ -515,16 +530,8 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="logo-mark">
-          <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
-            <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
-            <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
-          </svg>
-          <span class="logo-mark-text">
-            <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
-            <span class="logo-mark-sub">Pilates Studio</span>
-          </span>
-        </a>
+        <img src="assets/img/logo-officiel-clair.png" alt="Move and Breathe Pilates Studio" class="logo-img logo-img-footer">
+      </a>
         <p class="footer-tagline">Studio de Pilates à Roubaix Barbieux. Approche personnalisée corps-esprit, par Coralie Delahaye.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">

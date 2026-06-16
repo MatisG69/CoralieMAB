@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swapdisplay=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -286,6 +286,30 @@
   .pricing-note strong { color: var(--teal-mid); font-weight: 400; }
   .pricing-section.dark .pricing-note strong { color: var(--sage); }
 
+  /* Petite note d'annulation sous chaque catégorie */
+  .cancel-note {
+    max-width: 880px;
+    margin: 1.25rem auto 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.01em;
+  }
+  .pricing-section.dark .cancel-note { color: rgba(220, 227, 214, 0.6); }
+  .cancel-note svg { width: 15px; height: 15px; flex-shrink: 0; stroke: var(--teal); }
+  .pricing-section.dark .cancel-note svg { stroke: var(--sage); }
+  .pay-note {
+    max-width: 880px;
+    margin: 0.6rem auto 0;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--ink-mute);
+    font-family: var(--serif);
+  }
+  .pricing-section.dark .pay-note { color: rgba(220, 227, 214, 0.6); }
+
   /* ==== CANCELLATION POLICY ==== */
   .policy-strip {
     background: var(--cream-deep, var(--beige));
@@ -372,16 +396,8 @@
 <nav class="nav" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="logo-mark" aria-label="Move and Breathe Pilates Studio">
-      <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
-        <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
-        <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
-      </svg>
-      <span class="logo-mark-text">
-        <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
-        <span class="logo-mark-sub">Pilates Studio</span>
-      </span>
-    </a>
+        <img src="assets/img/logo-officiel.png" alt="Move and Breathe Pilates Studio" class="logo-img">
+      </a>
     <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -555,6 +571,13 @@
       </div>
       <div class="discovery-banner-price">15 €</div>
     </div>
+
+    <p class="pay-note reveal">Possibilité de régler en plusieurs fois sur demande.</p>
+
+    <div class="cancel-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span>Toute séance non annulée 48h à l'avance sera dûe.</span>
+    </div>
   </div>
 </section>
 
@@ -606,6 +629,11 @@
         <span class="sub">Valable une fois — bilan postural, respiratoire et de mobilité inclus</span>
       </div>
       <div class="discovery-banner-price">45 €</div>
+    </div>
+
+    <div class="cancel-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span>Toute séance non annulée 48h à l'avance sera dûe.</span>
     </div>
   </div>
 </section>
@@ -663,6 +691,11 @@
     <p class="pricing-note reveal">
       <strong>À noter :</strong> en cas d'absence de l'un des deux élèves, le tarif solo s'applique pour la séance.
     </p>
+
+    <div class="cancel-note reveal" style="justify-content: center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span>Toute séance non annulée 48h à l'avance sera dûe.</span>
+    </div>
   </div>
 </section>
 
@@ -696,16 +729,8 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="logo-mark">
-          <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
-            <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
-            <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
-          </svg>
-          <span class="logo-mark-text">
-            <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
-            <span class="logo-mark-sub">Pilates Studio</span>
-          </span>
-        </a>
+        <img src="assets/img/logo-officiel-clair.png" alt="Move and Breathe Pilates Studio" class="logo-img logo-img-footer">
+      </a>
         <p class="footer-tagline">Studio de Pilates à Roubaix Barbieux. Approche personnalisée corps-esprit, par Coralie Delahaye.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">

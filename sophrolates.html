@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swapdisplay=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -50,16 +50,73 @@
     text-align: center;
     position: relative;
   }
+
+  /* Image banner */
+  .sophro-banner {
+    position: relative;
+    width: 100%;
+    height: clamp(300px, 50vw, 560px);
+    overflow: hidden;
+  }
+  .sophro-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+  .sophro-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(12, 85, 91, 0.55), rgba(12, 85, 91, 0.1));
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(2rem, 8vw, 8rem);
+  }
+  .sophro-banner-overlay p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+    line-height: 1.25;
+    color: var(--cream);
+    max-width: 16em;
+    text-shadow: 0 2px 20px rgba(7, 41, 43, 0.4);
+  }
+
+  /* Pour qui */
+  .pour-qui {
+    background: var(--sage);
+    text-align: center;
+  }
+  .pour-qui-inner { max-width: 760px; margin: 0 auto; }
+  .pour-qui .eyebrow { color: var(--teal-deep); }
+  .pour-qui .eyebrow::before { background: var(--teal-deep); }
+  .pour-qui h2 { color: var(--teal-deep); }
+  .pour-qui h2 em { color: var(--white); }
+  .pour-qui-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--teal-deep);
+    margin: 1.75rem 0 2.5rem;
+  }
+  .pour-qui-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    line-height: 1.45;
+    color: var(--teal-deep);
+  }
   .poetic-inner {
     max-width: 760px;
     margin: 0 auto;
   }
   .poetic-line {
     font-family: var(--serif);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--teal-deep);
     line-height: 1.2;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.008em;
   }
   .poetic-line.l1 {
     font-size: clamp(2rem, 4vw, 3rem);
@@ -205,7 +262,7 @@
     font-size: 4rem;
     color: var(--sage);
     line-height: 1;
-    font-weight: 300;
+    font-weight: 400;
   }
   .phase-row-title {
     font-family: var(--serif);
@@ -293,7 +350,7 @@
   .testimonial-focus-text {
     font-family: var(--serif);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(1.5rem, 2.4vw, 2rem);
     line-height: 1.45;
     color: var(--teal-deep);
@@ -361,16 +418,8 @@
 <nav class="nav" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="logo-mark" aria-label="Move and Breathe Pilates Studio">
-      <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
-        <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
-        <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
-      </svg>
-      <span class="logo-mark-text">
-        <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
-        <span class="logo-mark-sub">Pilates Studio</span>
-      </span>
-    </a>
+        <img src="assets/img/logo-officiel.png" alt="Move and Breathe Pilates Studio" class="logo-img">
+      </a>
     <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -412,12 +461,22 @@
 <section class="poetic">
   <div class="container">
     <div class="poetic-inner">
-      <p class="poetic-line l1 split-text">Bouger pour relâcher.</p>
-      <p class="poetic-line l2 split-text">Respirer pour habiter.</p>
+      <p class="poetic-line l1 split-text">Un mental apaisé</p>
+      <p class="poetic-line l2 split-text">dans un corps souple et fort.</p>
       <span class="poetic-divider reveal"></span>
       <p class="poetic-text scroll-reveal-text">
-        Le Sophrolates est né d'une évidence : la séance la plus complète n'est pas celle qui renforce le plus de muscles, mais celle qui nous laisse, à la fin, plus aligné·e dans son corps, plus apaisé·e dans sa tête, plus relié·e à soi.
+        J'ai créé le Sophrolates® en observant une réalité chez de nombreuses personnes que j'accompagne : malgré une activité physique régulière, il est parfois difficile de relâcher véritablement les tensions, de calmer le mental et de retrouver un état de sérénité durable. Le corps est présent, mais l'esprit continue souvent de courir.
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BANNER -->
+<section style="padding: 0;">
+  <div class="sophro-banner">
+    <img src="assets/img/sophrolates-relax.jpg" alt="Séance de Sophrolates au studio Move and Breathe : moment de relâchement et de respiration" loading="lazy">
+    <div class="sophro-banner-overlay">
+      <p>Un véritable temps de reconnexion à soi.</p>
     </div>
   </div>
 </section>
@@ -428,26 +487,26 @@
     <div class="section-head center reveal">
       <div class="eyebrow center">Une alliance, pas une juxtaposition</div>
       <h2 class="h-2 mt-2">Deux disciplines,<br>une seule <em>expérience</em></h2>
-      <p class="lede mt-2">Le Sophrolates n'est pas du Pilates "avec un peu de relax à la fin". C'est une méthode pensée, structurée, où chaque discipline nourrit l'autre.</p>
+      <p class="lede mt-2">C'est de ce constat qu'est née cette approche unique, qui associe les bienfaits du Pilates et de la Sophrologie.</p>
     </div>
 
     <div class="alliance-grid">
       <div class="alliance-card a reveal reveal-delay-1">
         <div class="alliance-card-pill">Pilates</div>
         <h3>Le corps qui se <em>construit</em></h3>
-        <p>Renforcement profond, conscience posturale, mobilité articulaire, gainage. Le Pilates donne au corps les fondations dont il a besoin — précis, contrôlé, exigeant.</p>
+        <p>Le Pilates permet de renforcer le corps en profondeur, d'améliorer la posture, la mobilité et la conscience corporelle.</p>
         <p>Il agit sur la structure : les muscles profonds, l'alignement, la stabilité, la qualité du mouvement.</p>
       </div>
       <div class="alliance-card b reveal reveal-delay-2">
         <div class="alliance-card-pill">Sophrologie</div>
         <h3>L'esprit qui se <em>libère</em></h3>
-        <p>Respiration consciente, relaxation dynamique, ancrage corporel, visualisation. La sophrologie installe le calme, régule le système nerveux, libère les tensions invisibles.</p>
+        <p>La Sophrologie apporte des outils de respiration, de relaxation et de visualisation favorisant le relâchement, la gestion du stress et un meilleur équilibre émotionnel.</p>
         <p>Elle agit sur le souffle, l'attention, la qualité de présence à soi-même.</p>
       </div>
     </div>
 
     <div class="alliance-vs reveal">
-      <p class="alliance-vs-line">Ensemble, le mouvement devient méditation —<br>et la respiration, <em>une véritable thérapie</em>.</p>
+      <p class="alliance-vs-line">En combinant ces deux disciplines, le Sophrolates®<br>offre un <em>véritable temps de reconnexion à soi</em>.</p>
     </div>
   </div>
 </section>
@@ -506,45 +565,61 @@
       <div class="benefit reveal reveal-delay-1">
         <span class="benefit-num">01</span>
         <div>
-          <h4>Gestion du stress</h4>
-          <p>Le système nerveux apprend à se réguler. Le stress chronique recule. On gagne en patience, en calme, en discernement face aux situations difficiles.</p>
+          <h4>Apaiser le stress</h4>
+          <p>Apaiser le stress et les tensions du quotidien — le système nerveux apprend à se réguler, et le calme s'installe durablement.</p>
         </div>
       </div>
       <div class="benefit reveal reveal-delay-2">
         <span class="benefit-num">02</span>
         <div>
-          <h4>Qualité de sommeil</h4>
-          <p>Le souffle s'apaise. La tension du jour s'évacue. Beaucoup d'élèves rapportent un endormissement plus rapide et un sommeil plus profond dès les premières semaines.</p>
+          <h4>Équilibre corps-esprit</h4>
+          <p>Retrouver un équilibre entre le corps et l'esprit, là où l'un soutient l'autre plutôt que de tirer chacun de son côté.</p>
         </div>
       </div>
       <div class="benefit reveal reveal-delay-1">
         <span class="benefit-num">03</span>
         <div>
-          <h4>Conscience du corps</h4>
-          <p>Le mouvement et la respiration éveillent ensemble une présence corporelle plus fine. On habite mieux son corps, dans la séance et au quotidien.</p>
+          <h4>Posture &amp; respiration</h4>
+          <p>Améliorer la posture et la qualité de la respiration — deux piliers qui se renforcent mutuellement, séance après séance.</p>
         </div>
       </div>
       <div class="benefit reveal reveal-delay-2">
         <span class="benefit-num">04</span>
         <div>
-          <h4>Récupération profonde</h4>
-          <p>Pas un cours qui épuise — une séance dont on ressort plus disponible, plus solide. C'est la régularité qui transforme : on prend le temps, on en retire l'énergie.</p>
+          <h4>Concentration &amp; présence</h4>
+          <p>Développer la concentration et la présence à soi, pour mieux habiter chaque instant — sur le tapis comme au quotidien.</p>
         </div>
       </div>
       <div class="benefit reveal reveal-delay-1">
         <span class="benefit-num">05</span>
         <div>
-          <h4>Posture &amp; respiration liées</h4>
-          <p>On découvre qu'une posture juste libère le souffle, et qu'un souffle libre soutient la posture. Le travail devient cohérent — plus rien ne tire dans le mauvais sens.</p>
+          <h4>Sommeil &amp; récupération</h4>
+          <p>Favoriser un meilleur sommeil et une récupération plus profonde — le corps et l'esprit apprennent enfin à se déposer.</p>
         </div>
       </div>
       <div class="benefit reveal reveal-delay-2">
         <span class="benefit-num">06</span>
         <div>
-          <h4>Confiance dans le mouvement</h4>
-          <p>On retrouve la confiance dans son corps — particulièrement précieux après une blessure, une maternité, une période de fatigue ou de vie compliquée.</p>
+          <h4>Énergie durable</h4>
+          <p>Retrouver de l'énergie et du bien-être durablement, bien au-delà de la séance elle-même.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section class="pour-qui">
+  <div class="container">
+    <div class="pour-qui-inner reveal">
+      <div class="eyebrow center">Pour qui ?</div>
+      <h2 class="h-2 mt-2">Pour celles et ceux qui veulent<br>prendre soin d'eux <em>globalement</em></h2>
+      <p class="pour-qui-text">
+        Le Sophrolates® s'adresse à toutes les personnes qui souhaitent prendre soin d'elles de manière globale — qu'elles traversent une période de stress, de fatigue, de transition de vie, ou qu'elles recherchent simplement davantage de sérénité au quotidien.
+      </p>
+      <p class="pour-qui-quote">
+        Parce que prendre soin de son corps est essentiel,<br>mais apprendre à écouter son esprit l'est tout autant.
+      </p>
     </div>
   </div>
 </section>
@@ -556,6 +631,30 @@
       <span class="testimonial-focus-mark" aria-hidden="true">“</span>
       <p class="testimonial-focus-text">Les séances de Sophrolates sont un vrai moment pour soi. Je repars apaisée, alignée, et plus forte physiquement. Une méthode unique.</p>
       <p class="testimonial-focus-cite">— Élève Sophrolates · Avis Facebook</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Questions fréquentes</div>
+      <h2 class="h-2 mt-2">À propos du <em>Sophrolates®</em></h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Qu'est-ce que le Sophrolates® ?<span class="faq-q-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Le Sophrolates® associe les bienfaits du Pilates et de la sophrologie pour renforcer le corps tout en apaisant l'esprit.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">À qui s'adresse le Sophrolates® ?<span class="faq-q-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Aux personnes souhaitant réduire leur stress, améliorer leur respiration et retrouver un meilleur équilibre global — quelles que soient leur condition physique et leur expérience.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Faut-il déjà pratiquer le Pilates ou la sophrologie ?<span class="faq-q-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Non, aucune expérience préalable n'est nécessaire. La méthode est pensée pour être accessible et s'adapte à chacun, débutant comme pratiquant confirmé.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -586,16 +685,8 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="logo-mark">
-          <svg class="logo-mark-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="30" cy="20" r="14" fill="#98BDB8" opacity="0.78" style="mix-blend-mode: multiply"/>
-            <circle cx="20" cy="38" r="14" fill="#BFD5CF" opacity="0.78" style="mix-blend-mode: multiply"/>
-            <circle cx="40" cy="38" r="14" fill="#DCE3D6" opacity="0.88" style="mix-blend-mode: multiply"/>
-          </svg>
-          <span class="logo-mark-text">
-            <span class="logo-mark-title">Move <em>&amp;</em> Breathe</span>
-            <span class="logo-mark-sub">Pilates Studio</span>
-          </span>
-        </a>
+        <img src="assets/img/logo-officiel-clair.png" alt="Move and Breathe Pilates Studio" class="logo-img logo-img-footer">
+      </a>
         <p class="footer-tagline">Studio de Pilates à Roubaix Barbieux. Approche personnalisée corps-esprit, par Coralie Delahaye.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">
