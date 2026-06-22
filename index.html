@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Move and Breathe Pilates Studio — Roubaix Barbieux · Approche personnalisée corps-esprit</title>
+<title>Move and Breathe Pilates Studio, Roubaix Barbieux · Approche personnalisée corps-esprit</title>
 <meta name="description" content="Studio de Pilates à Roubaix Barbieux. Approche personnalisée du mouvement et de la respiration : Pilates classique, Sophrolates, méthode De Gasquet, sophrologie. Coralie Delahaye.">
 <meta name="keywords" content="pilates Lille, pilates Roubaix, sophrolates, méthode De Gasquet, studio pilates Barbieux, accompagnement corps esprit">
 <link rel="canonical" href="https://moveandbreathelille.fr/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Move and Breathe Pilates Studio — Roubaix Barbieux">
+<meta property="og:title" content="Move and Breathe Pilates Studio, Roubaix Barbieux">
 <meta property="og:description" content="Studio de Pilates où le mouvement et la respiration ont toute leur place. Approche personnalisée corps-esprit par Coralie Delahaye.">
 <meta property="og:url" content="https://moveandbreathelille.fr/">
 <meta property="og:locale" content="fr_FR">
@@ -17,7 +17,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swapdisplay=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <style>
@@ -93,13 +93,20 @@
     justify-content: center;
     overflow: hidden;
   }
-  .hero-visual::before {
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  .hero-visual::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(30, 72, 71, 0.08) 1px, transparent 0);
-    background-size: 24px 24px;
-    opacity: 0.5;
+    background: linear-gradient(to right, rgba(7,41,43,0.12), transparent 30%);
+    z-index: 1;
   }
   .hero-logo-large {
     position: relative;
@@ -157,12 +164,13 @@
     right: 1.25rem;
     transform: translateY(-50%) rotate(180deg);
     writing-mode: vertical-rl;
-    color: var(--teal-mid);
+    color: var(--cream);
     font-size: 0.7rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     z-index: 3;
-    opacity: 0.6;
+    opacity: 0.9;
+    text-shadow: 0 1px 8px rgba(7,41,43,0.5);
   }
 
   /* ==== MANIFESTE ==== */
@@ -207,8 +215,18 @@
     text-transform: uppercase;
     color: var(--teal-mid);
   }
+  .manifesto-cite::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--teal-mid);
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    opacity: 0.6;
+  }
 
-  /* ==== PILIERS — ce qui distingue le studio ==== */
+  /* ==== PILIERS, ce qui distingue le studio ==== */
   .pillars { background: var(--cream); }
   .pillars-grid {
     display: grid;
@@ -481,6 +499,16 @@
     text-transform: uppercase;
     color: var(--sage);
   }
+  .signature-visual-cite::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--sage);
+    vertical-align: middle;
+    margin-right: 0.6rem;
+    opacity: 0.7;
+  }
 
   /* ==== ACCOMPAGNEMENTS TEASER ==== */
   .accomp-teaser { background: var(--cream); }
@@ -745,7 +773,71 @@
     .cta-options { grid-template-columns: 1fr; }
     .digital-features { grid-template-columns: 1fr; }
   }
-  /* ==== AVIS — CAROUSEL ==== */
+  /* ==== STUDIO BANNER (dans Pratiques) ==== */
+  .studio-banner {
+    width: 100%;
+    height: clamp(280px, 42vw, 520px);
+    overflow: hidden;
+    border-radius: 3px;
+    margin: clamp(2rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 4.5rem);
+  }
+  .studio-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 32%;
+  }
+
+  /* ==== CORALIE, PRESENTATION ==== */
+  .coralie-intro {
+    background: var(--cream-soft);
+    padding: clamp(4rem, 8vw, 7rem) 0;
+  }
+  .coralie-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .coralie-photo {
+    border-radius: 3px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--beige);
+  }
+  .coralie-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .coralie-role {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--teal);
+    margin-top: 1rem;
+    line-height: 1.4;
+  }
+  .coralie-mission {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--teal-deep);
+    border-left: 2px solid var(--sage-deep);
+    padding-left: 1.5rem;
+    margin: 1.75rem 0 0.5rem;
+  }
+  @media (max-width: 860px) {
+    .coralie-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .coralie-photo { max-width: 380px; margin: 0 auto; }
+    .coralie-text { text-align: left; }
+  }
+
+  /* ==== AVIS, CAROUSEL ==== */
   .reviews {
     background: var(--cream);
     padding: clamp(4rem, 8vw, 7rem) 0;
@@ -863,6 +955,69 @@
     .review-card { flex: 0 0 100%; margin-right: 1rem; min-height: 0; }
     .reviews-arrow { display: none; }
   }
+  /* ==== ENTREPRISES, TEASER ACCUEIL ==== */
+  .enterprise-teaser {
+    background: var(--teal-deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .enterprise-teaser::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(220, 227, 214, 0.06) 1px, transparent 0);
+    background-size: 26px 26px;
+  }
+  .enterprise-teaser .container { position: relative; z-index: 1; }
+  .enterprise-teaser-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .enterprise-teaser .eyebrow { color: var(--sage); }
+  .enterprise-teaser .eyebrow::before { background: var(--sage); }
+  .enterprise-teaser .h-2 { color: var(--cream); }
+  .enterprise-teaser .h-2 em { color: var(--sage); }
+  .enterprise-teaser-text {
+    color: rgba(220, 227, 214, 0.8);
+    font-size: 1.06rem;
+    line-height: 1.8;
+    margin: 1.5rem 0 2.5rem;
+  }
+  .enterprise-logos {
+    margin: 2.5rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(220, 227, 214, 0.14);
+    border-bottom: 1px solid rgba(220, 227, 214, 0.14);
+  }
+  .enterprise-logos-label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+  }
+  .enterprise-logos-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .client-logo {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+    opacity: 0.92;
+  }
+  .client-logo-sep {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--sage-deep);
+  }
 </style>
 
 <script type="application/ld+json">
@@ -912,6 +1067,7 @@
       <li><a href="pilates.html">Pilates</a></li>
       <li><a href="sophrolates.html">Sophrolates</a></li>
       <li><a href="accompagnement.html">Accompagnement</a></li>
+      <li><a href="entreprises.html">Entreprises</a></li>
       <li><a href="tarifs.html">Tarifs &amp; Planning</a></li>
       <li><a href="contact.html" class="nav-cta">Contact</a></li>
     </ul>
@@ -924,7 +1080,7 @@
     <div class="hero-eyebrow eyebrow reveal">Pilates · Sophrolates · Accompagnement</div>
     <h1 class="hero-title split-text reveal reveal-delay-1">Un corps plus fort, plus mobile, <em>plus équilibré.</em></h1>
     <p class="hero-desc reveal reveal-delay-2">
-      Studio de Pilates à Roubaix Barbieux. Une approche personnalisée du mouvement et de la respiration — parce que chaque corps est unique et mérite un accompagnement individualisé.
+      Studio de Pilates à Roubaix Barbieux. Une approche personnalisée du mouvement et de la respiration, parce que chaque corps est unique et mérite un accompagnement individualisé.
     </p>
     <div class="hero-actions reveal reveal-delay-3">
       <a href="contact.html" class="btn btn-primary btn-magnetic">Prendre rendez-vous</a>
@@ -951,19 +1107,9 @@
     </div>
   </div>
 
-  <div class="hero-visual" aria-hidden="true">
+  <div class="hero-visual">
+    <img src="assets/img/hero-studio.jpg" alt="Coralie accompagne une élève sur Cadillac au studio Move and Breathe à Roubaix" class="hero-photo">
     <span class="hero-vertical-text">Roubaix · Barbieux</span>
-    <div class="hero-logo-large">
-      <span class="hero-logo-circle hero-logo-c1"></span>
-      <span class="hero-logo-circle hero-logo-c2"></span>
-      <span class="hero-logo-circle hero-logo-c3"></span>
-      <span class="hero-logo-text">
-        <span class="hero-logo-line">MOVE</span>
-        <span class="hero-logo-amp">&amp;</span>
-        <span class="hero-logo-line">BREATHE</span>
-        <span class="hero-logo-sub">Pilates Studio</span>
-      </span>
-    </div>
   </div>
 </header>
 
@@ -989,7 +1135,90 @@
   </div>
 </div>
 
-<!-- AVIS — CAROUSEL -->
+<!-- PRATIQUES (LE STUDIO) -->
+<section class="practices">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow center">Le studio</div>
+      <h2 class="h-2 mt-2">Le mouvement,<br>la respiration, <em>la transmission</em></h2>
+      <p class="lede mt-2">Un espace lumineux à Roubaix Barbieux, pensé pour prendre soin du corps et de l'esprit, autour de trois pratiques.</p>
+    </div>
+
+    <div class="studio-banner reveal">
+      <img src="assets/img/studio-coralie-reformer.jpg" alt="Coralie accompagne une élève sur Reformer au studio Move and Breathe à Roubaix" loading="lazy">
+    </div>
+
+    <div class="practices-grid">
+      <a href="pilates.html" class="practice-card reveal reveal-delay-1">
+        <div class="practice-visual">
+          <img src="assets/img/pilates-tapis.jpg" alt="Cours de Pilates sur tapis" loading="lazy">
+          <span class="practice-number">01</span>
+        </div>
+        <div class="practice-content">
+          <span class="practice-tag">Pratique · 01</span>
+          <h3 class="practice-name">Pilates</h3>
+          <p class="practice-desc">Sur tapis et sur l'ensemble des machines : Reformer, Cadillac, Chair, Barrel. Un véritable enseignement Pilates complet, pas seulement du Reformer.</p>
+          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="sophrolates.html" class="practice-card reveal reveal-delay-2">
+        <div class="practice-visual">
+          <img src="assets/img/sophrolates-relax.jpg" alt="Séance de Sophrolates, moment de relâchement" loading="lazy">
+          <span class="practice-number">02</span>
+        </div>
+        <div class="practice-content">
+          <span class="practice-tag">Pratique · 02 · Signature</span>
+          <h3 class="practice-name">Sophrolates</h3>
+          <p class="practice-desc">Ma prestation signature, l'alliance du Pilates et de la sophrologie. Un travail du corps et du mental, où la respiration et la récupération ont toute leur place.</p>
+          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="accompagnement.html" class="practice-card reveal reveal-delay-3">
+        <div class="practice-visual">
+          <img src="assets/img/accompagnement-bilan.jpg" alt="Accompagnement personnalisé et bilan" loading="lazy">
+          <span class="practice-number">03</span>
+        </div>
+        <div class="practice-content">
+          <span class="practice-tag">Pratique · 03</span>
+          <h3 class="practice-name">Accompagnement personnalisé</h3>
+          <p class="practice-desc">La boîte à outils : De Gasquet, chaînes musculaires, sophrologie, respiration, éducation corporelle. Pour le mal de dos, le stress, la péri-ménopause, la reprise d'activité.</p>
+          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CORALIE, PRESENTATION -->
+<section class="coralie-intro" id="coralie">
+  <div class="container">
+    <div class="coralie-grid">
+      <div class="coralie-photo reveal">
+        <img src="assets/img/coralie-portrait.jpg" alt="Coralie Delahaye, professeure de Pilates certifiée et fondatrice de Move and Breathe" loading="lazy">
+      </div>
+      <div class="coralie-text reveal reveal-delay-1">
+        <div class="eyebrow">La fondatrice</div>
+        <h2 class="h-2 mt-2">Bonjour,<br>je suis <em>Coralie</em></h2>
+        <p class="coralie-role">Professeure de Pilates certifiée et fondatrice de Move and Breathe.</p>
+        <p class="body-text mt-3">
+          Depuis plus de 8 ans, j'accompagne mes élèves avec une approche personnalisée qui associe mouvement, respiration et plaisir de transmettre.
+        </p>
+        <p class="body-text">
+          Formée au Pilates Classique, à la méthode De Gasquet et à la sophrologie, je mets ces différents outils au service d'un objectif simple : vous aider à vous sentir plus fort(e), plus mobile et plus fonctionnel au quotidien.
+        </p>
+        <p class="coralie-mission">Transmettre le mouvement et la respiration pour vous aider à bouger avec plus de confiance, de fluidité et de liberté.</p>
+        <a href="le-studio.html" class="btn btn-outline mt-3">
+          Découvrir mon parcours
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS, CAROUSEL -->
 <section class="reviews" id="avis">
   <div class="container">
     <div class="section-head center reveal">
@@ -997,7 +1226,7 @@
       <h2 class="h-2 mt-2">Ce qu'elles disent<br>du <em>studio</em></h2>
       <div class="reviews-rating reveal">
         <span class="reviews-stars">★★★★★</span>
-        <span class="reviews-rating-text">5,0 — Avis vérifiés Google</span>
+        <span class="reviews-rating-text">5,0 · Avis vérifiés Google</span>
       </div>
     </div>
 
@@ -1101,7 +1330,7 @@
       <p class="manifesto-text scroll-reveal-text">
         Le temps d'observer, de comprendre, d'apprendre et de progresser durablement. Au-delà de la performance physique, mon objectif est de vous aider à mieux comprendre votre corps, développer votre confiance dans le mouvement, prévenir les douleurs et retrouver un véritable équilibre entre corps et esprit.
       </p>
-      <p class="manifesto-cite reveal">— Coralie Delahaye</p>
+      <p class="manifesto-cite reveal">Coralie Delahaye</p>
     </div>
   </div>
 </section>
@@ -1118,7 +1347,7 @@
       <div class="pillar">
         <span class="pillar-num">01</span>
         <h3 class="pillar-title">Approche personnalisée</h3>
-        <p class="pillar-text">Aucun corps n'est identique. Chaque programme est conçu pour vous — votre histoire, votre posture, vos objectifs, vos contraintes du moment.</p>
+        <p class="pillar-text">Aucun corps n'est identique. Chaque programme est conçu pour vous, votre histoire, votre posture, vos objectifs, vos contraintes du moment.</p>
       </div>
       <div class="pillar">
         <span class="pillar-num">02</span>
@@ -1128,12 +1357,12 @@
       <div class="pillar">
         <span class="pillar-num">03</span>
         <h3 class="pillar-title">Vision corps-esprit</h3>
-        <p class="pillar-text">Le corps ne se travaille pas sans le mental, ni l'inverse. La respiration fait le pont — c'est elle qui change tout, séance après séance.</p>
+        <p class="pillar-text">Le corps ne se travaille pas sans le mental, ni l'inverse. La respiration fait le pont, c'est elle qui change tout, séance après séance.</p>
       </div>
       <div class="pillar">
         <span class="pillar-num">04</span>
         <h3 class="pillar-title">Accompagnement sur le long terme</h3>
-        <p class="pillar-text">Une séance change peu de choses. Une pratique régulière, encadrée, ajustée — transforme. C'est cette continuité que j'installe avec vous.</p>
+        <p class="pillar-text">Une séance change peu de choses. Une pratique régulière, encadrée, ajustée, transforme. C'est cette continuité que j'installe avec vous.</p>
       </div>
       <div class="pillar">
         <span class="pillar-num">05</span>
@@ -1143,58 +1372,8 @@
       <div class="pillar">
         <span class="pillar-num">06</span>
         <h3 class="pillar-title">Outils complémentaires</h3>
-        <p class="pillar-text">Au-delà du Pilates, plusieurs approches s'imbriquent — choisies pour répondre précisément à ce dont vous avez besoin à cet instant-là.</p>
+        <p class="pillar-text">Au-delà du Pilates, plusieurs approches s'imbriquent, choisies pour répondre précisément à ce dont vous avez besoin à cet instant-là.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRATIQUES -->
-<section class="practices">
-  <div class="container">
-    <div class="section-head center reveal">
-      <div class="eyebrow center">Trois pratiques principales</div>
-      <h2 class="h-2 mt-2">Le mouvement,<br>la respiration, <em>la régulation</em></h2>
-    </div>
-    <div class="practices-grid">
-      <a href="pilates.html" class="practice-card reveal reveal-delay-1">
-        <div class="practice-visual">
-          <img src="assets/img/pilates-tapis.jpg" alt="Cours de Pilates sur tapis" loading="lazy">
-          <span class="practice-number">01</span>
-        </div>
-        <div class="practice-content">
-          <span class="practice-tag">Pratique · 01</span>
-          <h3 class="practice-name">Pilates</h3>
-          <p class="practice-desc">Sur tapis et sur l'ensemble des machines : Reformer, Cadillac, Chair, Barrel. Un véritable enseignement Pilates complet, pas seulement du Reformer.</p>
-          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <a href="sophrolates.html" class="practice-card reveal reveal-delay-2">
-        <div class="practice-visual">
-          <img src="assets/img/sophrolates-relax.jpg" alt="Séance de Sophrolates, moment de relâchement" loading="lazy">
-          <span class="practice-number">02</span>
-        </div>
-        <div class="practice-content">
-          <span class="practice-tag">Pratique · 02 · Signature</span>
-          <h3 class="practice-name">Sophrolates</h3>
-          <p class="practice-desc">Ma prestation signature — l'alliance du Pilates et de la sophrologie. Un travail du corps et du mental, où la respiration et la récupération ont toute leur place.</p>
-          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <a href="accompagnement.html" class="practice-card reveal reveal-delay-3">
-        <div class="practice-visual">
-          <img src="assets/img/accompagnement-bilan.jpg" alt="Accompagnement personnalisé et bilan" loading="lazy">
-          <span class="practice-number">03</span>
-        </div>
-        <div class="practice-content">
-          <span class="practice-tag">Pratique · 03</span>
-          <h3 class="practice-name">Accompagnement personnalisé</h3>
-          <p class="practice-desc">La boîte à outils : De Gasquet, chaînes musculaires, sophrologie, respiration, éducation corporelle. Pour le mal de dos, le stress, la péri-ménopause, la reprise d'activité.</p>
-          <span class="practice-link">Découvrir <span class="arrow">→</span></span>
-        </div>
-      </a>
     </div>
   </div>
 </section>
@@ -1211,7 +1390,7 @@
           Quand le Pilates rencontre la sophrologie, le mouvement devient méditation et la respiration devient guide.
         </p>
         <p class="signature-text">
-          C'est ma méthode signature — née de la conviction qu'un corps bien tenu ne suffit pas sans un mental apaisé, et qu'un mental apaisé ne tient pas dans un corps tendu. Travail respiratoire, gestion du stress, récupération, posture : tout est lié.
+          C'est ma méthode signature, née de la conviction qu'un corps bien tenu ne suffit pas sans un mental apaisé, et qu'un mental apaisé ne tient pas dans un corps tendu. Travail respiratoire, gestion du stress, récupération, posture : tout est lié.
         </p>
         <div class="signature-actions">
           <a href="sophrolates.html" class="btn btn-light btn-magnetic">Découvrir le Sophrolates</a>
@@ -1225,7 +1404,7 @@
         <img src="assets/img/pilates-machine.jpg" alt="Coralie en séance de Pilates accompagné au studio Move and Breathe" loading="lazy">
         <div class="signature-visual-quote">
           Une heure pour soi qui change toute la semaine.
-          <div class="signature-visual-cite">— Élève Sophrolates</div>
+          <div class="signature-visual-cite">Élève Sophrolates</div>
         </div>
       </div>
     </div>
@@ -1240,7 +1419,7 @@
         <div class="eyebrow">L'accompagnement</div>
         <h2 class="h-2 mt-2">Une <em>boîte à outils</em>,<br>pas une méthode unique</h2>
         <p class="body-text mt-3">
-          Selon votre histoire, vos douleurs, vos objectifs et le moment de votre vie, je combine plusieurs approches — toutes complémentaires, toutes au service de votre corps.
+          Selon votre histoire, vos douleurs, vos objectifs et le moment de votre vie, je combine plusieurs approches, toutes complémentaires, toutes au service de votre corps.
         </p>
         <a href="accompagnement.html" class="btn btn-outline mt-4">
           Voir tous les accompagnements
@@ -1264,15 +1443,39 @@
   </div>
 </section>
 
+<!-- ENTREPRISES TEASER -->
+<section class="enterprise-teaser">
+  <div class="container">
+    <div class="enterprise-teaser-inner reveal">
+      <div class="eyebrow center">Bien-être en entreprise</div>
+      <h2 class="h-2 mt-2">Vous êtes une <em>entreprise</em> ?</h2>
+      <p class="enterprise-teaser-text">
+        J'interviens également auprès des entreprises pour accompagner leurs collaborateurs autour du mouvement, de la posture, de la gestion du stress et du bien-être au travail. Ateliers, séances régulières, événements ponctuels ou interventions sur mesure.
+      </p>
+
+      <div class="enterprise-logos">
+        <span class="enterprise-logos-label">Elles m'ont déjà fait confiance</span>
+        <div class="enterprise-logos-row">
+          <span class="client-logo">Bonduelle</span>
+          <span class="client-logo-sep"></span>
+          <span class="client-logo">Nexity</span>
+        </div>
+      </div>
+
+      <a href="entreprises.html" class="btn btn-primary btn-magnetic mt-4">Découvrir les interventions en entreprise</a>
+    </div>
+  </div>
+</section>
+
 <!-- STUDIO DIGITAL TEASER -->
 <section class="digital-teaser">
   <div class="container">
     <div class="digital-grid">
       <div class="reveal">
-        <span class="digital-pill">Bientôt — Studio Digital</span>
+        <span class="digital-pill">Bientôt, Studio Digital</span>
         <h2 class="h-2">Le studio,<br><em>aussi chez vous</em></h2>
         <p class="body-text mt-3">
-          Une bibliothèque de vidéos à la demande, des séances thématiques, un accès continu — pour pratiquer pendant les vacances, en complément du studio, ou à votre rythme depuis chez vous. Le Studio Digital arrive prochainement.
+          Une bibliothèque de vidéos à la demande, des séances thématiques, un accès continu, pour pratiquer pendant les vacances, en complément du studio, ou à votre rythme depuis chez vous. Le Studio Digital arrive prochainement.
         </p>
       </div>
       <div class="reveal reveal-delay-2">
@@ -1315,7 +1518,7 @@
         <span class="arrow">→</span>
       </a>
       <p class="mt-3" style="font-size: 0.78rem; color: var(--ink-mute); font-weight: 300;">
-        Métro 2 — Croix Mairie · Tram — Parc Barbieux · Parking gratuit · À 100m du Parc
+        Métro 2, Croix Mairie · Tram, Parc Barbieux · Parking gratuit · À 100m du Parc
       </p>
     </div>
   </div>
@@ -1326,9 +1529,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="logo-mark">
-        <img src="assets/img/logo-officiel-clair.png" alt="Move and Breathe Pilates Studio" class="logo-img logo-img-footer">
-      </a>
+        <div class="footer-brand">Move <span>&amp;</span> Breathe</div>
         <p class="footer-tagline">Studio de Pilates à Roubaix Barbieux. Approche personnalisée corps-esprit, par Coralie Delahaye.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/moveandbreathelille" target="_blank" rel="noopener" aria-label="Instagram">
@@ -1354,6 +1555,7 @@
           <li><a href="pilates.html">Pilates</a></li>
           <li><a href="sophrolates.html">Sophrolates</a></li>
           <li><a href="accompagnement.html">Accompagnement</a></li>
+          <li><a href="entreprises.html">Bien-être en entreprise</a></li>
           <li><a href="tarifs.html">Tarifs &amp; Planning</a></li>
         </ul>
       </div>
@@ -1368,8 +1570,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Move and Breathe Pilates Studio — Coralie Delahaye</span>
-      <span>Site réalisé par <a href="https://mapa-developpement.fr" target="_blank" rel="noopener">Mapa Développement</a></span>
+      <span>© <span data-year>2026</span> Move and Breathe Pilates Studio, Coralie Delahaye</span>
+      <span class="footer-credit">Site réalisé par <a href="https://mapa-developpement.fr" target="_blank" rel="noopener">Mapa Développement</a></span>
     </div>
   </div>
 </footer>
